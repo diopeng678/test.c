@@ -1,0 +1,41 @@
+{
+  "Version": 1,
+  "WorkspaceRootPath": "D:\\github\\simulate\\",
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{7D7B510E-3014-4631-963A-09B2AC3B886C}|simulate\\simulate.vcxproj|D:\\github\\simulate\\simulate\\test.c||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{7D7B510E-3014-4631-963A-09B2AC3B886C}|simulate\\simulate.vcxproj|solutionrelative:simulate\\test.c||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+    }
+  ],
+  "DocumentGroupContainers": [
+    {
+      "Orientation": 0,
+      "VerticalTabListWidth": 256,
+      "DocumentGroups": [
+        {
+          "DockedWidth": 200,
+          "SelectedChildIndex": 1,
+          "Children": [
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{3ae79031-e1bc-11d0-8f78-00a0c9110057}"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "test.c",
+              "DocumentMoniker": "D:\\github\\simulate\\simulate\\test.c",
+              "RelativeDocumentMoniker": "simulate\\test.c",
+              "ToolTip": "D:\\github\\simulate\\simulate\\test.c",
+              "RelativeToolTip": "simulate\\test.c",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABQAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000423|",
+              "WhenOpened": "2026-01-03T13:54:10.39Z",
+              "EditorCaption": ""
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}
