@@ -1,0 +1,41 @@
+{
+  "Version": 1,
+  "WorkspaceRootPath": "D:\\github\\simulate\\smlt\\",
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{BDF88B99-7B8E-4C79-A5BF-D8F7571C871F}|smlt\\smlt.vcxproj|D:\\github\\simulate\\smlt\\smlt\\strstr.c||{8B382828-6202-11D1-8870-0000F87579D2}",
+      "RelativeMoniker": "D:0:0:{BDF88B99-7B8E-4C79-A5BF-D8F7571C871F}|smlt\\smlt.vcxproj|solutionrelative:smlt\\strstr.c||{8B382828-6202-11D1-8870-0000F87579D2}"
+    }
+  ],
+  "DocumentGroupContainers": [
+    {
+      "Orientation": 0,
+      "VerticalTabListWidth": 256,
+      "DocumentGroups": [
+        {
+          "DockedWidth": 200,
+          "SelectedChildIndex": 1,
+          "Children": [
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{3ae79031-e1bc-11d0-8f78-00a0c9110057}"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "strstr.c",
+              "DocumentMoniker": "D:\\github\\simulate\\smlt\\smlt\\strstr.c",
+              "RelativeDocumentMoniker": "smlt\\strstr.c",
+              "ToolTip": "D:\\github\\simulate\\smlt\\smlt\\strstr.c",
+              "RelativeToolTip": "smlt\\strstr.c",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAMAAAANAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000423|",
+              "WhenOpened": "2026-01-04T13:38:58.604Z",
+              "EditorCaption": ""
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}
