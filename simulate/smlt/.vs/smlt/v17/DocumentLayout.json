@@ -3,8 +3,8 @@
   "WorkspaceRootPath": "D:\\github\\simulate\\smlt\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{BDF88B99-7B8E-4C79-A5BF-D8F7571C871F}|smlt\\smlt.vcxproj|D:\\github\\simulate\\smlt\\smlt\\strstr.c||{8B382828-6202-11D1-8870-0000F87579D2}",
-      "RelativeMoniker": "D:0:0:{BDF88B99-7B8E-4C79-A5BF-D8F7571C871F}|smlt\\smlt.vcxproj|solutionrelative:smlt\\strstr.c||{8B382828-6202-11D1-8870-0000F87579D2}"
+      "AbsoluteMoniker": "D:0:0:{BDF88B99-7B8E-4C79-A5BF-D8F7571C871F}|smlt\\smlt.vcxproj|D:\\github\\simulate\\smlt\\smlt\\strstr.c||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{BDF88B99-7B8E-4C79-A5BF-D8F7571C871F}|smlt\\smlt.vcxproj|solutionrelative:smlt\\strstr.c||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
     }
   ],
   "DocumentGroupContainers": [
@@ -28,9 +28,9 @@
               "RelativeDocumentMoniker": "smlt\\strstr.c",
               "ToolTip": "D:\\github\\simulate\\smlt\\smlt\\strstr.c",
               "RelativeToolTip": "smlt\\strstr.c",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAMAAAANAAAAAAAAAA==",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000423|",
-              "WhenOpened": "2026-01-04T13:38:58.604Z",
+              "WhenOpened": "2026-01-04T15:53:16.627Z",
               "EditorCaption": ""
             }
           ]
