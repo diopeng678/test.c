@@ -1,0 +1,41 @@
+{
+  "Version": 1,
+  "WorkspaceRootPath": "D:\\github\\test1_12\\",
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{177017B3-821B-47F9-96BD-ACE9FD22CA0C}|test1_12\\test1_12.vcxproj|D:\\github\\test1_12\\test1_12\\neicun.c||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{177017B3-821B-47F9-96BD-ACE9FD22CA0C}|test1_12\\test1_12.vcxproj|solutionrelative:test1_12\\neicun.c||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+    }
+  ],
+  "DocumentGroupContainers": [
+    {
+      "Orientation": 0,
+      "VerticalTabListWidth": 256,
+      "DocumentGroups": [
+        {
+          "DockedWidth": 200,
+          "SelectedChildIndex": 1,
+          "Children": [
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{3ae79031-e1bc-11d0-8f78-00a0c9110057}"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "neicun.c",
+              "DocumentMoniker": "D:\\github\\test1_12\\test1_12\\neicun.c",
+              "RelativeDocumentMoniker": "test1_12\\neicun.c",
+              "ToolTip": "D:\\github\\test1_12\\test1_12\\neicun.c",
+              "RelativeToolTip": "test1_12\\neicun.c",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000423|",
+              "WhenOpened": "2026-01-12T12:09:52.787Z",
+              "EditorCaption": ""
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

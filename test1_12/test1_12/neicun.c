@@ -4,5 +4,5 @@
 void Getmemory(char*p) {
 	p = (char*) malloc(100 * sizeof(char));
 
-}
+}//666
 
