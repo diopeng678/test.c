@@ -1,3 +1,3 @@
 ﻿  FILE.c
-D:\github\文件操作\文件操作\FILE.c(5,7): warning C4101: “str”: 未引用的局部变量
+D:\github\文件操作\文件操作\FILE.c(53,7): warning C4101: “str”: 未引用的局部变量
   文件操作.vcxproj -> D:\github\文件操作\x64\Debug\文件操作.exe
