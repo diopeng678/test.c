@@ -69,15 +69,35 @@
 //fputs函数的使用
 //"a"为追加
 
+//int main() {
+//	FILE* fp;
+//	fp = fopen("6666", "a");
+//	if (fp == NULL) {
+//		perror("无法打开文件");
+//		return -1;
+//	}
+//	int ch=0;
+//	fputs("hello world\n", fp);	
+//	fclose(fp);
+//	return 0;
+//}
+//
 int main() {
 	FILE* fp;
-	fp = fopen("6666", "a");
+	int arr[] = { 1,2,3,5,6 };
+	fp = fopen("6666", "rb");
 	if (fp == NULL) {
 		perror("无法打开文件");
-		return -1;
+		return EOF;
 	}
-	int ch=0;
-	fputs("hello world\n", fp);	
+	int ch = 0;
+	int sz = sizeof(arr) / sizeof(arr[0]);
+	fread(arr, sizeof(int), sz, fp);
 	fclose(fp);
+	int a = 0;
+	for (a = 0;a < 5;a++)
+	{
+		printf("%d ", arr[a]);
+	}
 	return 0;
 }
