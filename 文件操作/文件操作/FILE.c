@@ -51,7 +51,7 @@
 
 int main() {
 	FILE* fp;
-	char str[100];
+	
 	// 打开文件以读取,用循环的方式去读取文件中的内容,就是一下子读取完
 	fp = fopen("6666", "r");
 	if (fp == NULL) {
@@ -61,7 +61,7 @@ int main() {
 	int ch=0;
 	while(( ch = fgetc(fp)) != EOF)
 	{
-		printf("%c\n", ch);
+		printf("%c", ch);
 	}	
 	fclose(fp);
 	return 0;
