@@ -49,20 +49,35 @@
 //	return 0;
 //}
 
+//int main() {
+//	FILE* fp;
+//	
+//	// 打开文件以读取,用循环的方式去读取文件中的内容,就是一下子读取完
+//	fp = fopen("6666", "r");
+//	if (fp == NULL) {
+//		perror("无法打开文件");
+//		return -1;
+//	}
+//	int ch=0;
+//	while(( ch = fgetc(fp)) != EOF)
+//	{
+//		printf("%c", ch);
+//	}	
+//	fclose(fp);
+//	return 0;
+//}
+//fputs函数的使用
+//"a"为追加
+
 int main() {
 	FILE* fp;
-	
-	// 打开文件以读取,用循环的方式去读取文件中的内容,就是一下子读取完
-	fp = fopen("6666", "r");
+	fp = fopen("6666", "a");
 	if (fp == NULL) {
 		perror("无法打开文件");
 		return -1;
 	}
 	int ch=0;
-	while(( ch = fgetc(fp)) != EOF)
-	{
-		printf("%c", ch);
-	}	
+	fputs("hello world\n", fp);	
 	fclose(fp);
 	return 0;
 }
