@@ -1,4 +1,4 @@
-#define _CRT_SECURE_NO_WARNINGS
+#define _CRT_SECURE_NO_WARNINGS 1
 #include<stdio.h>
 
 
@@ -82,22 +82,42 @@
 //	return 0;
 //}
 //
+
+
+//int main() {
+//	FILE* fp;
+//	int arr[] = { 1,2,3,5,6 };
+//	fp = fopen("6666", "rb");
+//	if (fp == NULL) {
+//		perror("无法打开文件");
+//		return EOF;
+//	}
+//	int ch = 0;
+//	int sz = sizeof(arr) / sizeof(arr[0]);
+//	fread(arr, sizeof(int), sz, fp);
+//	fclose(fp);
+//	int a = 0;
+//	for (a = 0;a < 5;a++)
+//	{
+//		printf("%d ", arr[a]);
+//	}
+//	return 0;
+//}
+
+struct S {
+	char name[20];
+	int age;
+	int score;
+
+};
 int main() {
-	FILE* fp;
-	int arr[] = { 1,2,3,5,6 };
-	fp = fopen("6666", "rb");
-	if (fp == NULL) {
-		perror("无法打开文件");
-		return EOF;
-	}
-	int ch = 0;
-	int sz = sizeof(arr) / sizeof(arr[0]);
-	fread(arr, sizeof(int), sz, fp);
-	fclose(fp);
-	int a = 0;
-	for (a = 0;a < 5;a++)
-	{
-		printf("%d ", arr[a]);
-	}
+	char buf[200] = { 0 };
+	struct S s = { "张三",20,300 };
+	sprintf(buf, "姓名:%s 年龄:%d 分数:%d\n", s.name, s.age, s.score);
+	printf(" %s", buf);
+
+	struct S t = { 0 };
+	sscanf(buf, "姓名:%s 年龄:%d 分数:%d\n", t.name, &t.age, &t.score);
+	printf("姓名:%s 年龄:%d 分数:%d\n", t.name, t.age, t.score);
 	return 0;
 }
