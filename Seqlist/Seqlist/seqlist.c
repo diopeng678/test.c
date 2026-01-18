@@ -1,4 +1,5 @@
-#include"sequlist.h"
+#include"seqlist.h"
+
 void SLInit(SL* ps)
 {
 	assert(ps);
@@ -64,12 +65,12 @@ void SLPushFront(SL* ps, SLDataType x)
 }
 
 //¥Ú”°À≥–Ú±Ì
-void SLPrint(SL* ps)
+void SLPrint(SL ps)
 {
-	assert(ps);
-	for (size_t i = 0; i < ps->size; i++)
+	
+	for (size_t i = 0; i < ps.size; i++)
 	{
-		printf("%d ", ps->arr[i]);
+		printf("%d ", ps.arr[i]);
 	}
 	printf("\n");
 }

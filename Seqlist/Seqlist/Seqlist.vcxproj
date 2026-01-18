@@ -123,9 +123,11 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
-    <ClInclude Include="sequlist.h" />
+    <ClInclude Include="contact.h" />
+    <ClInclude Include="seqlist.h" />
   </ItemGroup>
   <ItemGroup>
+    <ClCompile Include="contact.c" />
     <ClCompile Include="seqlist.c" />
     <ClCompile Include="test.c" />
   </ItemGroup>
