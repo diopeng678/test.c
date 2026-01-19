@@ -3,12 +3,8 @@
   "WorkspaceRootPath": "D:\\github\\Seqlist\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{99FE7EB4-9CBD-491B-8F85-099D3246A4B7}|Seqlist\\Seqlist.vcxproj|D:\\github\\Seqlist\\Seqlist\\seqlist.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
-      "RelativeMoniker": "D:0:0:{99FE7EB4-9CBD-491B-8F85-099D3246A4B7}|Seqlist\\Seqlist.vcxproj|solutionrelative:Seqlist\\seqlist.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{99FE7EB4-9CBD-491B-8F85-099D3246A4B7}|Seqlist\\Seqlist.vcxproj|D:\\github\\Seqlist\\Seqlist\\contact.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
-      "RelativeMoniker": "D:0:0:{99FE7EB4-9CBD-491B-8F85-099D3246A4B7}|Seqlist\\Seqlist.vcxproj|solutionrelative:Seqlist\\contact.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+      "AbsoluteMoniker": "D:0:0:{99FE7EB4-9CBD-491B-8F85-099D3246A4B7}|Seqlist\\Seqlist.vcxproj|D:\\github\\Seqlist\\Seqlist\\contact.c||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{99FE7EB4-9CBD-491B-8F85-099D3246A4B7}|Seqlist\\Seqlist.vcxproj|solutionrelative:Seqlist\\contact.c||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{99FE7EB4-9CBD-491B-8F85-099D3246A4B7}|Seqlist\\Seqlist.vcxproj|D:\\github\\Seqlist\\Seqlist\\test.c||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
@@ -19,8 +15,12 @@
       "RelativeMoniker": "D:0:0:{99FE7EB4-9CBD-491B-8F85-099D3246A4B7}|Seqlist\\Seqlist.vcxproj|solutionrelative:Seqlist\\seqlist.c||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{99FE7EB4-9CBD-491B-8F85-099D3246A4B7}|Seqlist\\Seqlist.vcxproj|D:\\github\\Seqlist\\Seqlist\\contact.c||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
-      "RelativeMoniker": "D:0:0:{99FE7EB4-9CBD-491B-8F85-099D3246A4B7}|Seqlist\\Seqlist.vcxproj|solutionrelative:Seqlist\\contact.c||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+      "AbsoluteMoniker": "D:0:0:{99FE7EB4-9CBD-491B-8F85-099D3246A4B7}|Seqlist\\Seqlist.vcxproj|D:\\github\\Seqlist\\Seqlist\\seqlist.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{99FE7EB4-9CBD-491B-8F85-099D3246A4B7}|Seqlist\\Seqlist.vcxproj|solutionrelative:Seqlist\\seqlist.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{99FE7EB4-9CBD-491B-8F85-099D3246A4B7}|Seqlist\\Seqlist.vcxproj|D:\\github\\Seqlist\\Seqlist\\contact.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{99FE7EB4-9CBD-491B-8F85-099D3246A4B7}|Seqlist\\Seqlist.vcxproj|solutionrelative:Seqlist\\contact.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
     }
   ],
   "DocumentGroupContainers": [
@@ -34,17 +34,16 @@
           "Children": [
             {
               "$type": "Document",
-              "DocumentIndex": 3,
+              "DocumentIndex": 2,
               "Title": "seqlist.c",
               "DocumentMoniker": "D:\\github\\Seqlist\\Seqlist\\seqlist.c",
               "RelativeDocumentMoniker": "Seqlist\\seqlist.c",
               "ToolTip": "D:\\github\\Seqlist\\Seqlist\\seqlist.c",
               "RelativeToolTip": "Seqlist\\seqlist.c",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAEMAAAATAAAAAAAAAA==",
+              "ViewState": "AgIAAB8AAAAAAAAAAIAwwDEAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000423|",
               "WhenOpened": "2026-01-17T13:30:02.263Z",
-              "IsPinned": true,
-              "EditorCaption": ""
+              "IsPinned": true
             },
             {
               "$type": "Bookmark",
@@ -52,54 +51,51 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 2,
+              "DocumentIndex": 1,
               "Title": "test.c",
               "DocumentMoniker": "D:\\github\\Seqlist\\Seqlist\\test.c",
               "RelativeDocumentMoniker": "Seqlist\\test.c",
               "ToolTip": "D:\\github\\Seqlist\\Seqlist\\test.c",
               "RelativeToolTip": "Seqlist\\test.c",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAABQAAAAJAAAAAAAAAA==",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABYAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000423|",
-              "WhenOpened": "2026-01-17T14:00:35.592Z",
-              "EditorCaption": ""
+              "WhenOpened": "2026-01-17T14:00:35.592Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 4,
-              "Title": "contact.c",
-              "DocumentMoniker": "D:\\github\\Seqlist\\Seqlist\\contact.c",
-              "RelativeDocumentMoniker": "Seqlist\\contact.c",
-              "ToolTip": "D:\\github\\Seqlist\\Seqlist\\contact.c",
-              "RelativeToolTip": "Seqlist\\contact.c",
-              "ViewState": "AgIAAA8AAAAAAAAAAIAwwCIAAAAQAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000423|",
-              "WhenOpened": "2026-01-18T14:07:45.233Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 1,
-              "Title": "contact.h",
-              "DocumentMoniker": "D:\\github\\Seqlist\\Seqlist\\contact.h",
-              "RelativeDocumentMoniker": "Seqlist\\contact.h",
-              "ToolTip": "D:\\github\\Seqlist\\Seqlist\\contact.h",
-              "RelativeToolTip": "Seqlist\\contact.h",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAACEAAAAdAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
-              "WhenOpened": "2026-01-18T13:57:54.81Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 0,
+              "DocumentIndex": 3,
               "Title": "seqlist.h",
               "DocumentMoniker": "D:\\github\\Seqlist\\Seqlist\\seqlist.h",
               "RelativeDocumentMoniker": "Seqlist\\seqlist.h",
               "ToolTip": "D:\\github\\Seqlist\\Seqlist\\seqlist.h",
               "RelativeToolTip": "Seqlist\\seqlist.h",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAABYAAAAAAAAAAAAAAA==",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA0AAAARAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
-              "WhenOpened": "2026-01-17T13:29:37.082Z",
+              "WhenOpened": "2026-01-17T13:29:37.082Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "contact.h",
+              "DocumentMoniker": "D:\\github\\Seqlist\\Seqlist\\contact.h",
+              "RelativeDocumentMoniker": "Seqlist\\contact.h",
+              "ToolTip": "D:\\github\\Seqlist\\Seqlist\\contact.h",
+              "RelativeToolTip": "Seqlist\\contact.h",
+              "ViewState": "AgIAAAMAAAAAAAAAAAAAAA8AAAAJAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
+              "WhenOpened": "2026-01-18T13:57:54.81Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "contact.c",
+              "DocumentMoniker": "D:\\github\\Seqlist\\Seqlist\\contact.c",
+              "RelativeDocumentMoniker": "Seqlist\\contact.c",
+              "ToolTip": "D:\\github\\Seqlist\\Seqlist\\contact.c",
+              "RelativeToolTip": "Seqlist\\contact.c",
+              "ViewState": "AgIAAEYAAAAAAAAAAAAAAFgAAAADAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000423|",
+              "WhenOpened": "2026-01-18T14:07:45.233Z",
               "EditorCaption": ""
             }
           ]

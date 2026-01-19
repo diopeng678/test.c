@@ -30,6 +30,7 @@ void ContactAdd(Contact* pc)
 	scanf("%s", info.tel);
 
 	printf("请输入地址:>");
+
 	scanf("%s", info.addr);
 
 	SLPushBack(pc, info);//用顺序表的尾插法插入联系人信息
@@ -83,7 +84,9 @@ void ContactShow(Contact* pc)
 			pc->arr[i].age,
 			pc->arr[i].tel,
 			pc->arr[i].addr);
-	}
+	}           
+
+	ㄖㄙ
 }
 
 //修改联系人信息

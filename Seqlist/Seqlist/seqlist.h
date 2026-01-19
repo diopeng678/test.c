@@ -7,8 +7,7 @@
 
 #include "contact.h"
 
-typedef peoInfo SLDataType;	
-
+typedef peoInfo SLDataType;
 
 typedef struct SeqList
 {
