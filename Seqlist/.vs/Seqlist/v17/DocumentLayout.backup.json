@@ -43,8 +43,7 @@
               "ViewState": "AgIAAB8AAAAAAAAAAIAwwDEAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000423|",
               "WhenOpened": "2026-01-17T13:30:02.263Z",
-              "IsPinned": true,
-              "EditorCaption": ""
+              "IsPinned": true
             },
             {
               "$type": "Bookmark",
@@ -60,8 +59,7 @@
               "RelativeToolTip": "Seqlist\\test.c",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAABYAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000423|",
-              "WhenOpened": "2026-01-17T14:00:35.592Z",
-              "EditorCaption": ""
+              "WhenOpened": "2026-01-17T14:00:35.592Z"
             },
             {
               "$type": "Document",
@@ -73,8 +71,7 @@
               "RelativeToolTip": "Seqlist\\seqlist.h",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAA0AAAARAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
-              "WhenOpened": "2026-01-17T13:29:37.082Z",
-              "EditorCaption": ""
+              "WhenOpened": "2026-01-17T13:29:37.082Z"
             },
             {
               "$type": "Document",
@@ -86,8 +83,7 @@
               "RelativeToolTip": "Seqlist\\contact.h",
               "ViewState": "AgIAAAMAAAAAAAAAAAAAAA8AAAAJAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
-              "WhenOpened": "2026-01-18T13:57:54.81Z",
-              "EditorCaption": ""
+              "WhenOpened": "2026-01-18T13:57:54.81Z"
             },
             {
               "$type": "Document",
@@ -95,9 +91,9 @@
               "Title": "contact.c",
               "DocumentMoniker": "D:\\github\\Seqlist\\Seqlist\\contact.c",
               "RelativeDocumentMoniker": "Seqlist\\contact.c",
-              "ToolTip": "D:\\github\\Seqlist\\Seqlist\\contact.c",
-              "RelativeToolTip": "Seqlist\\contact.c",
-              "ViewState": "AgIAAEYAAAAAAAAAAAAAAHsAAAATAAAAAAAAAA==",
+              "ToolTip": "D:\\github\\Seqlist\\Seqlist\\contact.c*",
+              "RelativeToolTip": "Seqlist\\contact.c*",
+              "ViewState": "AgIAAEYAAAAAAAAAAAAAAFgAAAAEAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000423|",
               "WhenOpened": "2026-01-18T14:07:45.233Z",
               "EditorCaption": ""

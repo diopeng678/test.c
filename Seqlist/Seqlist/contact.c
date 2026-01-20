@@ -85,8 +85,6 @@ void ContactShow(Contact* pc)
 			pc->arr[i].tel,
 			pc->arr[i].addr);
 	}           
-
-	ㄖㄙ
 }
 
 //修改联系人信息
