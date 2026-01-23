@@ -1,5 +1,4 @@
 ﻿  contact.c
 D:\github\Seqlist\Seqlist\contact.c(43,10): warning C4013: “strcmp”未定义；假设外部返回 int
 D:\github\Seqlist\Seqlist\contact.c(46,11): warning C4267: “return”: 从“size_t”转换到“int”，可能丢失数据
-D:\github\Seqlist\Seqlist\contact.c(89,2): error C2065: “ㄖㄙ”: 未声明的标识符
-D:\github\Seqlist\Seqlist\contact.c(90,1): error C2143: 语法错误: 缺少“;”(在“}”的前面)
+  Seqlist.vcxproj -> D:\github\Seqlist\x64\Debug\Seqlist.exe

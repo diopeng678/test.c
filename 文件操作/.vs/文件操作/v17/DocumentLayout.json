@@ -1,12 +1,7 @@
 {
   "Version": 1,
   "WorkspaceRootPath": "D:\\github\\\u6587\u4EF6\u64CD\u4F5C\\",
-  "Documents": [
-    {
-      "AbsoluteMoniker": "D:0:0:{B58964B0-809A-43D9-8AD4-91AF0EA59D39}|\u6587\u4EF6\u64CD\u4F5C\\\u6587\u4EF6\u64CD\u4F5C.vcxproj|D:\\github\\\u6587\u4EF6\u64CD\u4F5C\\\u6587\u4EF6\u64CD\u4F5C\\FILE.c||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
-      "RelativeMoniker": "D:0:0:{B58964B0-809A-43D9-8AD4-91AF0EA59D39}|\u6587\u4EF6\u64CD\u4F5C\\\u6587\u4EF6\u64CD\u4F5C.vcxproj|solutionrelative:\u6587\u4EF6\u64CD\u4F5C\\FILE.c||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
-    }
-  ],
+  "Documents": [],
   "DocumentGroupContainers": [
     {
       "Orientation": 0,
@@ -14,24 +9,11 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 1,
+          "SelectedChildIndex": -1,
           "Children": [
             {
               "$type": "Bookmark",
               "Name": "ST:0:0:{3ae79031-e1bc-11d0-8f78-00a0c9110057}"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 0,
-              "Title": "FILE.c",
-              "DocumentMoniker": "D:\\github\\\u6587\u4EF6\u64CD\u4F5C\\\u6587\u4EF6\u64CD\u4F5C\\FILE.c",
-              "RelativeDocumentMoniker": "\u6587\u4EF6\u64CD\u4F5C\\FILE.c",
-              "ToolTip": "D:\\github\\\u6587\u4EF6\u64CD\u4F5C\\\u6587\u4EF6\u64CD\u4F5C\\FILE.c",
-              "RelativeToolTip": "\u6587\u4EF6\u64CD\u4F5C\\FILE.c",
-              "ViewState": "AgIAAGYAAAAAAAAAAAAAAG0AAAALAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000423|",
-              "WhenOpened": "2026-01-14T14:04:26.597Z",
-              "EditorCaption": ""
             }
           ]
         }

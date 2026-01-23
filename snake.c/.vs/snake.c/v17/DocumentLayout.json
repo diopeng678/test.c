@@ -1,0 +1,41 @@
+{
+  "Version": 1,
+  "WorkspaceRootPath": "D:\\github\\snake.c\\",
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{9C98B700-4AC3-4406-A678-5CA0B0647AF8}|snake.c\\snake.c.vcxproj|D:\\github\\snake.c\\snake.c\\try.c||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{9C98B700-4AC3-4406-A678-5CA0B0647AF8}|snake.c\\snake.c.vcxproj|solutionrelative:snake.c\\try.c||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+    }
+  ],
+  "DocumentGroupContainers": [
+    {
+      "Orientation": 0,
+      "VerticalTabListWidth": 256,
+      "DocumentGroups": [
+        {
+          "DockedWidth": 200,
+          "SelectedChildIndex": 1,
+          "Children": [
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{3ae79031-e1bc-11d0-8f78-00a0c9110057}"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "try.c",
+              "DocumentMoniker": "D:\\github\\snake.c\\snake.c\\try.c",
+              "RelativeDocumentMoniker": "snake.c\\try.c",
+              "ToolTip": "D:\\github\\snake.c\\snake.c\\try.c",
+              "RelativeToolTip": "snake.c\\try.c",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAgAAAAkAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000423|",
+              "WhenOpened": "2026-01-23T08:27:38.978Z",
+              "EditorCaption": ""
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}
