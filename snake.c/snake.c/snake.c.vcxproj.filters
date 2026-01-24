@@ -18,5 +18,14 @@
     <ClCompile Include="try.c">
       <Filter>源文件</Filter>
     </ClCompile>
+    <ClCompile Include="test.c">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="snake.c">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="snake.h">
+      <Filter>头文件</Filter>
+    </ClCompile>
   </ItemGroup>
 </Project>

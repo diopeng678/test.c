@@ -3,8 +3,16 @@
   "WorkspaceRootPath": "D:\\github\\snake.c\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{9C98B700-4AC3-4406-A678-5CA0B0647AF8}|snake.c\\snake.c.vcxproj|D:\\github\\snake.c\\snake.c\\try.c||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
-      "RelativeMoniker": "D:0:0:{9C98B700-4AC3-4406-A678-5CA0B0647AF8}|snake.c\\snake.c.vcxproj|solutionrelative:snake.c\\try.c||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+      "AbsoluteMoniker": "D:0:0:{9C98B700-4AC3-4406-A678-5CA0B0647AF8}|snake.c\\snake.c.vcxproj|D:\\github\\snake.c\\snake.c\\test.c||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{9C98B700-4AC3-4406-A678-5CA0B0647AF8}|snake.c\\snake.c.vcxproj|solutionrelative:snake.c\\test.c||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{9C98B700-4AC3-4406-A678-5CA0B0647AF8}|snake.c\\snake.c.vcxproj|D:\\github\\snake.c\\snake.c\\snake.c||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{9C98B700-4AC3-4406-A678-5CA0B0647AF8}|snake.c\\snake.c.vcxproj|solutionrelative:snake.c\\snake.c||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{9C98B700-4AC3-4406-A678-5CA0B0647AF8}|snake.c\\snake.c.vcxproj|D:\\github\\snake.c\\snake.c\\snake.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{9C98B700-4AC3-4406-A678-5CA0B0647AF8}|snake.c\\snake.c.vcxproj|solutionrelative:snake.c\\snake.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
     }
   ],
   "DocumentGroupContainers": [
@@ -14,7 +22,7 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 1,
+          "SelectedChildIndex": 3,
           "Children": [
             {
               "$type": "Bookmark",
@@ -22,15 +30,41 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 0,
-              "Title": "try.c",
-              "DocumentMoniker": "D:\\github\\snake.c\\snake.c\\try.c",
-              "RelativeDocumentMoniker": "snake.c\\try.c",
-              "ToolTip": "D:\\github\\snake.c\\snake.c\\try.c*",
-              "RelativeToolTip": "snake.c\\try.c*",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAgAAAAdAAAAAAAAAA==",
+              "DocumentIndex": 2,
+              "Title": "snake.h",
+              "DocumentMoniker": "D:\\github\\snake.c\\snake.c\\snake.h",
+              "RelativeDocumentMoniker": "snake.c\\snake.h",
+              "ToolTip": "D:\\github\\snake.c\\snake.c\\snake.h",
+              "RelativeToolTip": "snake.c\\snake.h",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA8AAAARAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
+              "WhenOpened": "2026-01-24T07:22:04.922Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "snake.c",
+              "DocumentMoniker": "D:\\github\\snake.c\\snake.c\\snake.c",
+              "RelativeDocumentMoniker": "snake.c\\snake.c",
+              "ToolTip": "D:\\github\\snake.c\\snake.c\\snake.c",
+              "RelativeToolTip": "snake.c\\snake.c",
+              "ViewState": "AgIAAB4AAAAAAAAAAAAAAB4AAAABAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000423|",
-              "WhenOpened": "2026-01-23T08:27:38.978Z",
+              "WhenOpened": "2026-01-24T07:22:00.992Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "test.c",
+              "DocumentMoniker": "D:\\github\\snake.c\\snake.c\\test.c",
+              "RelativeDocumentMoniker": "snake.c\\test.c",
+              "ToolTip": "D:\\github\\snake.c\\snake.c\\test.c",
+              "RelativeToolTip": "snake.c\\test.c",
+              "ViewState": "AgIAABsAAAAAAAAAAAAAADAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000423|",
+              "WhenOpened": "2026-01-24T07:21:44.533Z",
               "EditorCaption": ""
             }
           ]

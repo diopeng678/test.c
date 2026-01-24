@@ -24,6 +24,7 @@
     <ProjectGuid>{9c98b700-4ac3-4406-a678-5ca0b0647af8}</ProjectGuid>
     <RootNamespace>snakec</RootNamespace>
     <WindowsTargetPlatformVersion>10.0</WindowsTargetPlatformVersion>
+    <ProjectName>snake</ProjectName>
   </PropertyGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="Configuration">
@@ -123,6 +124,9 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClCompile Include="snake.h" />
+    <ClCompile Include="snake.c" />
+    <ClCompile Include="test.c" />
     <ClCompile Include="try.c" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
