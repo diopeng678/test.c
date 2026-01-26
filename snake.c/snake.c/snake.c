@@ -104,7 +104,7 @@ void InitSnake(pSnake ps)
 	ps->_food_weight = 10;
 	ps->_sleep_time = 200;//单位是毫秒
 	ps->_status = OK;
-
+	   
 }
 
 void CreateFood(pSnake ps)
@@ -387,7 +387,7 @@ void GameRun(pSnake ps)
 		{
 			//减速
 			if (ps->_food_weight > 2)
-			{
+			{    
 				ps->_sleep_time += 30;
 				ps->_food_weight -= 2;
 			}
@@ -425,4 +425,4 @@ void GameEnd(pSnake ps)
 		cur = cur->next;
 		free(del);
 	}
-}
+}   
