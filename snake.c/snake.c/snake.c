@@ -387,7 +387,7 @@ void GameRun(pSnake ps)
 		{
 			//¼õËÙ
 			if (ps->_food_weight > 2)
-			{    
+			{         
 				ps->_sleep_time += 30;
 				ps->_food_weight -= 2;
 			}
