@@ -24,6 +24,7 @@
     <ProjectGuid>{7981e54f-4aa4-4b0e-a126-93535930f0ab}</ProjectGuid>
     <RootNamespace>judge</RootNamespace>
     <WindowsTargetPlatformVersion>10.0</WindowsTargetPlatformVersion>
+    <ProjectName>大小端判断</ProjectName>
   </PropertyGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="Configuration">
