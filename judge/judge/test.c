@@ -16,8 +16,7 @@ int check_sys() {
 		char b;
 	} c;
 	c.a = 1;
-	return c.b;
-}
+	return c.b;       
 int main() {
 	if(check_sys() == 1) {
 		printf("ÊÇÐ¡¶Ë\n");
