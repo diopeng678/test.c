@@ -1,10 +1,10 @@
 {
   "Version": 1,
-  "WorkspaceRootPath": "D:\\github\\judge\\",
+  "WorkspaceRootPath": "D:\\github\\leecode\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{7981E54F-4AA4-4B0E-A126-93535930F0AB}|judge\\judge.vcxproj|D:\\github\\judge\\judge\\test.c||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
-      "RelativeMoniker": "D:0:0:{7981E54F-4AA4-4B0E-A126-93535930F0AB}|judge\\judge.vcxproj|solutionrelative:judge\\test.c||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+      "AbsoluteMoniker": "D:0:0:{103ACBC6-C23F-4C73-8593-1E5FA1D29723}|leecode\\leecode.vcxproj|D:\\github\\leecode\\leecode\\\u53CD\u8F6C.c||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{103ACBC6-C23F-4C73-8593-1E5FA1D29723}|leecode\\leecode.vcxproj|solutionrelative:leecode\\\u53CD\u8F6C.c||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
     }
   ],
   "DocumentGroupContainers": [
@@ -31,14 +31,14 @@
             {
               "$type": "Document",
               "DocumentIndex": 0,
-              "Title": "test.c",
-              "DocumentMoniker": "D:\\github\\judge\\judge\\test.c",
-              "RelativeDocumentMoniker": "judge\\test.c",
-              "ToolTip": "D:\\github\\judge\\judge\\test.c",
-              "RelativeToolTip": "judge\\test.c",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAkAAAADAAAAAAAAAA==",
+              "Title": "\u53CD\u8F6C.c",
+              "DocumentMoniker": "D:\\github\\leecode\\leecode\\\u53CD\u8F6C.c",
+              "RelativeDocumentMoniker": "leecode\\\u53CD\u8F6C.c",
+              "ToolTip": "D:\\github\\leecode\\leecode\\\u53CD\u8F6C.c",
+              "RelativeToolTip": "leecode\\\u53CD\u8F6C.c",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAQAAAAbAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000423|",
-              "WhenOpened": "2026-01-05T09:04:36.158Z",
+              "WhenOpened": "2026-02-02T05:32:45.625Z",
               "EditorCaption": ""
             }
           ]
