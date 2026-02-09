@@ -1,0 +1,15 @@
+﻿  test.cpp
+D:\github\运算符重载\运算符重载\test.cpp(20,2): error C2065: “cout”: 未声明的标识符
+D:\github\运算符重载\运算符重载\test.cpp(20,23): error C2248: “Point::x”: 无法访问 private 成员(在“Point”类中声明)
+      D:\github\运算符重载\运算符重载\test.cpp(6,9):
+      参见“Point::x”的声明
+      D:\github\运算符重载\运算符重载\test.cpp(4,7):
+      参见“Point”的声明
+  
+D:\github\运算符重载\运算符重载\test.cpp(20,44): error C2248: “Point::y”: 无法访问 private 成员(在“Point”类中声明)
+      D:\github\运算符重载\运算符重载\test.cpp(6,12):
+      参见“Point::y”的声明
+      D:\github\运算符重载\运算符重载\test.cpp(4,7):
+      参见“Point”的声明
+  
+D:\github\运算符重载\运算符重载\test.cpp(20,50): error C2065: “endl”: 未声明的标识符
