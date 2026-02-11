@@ -3,7 +3,7 @@
 
 #include <locale.h>
 #include "snake.h"
-
+    
 //完成的是游戏的测试逻辑
 void test()
 {
@@ -20,7 +20,6 @@ void test()
 		//4. 创建蛇
 		//5. 创建食物
 		//6. 设置游戏的相关信息
-		GameStart(&snake);
 
 		//运行游戏
 		GameRun(&snake);
