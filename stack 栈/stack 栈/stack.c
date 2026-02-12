@@ -59,8 +59,7 @@ void STPop(ST* pst)
 	pst->top--;
 }
 
-// 20:08继续
-// 取栈顶数据
+//取栈顶数据
 STDataType STTop(ST* pst)
 {
 	assert(pst);
