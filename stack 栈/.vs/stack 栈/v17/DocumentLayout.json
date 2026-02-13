@@ -46,8 +46,7 @@
               "RelativeToolTip": "stack \u6808\\test.c",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAABIAAAAPAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000423|",
-              "WhenOpened": "2026-02-12T08:16:26.323Z",
-              "EditorCaption": ""
+              "WhenOpened": "2026-02-12T08:16:26.323Z"
             },
             {
               "$type": "Document",
@@ -59,8 +58,7 @@
               "RelativeToolTip": "stack \u6808\\stack.h",
               "ViewState": "AgIAAAMAAAAAAAAAAAAAAAcAAAAXAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
-              "WhenOpened": "2026-02-12T08:15:52.326Z",
-              "EditorCaption": ""
+              "WhenOpened": "2026-02-12T08:15:52.326Z"
             },
             {
               "$type": "Document",
@@ -70,7 +68,7 @@
               "RelativeDocumentMoniker": "stack \u6808\\stack.c",
               "ToolTip": "D:\\github\\stack \u6808\\stack \u6808\\stack.c",
               "RelativeToolTip": "stack \u6808\\stack.c",
-              "ViewState": "AgIAABgAAAAAAAAAAAAAAAsAAAATAAAAAAAAAA==",
+              "ViewState": "AgIAAAYAAAAAAAAAAAAAAAsAAAATAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000423|",
               "WhenOpened": "2026-02-05T08:56:30.538Z",
               "EditorCaption": ""
