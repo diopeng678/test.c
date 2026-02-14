@@ -1,0 +1,49 @@
+{
+  "Version": 1,
+  "WorkspaceRootPath": "D:\\github\\snake AI\\",
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{F7AA959F-948A-4D0A-9BE4-743A87F4083F}|snake AI\\snake AI.vcxproj|D:\\github\\snake AI\\snake AI\\snake.c||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{F7AA959F-948A-4D0A-9BE4-743A87F4083F}|snake AI\\snake AI.vcxproj|solutionrelative:snake AI\\snake.c||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+    }
+  ],
+  "DocumentGroupContainers": [
+    {
+      "Orientation": 0,
+      "VerticalTabListWidth": 256,
+      "DocumentGroups": [
+        {
+          "DockedWidth": 200,
+          "SelectedChildIndex": 3,
+          "Children": [
+            {
+              "$type": "Bookmark",
+              "Name": "ST:283709:0:{1a46fd64-28d5-0019-8eb3-17a02d419b53}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{3ae79031-e1bc-11d0-8f78-00a0c9110057}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{aa2115a1-9712-457b-9047-dbb71ca2cdd2}"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "snake.c",
+              "DocumentMoniker": "D:\\github\\snake AI\\snake AI\\snake.c",
+              "RelativeDocumentMoniker": "snake AI\\snake.c",
+              "ToolTip": "D:\\github\\snake AI\\snake AI\\snake.c",
+              "RelativeToolTip": "snake AI\\snake.c",
+              "ViewState": "AgIAAH8AAAAAAAAAAAAiwMkAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000423|",
+              "WhenOpened": "2026-02-14T10:15:23.643Z",
+              "EditorCaption": ""
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}
