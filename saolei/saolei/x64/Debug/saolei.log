@@ -1,1 +1,5 @@
-﻿  saolei.vcxproj -> D:\github\saolei\x64\Debug\saolei AI.exe
+﻿  saolei.c
+D:\github\saolei\saolei\saolei.c(68,11): warning C4244: “函数”: 从“time_t”转换到“unsigned int”，可能丢失数据
+D:\github\saolei\saolei\saolei.c(67,12): warning C4101: “j”: 未引用的局部变量
+D:\github\saolei\saolei\saolei.c(67,9): warning C4101: “i”: 未引用的局部变量
+  saolei.vcxproj -> D:\github\saolei\x64\Debug\saolei AI.exe
