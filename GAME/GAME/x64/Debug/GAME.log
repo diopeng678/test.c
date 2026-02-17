@@ -1,0 +1,12 @@
+﻿  GAME.c
+D:\github\GAME\GAME\GAME.c(66,23): warning C4244: “=”: 从“int”转换到“float”，可能丢失数据
+D:\github\GAME\GAME\GAME.c(67,37): warning C4244: “=”: 从“int”转换到“float”，可能丢失数据
+D:\github\GAME\GAME\GAME.c(103,35): warning C4244: “=”: 从“int”转换到“float”，可能丢失数据
+D:\github\GAME\GAME\GAME.c(104,49): warning C4244: “=”: 从“int”转换到“float”，可能丢失数据
+D:\github\GAME\GAME\GAME.c(124,53): warning C4244: “=”: 从“int”转换到“float”，可能丢失数据
+D:\github\GAME\GAME\GAME.c(182,42): warning C4267: “函数”: 从“size_t”转换到“int”，可能丢失数据
+D:\github\GAME\GAME\GAME.c(185,102): error C2059: 语法错误:“)”
+D:\github\GAME\GAME\GAME.c(190,91): error C2059: 语法错误:“)”
+D:\github\GAME\GAME\GAME.c(191,100): error C2059: 语法错误:“)”
+D:\github\GAME\GAME\GAME.c(178,9): error C4996: 'sprintf': This function or variable may be unsafe. Consider using sprintf_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+D:\github\GAME\GAME\GAME.c(245,22): warning C4133: “=”: 从“const char *”到“LPCWSTR”的类型不兼容

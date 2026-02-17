@@ -1,0 +1,49 @@
+{
+  "Version": 1,
+  "WorkspaceRootPath": "D:\\github\\GAME\\",
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{6968EE66-267C-4CD5-BBB2-3019077BA56F}|GAME\\GAME.vcxproj|D:\\github\\GAME\\GAME\\GAME.c||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{6968EE66-267C-4CD5-BBB2-3019077BA56F}|GAME\\GAME.vcxproj|solutionrelative:GAME\\GAME.c||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+    }
+  ],
+  "DocumentGroupContainers": [
+    {
+      "Orientation": 0,
+      "VerticalTabListWidth": 256,
+      "DocumentGroups": [
+        {
+          "DockedWidth": 200,
+          "SelectedChildIndex": 3,
+          "Children": [
+            {
+              "$type": "Bookmark",
+              "Name": "ST:283709:0:{1a46fd64-28d5-0019-8eb3-17a02d419b53}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{3ae79031-e1bc-11d0-8f78-00a0c9110057}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{aa2115a1-9712-457b-9047-dbb71ca2cdd2}"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "GAME.c",
+              "DocumentMoniker": "D:\\github\\GAME\\GAME\\GAME.c",
+              "RelativeDocumentMoniker": "GAME\\GAME.c",
+              "ToolTip": "D:\\github\\GAME\\GAME\\GAME.c",
+              "RelativeToolTip": "GAME\\GAME.c",
+              "ViewState": "AgIAAK4AAAAAAAAAAAAQwL0AAABaAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000423|",
+              "WhenOpened": "2026-02-17T11:57:37.946Z",
+              "EditorCaption": ""
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}
