@@ -1,0 +1,3 @@
+﻿  rand.c
+D:\github\rand\rand\rand.c(9,8): warning C4244: “函数”: 从“time_t”转换到“unsigned int”，可能丢失数据
+  rand.vcxproj -> D:\github\rand\x64\Debug\rand.exe

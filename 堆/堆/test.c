@@ -143,7 +143,7 @@ void TestHeap3()
 
 int main()
 {
-	//CreateNDate();
+	/*CreateNDate();*/
 
 	TestHeap3();
 
