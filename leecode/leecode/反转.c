@@ -71,3 +71,32 @@ struct Node* copyRandomList(struct Node* head) {
     }
     return copyhead;
 }
+//144Ìâ Ç°Ðò±éÀú
+//int treesize(struct TreeNode* root)
+//{
+//    if (root == NULL)
+//        return 0;
+//    else
+//        return treesize(root->left) + treesize(root->right) + 1;
+//}
+//
+//void preorder(struct TreeNode* root, int* a, int* pi)
+//{
+//    if (root == NULL)
+//        return;
+//
+//    a[(*pi)++] = root->val;
+//
+//    preorder(root->left, a, pi);
+//    preorder(root->right, a, pi);
+//}
+//
+//
+//int* preorderTraversal(struct TreeNode* root, int* returnSize) {
+//    *returnSize = treesize(root);
+//    int* a = (int*)malloc(sizeof(int) * (*returnSize));
+//    int i = 0;
+//    preorder(root, a, &i);
+//
+//    return a;
+//}
