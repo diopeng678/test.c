@@ -101,7 +101,7 @@ struct Node* copyRandomList(struct Node* head) {
 //    return a;
 //}
 
-//572. 另一个树的子树
+//leetcode 572. 另一个树的子树
 //bool isSameTree(struct TreeNode* p, struct TreeNode* q) {
 //    if (p == NULL && q == NULL)
 //        return true;
@@ -116,10 +116,10 @@ struct Node* copyRandomList(struct Node* head) {
 //        && isSameTree(p->right, q->right);
 //}
 //
+// ///
 //bool isSubtree(struct TreeNode* root, struct TreeNode* subRoot) {
 //    if (root == NULL)
 //        return false;
-//
 //    if (root->val == subRoot->val
 //        && isSameTree(root, subRoot))
 //        return true;
