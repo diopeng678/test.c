@@ -44,7 +44,7 @@
               "RelativeDocumentMoniker": "game\u0027\\test.c",
               "ToolTip": "D:\\github\\game\u0027\\game\u0027\\test.c",
               "RelativeToolTip": "game\u0027\\test.c",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAfAAAAAAAAAA==",
+              "ViewState": "AgIAACMAAAAAAAAAAADwv0MAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000423|",
               "WhenOpened": "2026-03-02T13:56:57.755Z",
               "EditorCaption": ""
@@ -59,8 +59,7 @@
               "RelativeToolTip": "game\u0027\\game.c",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAfAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000423|",
-              "WhenOpened": "2026-03-02T13:56:36.895Z",
-              "EditorCaption": ""
+              "WhenOpened": "2026-03-02T13:56:36.895Z"
             },
             {
               "$type": "Document",
@@ -70,7 +69,7 @@
               "RelativeDocumentMoniker": "game\u0027\\game.h",
               "ToolTip": "D:\\github\\game\u0027\\game\u0027\\game.h",
               "RelativeToolTip": "game\u0027\\game.h",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAfAAAAAAAAAA==",
+              "ViewState": "AgIAAAMAAAAAAAAAAAAAAAAAAAAfAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
               "WhenOpened": "2026-03-02T13:56:21.434Z",
               "EditorCaption": ""

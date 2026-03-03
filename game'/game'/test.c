@@ -35,6 +35,7 @@ void game()
 	FindMine(mine, show, ROW, COL);
 }
 
+//²âÊÔº¯Êı
 void test()
 {
 	int input = 0;
@@ -59,6 +60,10 @@ void test()
 
 	} while (input);
 }
+
+
+
+
 
 int main()
 {
