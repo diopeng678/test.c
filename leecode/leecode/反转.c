@@ -142,6 +142,10 @@ struct Node* copyRandomList(struct Node* head) {
 //
 //}
 //
+//
+// 
+// 
+// di
 //void rotate(int* nums, int numsSize, int k) {
 //    k %= numsSize;
 //    reverse(nums, 0, numsSize - k - 1);
