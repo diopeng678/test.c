@@ -115,7 +115,7 @@ void TestHeap3()
 		fscanf(fout, "%d", &kminheap[i]);
 	}
 
-	// 11:51继续
+
 	// 建K个数的小堆
 	for (int i = (k - 1 - 1) / 2; i >= 0; i--)
 	{
