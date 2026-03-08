@@ -1,10 +1,10 @@
 {
   "Version": 1,
-  "WorkspaceRootPath": "D:\\github\\insert\\",
+  "WorkspaceRootPath": "D:\\github\\homework\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{EA8EEDE3-0D6B-4415-A5B3-6E40F78C33B6}|insert\\insert.vcxproj|D:\\github\\insert\\insert\\insert.c||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
-      "RelativeMoniker": "D:0:0:{EA8EEDE3-0D6B-4415-A5B3-6E40F78C33B6}|insert\\insert.vcxproj|solutionrelative:insert\\insert.c||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+      "AbsoluteMoniker": "D:0:0:{138AD09B-093F-487A-9A61-3524FC8354DC}|homework\\homework.vcxproj|D:\\github\\homework\\homework\\max.c||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{138AD09B-093F-487A-9A61-3524FC8354DC}|homework\\homework.vcxproj|solutionrelative:homework\\max.c||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
     }
   ],
   "DocumentGroupContainers": [
@@ -31,14 +31,14 @@
             {
               "$type": "Document",
               "DocumentIndex": 0,
-              "Title": "insert.c",
-              "DocumentMoniker": "D:\\github\\insert\\insert\\insert.c",
-              "RelativeDocumentMoniker": "insert\\insert.c",
-              "ToolTip": "D:\\github\\insert\\insert\\insert.c*",
-              "RelativeToolTip": "insert\\insert.c*",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAACEAAAAYAAAAAAAAAA==",
+              "Title": "max.c",
+              "DocumentMoniker": "D:\\github\\homework\\homework\\max.c",
+              "RelativeDocumentMoniker": "homework\\max.c",
+              "ToolTip": "D:\\github\\homework\\homework\\max.c*",
+              "RelativeToolTip": "homework\\max.c*",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAIAAAATAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000423|",
-              "WhenOpened": "2026-03-07T08:19:32.811Z",
+              "WhenOpened": "2026-03-07T09:16:12.74Z",
               "EditorCaption": ""
             }
           ]

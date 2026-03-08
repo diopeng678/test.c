@@ -24,7 +24,6 @@ void InsertSort(int* arr, int n)
 	}
 }
 
-
 int main()
 {
 	int arr[] = { 55,24,345,645,7654,4756,35,356};
