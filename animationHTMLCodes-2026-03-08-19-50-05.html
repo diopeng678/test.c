@@ -1,0 +1,586 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cinematic Shell Sort Visualization</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;800&family=Noto+Sans+SC:wght@300;400;500;700&display=swap');
+
+        :root {
+            --bg-color: #f0f4f8;
+            --box-bg: #ffffff;
+            --text-primary: #1e293b;
+            --text-secondary: #64748b;
+            --accent-blue: #3b82f6;
+            --accent-red: #ef4444;
+            --accent-green: #10b981;
+            --accent-purple: #8b5cf6;
+            --shadow-soft: 0 10px 25px -5px rgba(0, 0, 0, 0.1), 0 8px 10px -6px rgba(0, 0, 0, 0.1);
+            --shadow-float: 0 20px 25px -5px rgba(0, 0, 0, 0.15), 0 10px 10px -5px rgba(0, 0, 0, 0.1);
+            --item-width: 60px;
+            --gap-width: 20px;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: 'Inter', 'Noto Sans SC', sans-serif;
+            background-color: var(--bg-color);
+            height: 100vh;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            overflow: hidden;
+            color: var(--text-primary);
+        }
+
+        /* UI Layout */
+        #header {
+            position: absolute;
+            top: 40px;
+            text-align: center;
+            opacity: 0;
+            animation: fadeIn 2s ease forwards;
+        }
+
+        h1 {
+            font-size: 2.5rem;
+            font-weight: 800;
+            letter-spacing: -0.05em;
+            margin-bottom: 10px;
+            background: linear-gradient(135deg, #1e293b 0%, #334155 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .subtitle-tag {
+            font-size: 0.9rem;
+            color: var(--text-secondary);
+            background: rgba(255,255,255,0.6);
+            padding: 6px 16px;
+            border-radius: 20px;
+            backdrop-filter: blur(5px);
+        }
+
+        /* Visualization Stage */
+        #stage {
+            position: relative;
+            width: 900px;
+            height: 300px;
+            display: flex;
+            align-items: flex-end; /* Align bottom to have baseline */
+            justify-content: center;
+            margin-bottom: 60px;
+        }
+
+        /* Info Panel (Gap Display) */
+        #info-panel {
+            position: absolute;
+            top: 0;
+            left: 50%;
+            transform: translateX(-50%);
+            display: flex;
+            gap: 40px;
+            opacity: 0;
+            transition: opacity 0.5s;
+        }
+
+        .info-box {
+            background: white;
+            padding: 15px 30px;
+            border-radius: 16px;
+            box-shadow: var(--shadow-soft);
+            text-align: center;
+            min-width: 140px;
+        }
+
+        .info-label {
+            font-size: 0.8rem;
+            text-transform: uppercase;
+            letter-spacing: 0.1em;
+            color: var(--text-secondary);
+            margin-bottom: 5px;
+        }
+
+        .info-value {
+            font-size: 1.8rem;
+            font-weight: 700;
+            color: var(--accent-blue);
+        }
+
+        /* Sorting Elements (Bars/Cards) */
+        .array-item {
+            position: absolute;
+            bottom: 50px; /* Base line */
+            width: var(--item-width);
+            background: var(--box-bg);
+            border-radius: 12px;
+            box-shadow: var(--shadow-soft);
+            display: flex;
+            flex-direction: column;
+            justify-content: flex-end;
+            align-items: center;
+            transition: transform 0.6s cubic-bezier(0.34, 1.56, 0.64, 1), 
+                        background-color 0.4s ease, 
+                        box-shadow 0.4s ease,
+                        height 0.6s ease;
+            z-index: 10;
+            overflow: hidden;
+            height: 180px; /* Default height container */
+        }
+
+        .bar-visual {
+            width: 100%;
+            background: linear-gradient(to top, #e2e8f0, #f1f5f9);
+            border-radius: 0 0 12px 12px;
+            transition: height 0.5s ease, background 0.3s ease;
+        }
+
+        .number-label {
+            font-size: 1.5rem;
+            font-weight: 700;
+            margin-bottom: 10px;
+            position: absolute;
+            top: 10px;
+            width: 100%;
+            text-align: center;
+        }
+
+        /* Connectors for Gap Visualization */
+        #connector-canvas {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            pointer-events: none;
+            z-index: 5;
+        }
+
+        /* Subtitles */
+        #subtitle-container {
+            position: fixed;
+            bottom: 60px;
+            width: 80%;
+            max-width: 800px;
+            text-align: center;
+            background: rgba(255, 255, 255, 0.85);
+            backdrop-filter: blur(12px);
+            padding: 24px 40px;
+            border-radius: 24px;
+            box-shadow: var(--shadow-float);
+            border: 1px solid rgba(255,255,255,0.5);
+            transform: translateY(20px);
+            opacity: 0;
+            transition: all 0.5s ease;
+        }
+
+        #sub-cn {
+            display: block;
+            font-size: 1.4rem;
+            font-weight: 600;
+            color: var(--text-primary);
+            margin-bottom: 8px;
+            line-height: 1.4;
+        }
+
+        #sub-en {
+            display: block;
+            font-size: 0.95rem;
+            font-weight: 400;
+            color: var(--text-secondary);
+            font-style: italic;
+        }
+
+        /* States */
+        .highlight-compare {
+            background-color: #eff6ff !important; /* Light Blue */
+            border: 2px solid var(--accent-blue);
+            transform: translateY(-20px) !important;
+            box-shadow: var(--shadow-float) !important;
+            z-index: 20;
+        }
+
+        .highlight-temp {
+            background-color: #fff7ed !important; /* Orange tint */
+            border: 2px solid #f97316;
+            transform: translateY(-90px) !important; /* Lifted high */
+            z-index: 30;
+            box-shadow: 0 30px 40px -10px rgba(249, 115, 22, 0.3) !important;
+        }
+
+        .highlight-sorted {
+            background-color: #ecfdf5 !important;
+            border: 2px solid var(--accent-green);
+        }
+        
+        .highlight-group-a { border-bottom: 4px solid var(--accent-purple); }
+        .highlight-group-b { border-bottom: 4px solid var(--accent-red); }
+
+        @keyframes fadeIn {
+            to { opacity: 1; }
+        }
+
+        /* Progress Bar */
+        #progress-container {
+            position: fixed;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            height: 6px;
+            background: #e2e8f0;
+        }
+        #progress-bar {
+            height: 100%;
+            width: 0%;
+            background: linear-gradient(90deg, var(--accent-blue), var(--accent-purple));
+            transition: width 0.2s linear;
+        }
+
+    </style>
+</head>
+<body>
+
+    <div id="header">
+        <h1>Shell Sort</h1>
+        <div class="subtitle-tag">希尔排序 · 算法可视化</div>
+    </div>
+
+    <div id="stage">
+        <div id="info-panel">
+            <div class="info-box">
+                <div class="info-label">Current Gap</div>
+                <div class="info-value" id="gap-display">-</div>
+            </div>
+            <div class="info-box">
+                <div class="info-label">Status</div>
+                <div class="info-value" id="status-display" style="font-size: 1.2rem; line-height: 2.2rem; color: var(--text-primary)">Ready</div>
+            </div>
+        </div>
+        <canvas id="connector-canvas"></canvas>
+        <!-- Items will be injected here via JS -->
+    </div>
+
+    <div id="subtitle-container">
+        <span id="sub-cn">准备开始...</span>
+        <span id="sub-en">Preparing to start...</span>
+    </div>
+
+    <div id="progress-container"><div id="progress-bar"></div></div>
+
+    <script>
+        // --- Configuration ---
+        const DATA = [9, 3, 7, 5, 6, 2, 8, 4]; // Perfect dataset to show gap sorting
+        const ITEM_WIDTH = 60;
+        const GAP_WIDTH = 20;
+        const SPEED_FACTOR = 1.0; // Adjust for global speed (1.0 = normal)
+
+        // --- State ---
+        let items = [];
+        let itemElements = [];
+        
+        // --- DOM Elements ---
+        const stage = document.getElementById('stage');
+        const gapDisplay = document.getElementById('gap-display');
+        const statusDisplay = document.getElementById('status-display');
+        const infoPanel = document.getElementById('info-panel');
+        const subContainer = document.getElementById('subtitle-container');
+        const subCn = document.getElementById('sub-cn');
+        const subEn = document.getElementById('sub-en');
+        const canvas = document.getElementById('connector-canvas');
+        const ctx = canvas.getContext('2d');
+        const progressBar = document.getElementById('progress-bar');
+
+        // --- Utility Functions ---
+        const sleep = (ms) => new Promise(resolve => setTimeout(resolve, ms / SPEED_FACTOR));
+
+        function setSubtitle(cn, en) {
+            subContainer.style.opacity = 0;
+            subContainer.style.transform = "translateY(10px)";
+            
+            setTimeout(() => {
+                subCn.innerText = cn;
+                subEn.innerText = en;
+                subContainer.style.opacity = 1;
+                subContainer.style.transform = "translateY(0)";
+            }, 300);
+        }
+
+        function updateStatus(text, color = 'var(--text-primary)') {
+            statusDisplay.innerText = text;
+            statusDisplay.style.color = color;
+        }
+
+        function setProgress(percent) {
+            progressBar.style.width = percent + '%';
+        }
+
+        // --- Initialization ---
+        function init() {
+            // Set canvas size
+            canvas.width = stage.offsetWidth;
+            canvas.height = stage.offsetHeight;
+
+            // Calculate centering
+            const totalWidth = (DATA.length * ITEM_WIDTH) + ((DATA.length - 1) * GAP_WIDTH);
+            const startX = (stage.offsetWidth - totalWidth) / 2;
+
+            DATA.forEach((value, index) => {
+                const el = document.createElement('div');
+                el.classList.add('array-item');
+                el.style.left = (startX + index * (ITEM_WIDTH + GAP_WIDTH)) + 'px';
+                
+                // Create internal structure
+                const num = document.createElement('div');
+                num.classList.add('number-label');
+                num.innerText = value;
+                
+                const bar = document.createElement('div');
+                bar.classList.add('bar-visual');
+                // Height based on value relative to max (10)
+                bar.style.height = (value * 15) + 'px'; 
+                bar.style.background = `hsla(${210 + value * 5}, 70%, 60%, 1)`;
+
+                el.appendChild(num);
+                el.appendChild(bar);
+                stage.appendChild(el);
+
+                itemElements.push(el);
+                items.push({
+                    value: value,
+                    element: el,
+                    x: startX + index * (ITEM_WIDTH + GAP_WIDTH),
+                    index: index // logical index
+                });
+            });
+
+            // Make info panel visible
+            setTimeout(() => {
+                infoPanel.style.opacity = 1;
+            }, 1000);
+        }
+
+        // --- Drawing Connectors (Canvas) ---
+        function drawArch(idx1, idx2, color) {
+            ctx.clearRect(0, 0, canvas.width, canvas.height);
+            if (idx1 === -1) return;
+
+            const x1 = items[idx1].x + ITEM_WIDTH / 2;
+            const x2 = items[idx2].x + ITEM_WIDTH / 2;
+            const y = stage.offsetHeight - 50; // Base line
+
+            ctx.beginPath();
+            ctx.moveTo(x1, y);
+            const cpY = y - (Math.abs(x1 - x2) / 2) - 40; // Control point height
+            ctx.quadraticCurveTo((x1 + x2) / 2, cpY, x2, y);
+            
+            ctx.strokeStyle = color;
+            ctx.lineWidth = 3;
+            ctx.setLineDash([5, 5]);
+            ctx.stroke();
+
+            // Draw dots at base
+            ctx.fillStyle = color;
+            ctx.beginPath();
+            ctx.arc(x1, y, 4, 0, Math.PI*2);
+            ctx.arc(x2, y, 4, 0, Math.PI*2);
+            ctx.fill();
+        }
+
+        function clearCanvas() {
+            ctx.clearRect(0, 0, canvas.width, canvas.height);
+        }
+
+        // --- Core Animation Logic ---
+
+        async function moveItem(logicalIndex, newLogicalIndex) {
+            const item = items[logicalIndex];
+            const targetX = items[newLogicalIndex].x; // Target position based on slot
+            
+            // Note: We don't update items[].x here yet, we just move the visual element
+            // We need to actually swap the objects in the array later to keep logical consistency
+            item.element.style.transform = `translateX(${targetX - item.x}px)`; // Relative move
+        }
+
+        async function liftItem(idx) {
+            items[idx].element.classList.add('highlight-temp');
+            await sleep(600);
+        }
+
+        async function dropItem(itemObj, targetIdx) {
+            // Calculate absolute position of target slot
+            // Since we are moving the element using transform relative to its original creation,
+            // we need to calculate the delta.
+            
+            // However, a cleaner way for this complexity is to update the 'left' property 
+            // and reset transform to 0. But transitions require care.
+            
+            // Let's use the stored X coordinates of the SLOTS.
+            // All items were initialized. items[k].x holds the screen X of slot k.
+            
+            const targetX = (stage.offsetWidth - ((DATA.length * ITEM_WIDTH) + ((DATA.length - 1) * GAP_WIDTH))) / 2 + targetIdx * (ITEM_WIDTH + GAP_WIDTH);
+
+            itemObj.element.classList.remove('highlight-temp');
+            itemObj.element.style.left = targetX + 'px';
+            itemObj.element.style.transform = 'translateY(0)'; // Reset lift
+            
+            // Update internal X
+            itemObj.x = targetX;
+            await sleep(600);
+        }
+
+        async function shiftItem(fromIdx, toIdx) {
+            // Move item at fromIdx to toIdx visually
+            const item = items[fromIdx];
+            const targetX = (stage.offsetWidth - ((DATA.length * ITEM_WIDTH) + ((DATA.length - 1) * GAP_WIDTH))) / 2 + toIdx * (ITEM_WIDTH + GAP_WIDTH);
+            
+            item.element.style.left = targetX + 'px';
+            item.x = targetX;
+            await sleep(600);
+        }
+
+        // --- Shell Sort Algorithm (Visualized) ---
+        async function runShellSort() {
+            const len = items.length;
+            let gap = Math.floor(len / 2);
+
+            // Intro
+            await sleep(1000);
+            setSubtitle("欢迎来到希尔排序。", "Welcome to Shell Sort.");
+            updateStatus("Intro");
+            await sleep(3000);
+
+            setSubtitle("它是插入排序的改进版，旨在解决数据大规模移动的问题。", "It is an optimized version of Insertion Sort, designed to solve large-scale data movement.");
+            await sleep(4000);
+
+            setSubtitle("核心思想是：将数组按‘增量’(Gap) 分组，先让远距离的元素有序。", "The core idea: Group elements by a 'Gap' and sort distant elements first.");
+            await sleep(5000);
+
+            let totalSteps = 0; // Rough estimation for progress
+            // Calculate total steps roughly for progress bar
+            let tempGap = Math.floor(len/2);
+            while(tempGap > 0) { totalSteps++; tempGap = Math.floor(tempGap/2); }
+            let currentStep = 0;
+
+            while (gap > 0) {
+                // Visualize Gap
+                gapDisplay.innerText = gap;
+                updateStatus("New Gap: " + gap, "var(--accent-purple)");
+                setSubtitle(`现在的增量是 ${gap}。我们将比较相距 ${gap} 的元素。`, `Current Gap is ${gap}. We will compare elements ${gap} positions apart.`);
+                setProgress((currentStep / totalSteps) * 100);
+                
+                // Show visuals for gap
+                for(let k=0; k<len-gap; k++) {
+                    drawArch(k, k+gap, '#cbd5e1'); // Light gray preview
+                }
+                await sleep(3000);
+                clearCanvas();
+
+                // Standard Insertion Sort logic with Gap
+                for (let i = gap; i < len; i++) {
+                    
+                    let tempItemObj = items[i]; // The object wrapper
+                    let tempVal = tempItemObj.value;
+                    let j = i;
+
+                    // Highlight the element being inserted
+                    setSubtitle(`取出元素 ${tempVal}，准备在它的分组中找到正确位置。`, `Pick up ${tempVal}, ready to find its position in its group.`);
+                    updateStatus(`Sorting Index ${i}`, "var(--accent-blue)");
+                    
+                    // Visual: Lift temp
+                    drawArch(i-gap, i, 'var(--accent-blue)'); // Show connection
+                    await liftItem(i); 
+                    
+                    // Compare loop
+                    while (j >= gap) {
+                        setSubtitle(`比较: ${items[j - gap].value} 和 ${tempVal} (Gap=${gap})`, `Compare: ${items[j - gap].value} vs ${tempVal} (Gap=${gap})`);
+                        
+                        // Highlight comparison target
+                        items[j-gap].element.classList.add('highlight-compare');
+                        await sleep(1000);
+
+                        if (items[j - gap].value > tempVal) {
+                            setSubtitle(`${items[j - gap].value} 比 ${tempVal} 大，后移。`, `${items[j - gap].value} is larger than ${tempVal}, move it back.`);
+                            
+                            // Visual: Move items[j-gap] to items[j] slot
+                            // We need to physically move the DOM element of items[j-gap] to slot j
+                            await shiftItem(j - gap, j);
+                            
+                            // Logic: Move object in array
+                            items[j] = items[j - gap];
+                            
+                            items[j-gap].element.classList.remove('highlight-compare'); // Remove highlight
+                            j -= gap;
+                            
+                            // If we still have more to compare
+                            if (j >= gap) {
+                                drawArch(j-gap, j, 'var(--accent-blue)');
+                                await sleep(500);
+                            }
+                        } else {
+                            setSubtitle(`${items[j - gap].value} 更小，位置正确。`, `${items[j - gap].value} is smaller. Position found.`);
+                            items[j-gap].element.classList.remove('highlight-compare');
+                            await sleep(1000);
+                            break;
+                        }
+                    }
+                    
+                    clearCanvas();
+
+                    // Place temp
+                    if (j !== i) {
+                        setSubtitle(`将 ${tempVal} 放入空位。`, `Drop ${tempVal} into the empty slot.`);
+                    } else {
+                        setSubtitle(`${tempVal} 原地不动。`, `${tempVal} stays in place.`);
+                    }
+                    
+                    // Visual: Drop temp into slot j
+                    await dropItem(tempItemObj, j);
+                    items[j] = tempItemObj; // Logic update
+                    
+                    await sleep(800);
+                }
+
+                currentStep++;
+                gap = Math.floor(gap / 2);
+            }
+
+            // Final
+            gapDisplay.innerText = "0";
+            setProgress(100);
+            updateStatus("Sorted", "var(--accent-green)");
+            clearCanvas();
+            
+            setSubtitle("排序完成！", "Sorting Complete!");
+            
+            // Success animation
+            for(let i=0; i<len; i++) {
+                items[i].element.classList.add('highlight-sorted');
+                await sleep(100);
+            }
+
+            await sleep(2000);
+            setSubtitle("随着增量缩小，数组越来越有序，效率远超普通插入排序。", "As the gap shrinks, the array becomes more sorted, far exceeding standard Insertion Sort.");
+            
+            // End screen
+            await sleep(4000);
+            document.getElementById('header').style.opacity = 0;
+            stage.style.opacity = 0;
+            subContainer.innerHTML = "<h1 style='color:var(--text-primary); margin:0'>Fin.</h1>";
+        }
+
+        // Start
+        window.onload = () => {
+            init();
+            setTimeout(runShellSort, 1000);
+        };
+
+    </script>
+</body>
+</html>

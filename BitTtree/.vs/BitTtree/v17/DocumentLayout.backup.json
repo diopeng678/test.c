@@ -42,9 +42,9 @@
               "Title": "test.c",
               "DocumentMoniker": "D:\\github\\BitTtree\\BitTtree\\test.c",
               "RelativeDocumentMoniker": "BitTtree\\test.c",
-              "ToolTip": "D:\\github\\BitTtree\\BitTtree\\test.c*",
-              "RelativeToolTip": "BitTtree\\test.c*",
-              "ViewState": "AgIAABIAAAAAAAAAAAAAABwAAAAQAAAAAAAAAA==",
+              "ToolTip": "D:\\github\\BitTtree\\BitTtree\\test.c",
+              "RelativeToolTip": "BitTtree\\test.c",
+              "ViewState": "AgIAABIAAAAAAAAAAAAAAB0AAAAoAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000423|",
               "WhenOpened": "2026-03-07T02:50:07.194Z",
               "EditorCaption": ""
@@ -70,7 +70,7 @@
               "RelativeDocumentMoniker": "BitTtree\\bitree.c",
               "ToolTip": "D:\\github\\BitTtree\\BitTtree\\bitree.c",
               "RelativeToolTip": "BitTtree\\bitree.c",
-              "ViewState": "AgIAADwAAAAAAAAAAAAcwBYAAAAZAAAAAAAAAA==",
+              "ViewState": "AgIAABIAAAAAAAAAAAAAABYAAAAZAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000423|",
               "WhenOpened": "2026-03-07T02:49:02.939Z",
               "EditorCaption": ""

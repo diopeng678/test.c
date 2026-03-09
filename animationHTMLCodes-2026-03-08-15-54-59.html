@@ -1,0 +1,561 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>冒泡排序 vs 插入排序 - 算法视觉剧场</title>
+    <!-- 引入字体 -->
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+SC:wght@300;400;700;900&family=Poppins:wght@400;600;800&display=swap" rel="stylesheet">
+    <!-- 引入 GSAP 动画库 -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+    
+    <style>
+        :root {
+            /* 浅色系高级配色方案 */
+            --bg-color: #f4f7f6;
+            --text-main: #2d3436;
+            --text-sub: #636e72;
+            
+            /* 柱子颜色 */
+            --bar-unsorted: #a29bfe; /* 柔和紫 */
+            --bar-active: #fd79a8;   /* 亮粉色 - 用于比较 */
+            --bar-sorted: #00cec9;   /* 薄荷绿 - 用于已排序 */
+            --bar-lifted: #ffeaa7;   /* 奶油黄 - 插入排序提起时 */
+            --bar-shadow: rgba(108, 92, 231, 0.2);
+            
+            --stage-bg: #ffffff;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            background-color: var(--bg-color);
+            background-image: radial-gradient(circle at 50% 0%, #ffffff 0%, #f4f7f6 80%);
+            font-family: 'Noto Sans SC', 'Poppins', sans-serif;
+            color: var(--text-main);
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            overflow: hidden;
+        }
+
+        /* 维持 16:9 电影比例的容器 */
+        #theater {
+            width: 1280px;
+            height: 720px;
+            position: relative;
+            background: transparent;
+            transform-origin: center center;
+            /* 根据屏幕大小自动缩放，这里在JS中处理以保证完美呈现 */
+        }
+
+        /* 顶部标题区 */
+        #header {
+            position: absolute;
+            top: 40px;
+            width: 100%;
+            text-align: center;
+            opacity: 0;
+        }
+
+        #header h1 {
+            font-size: 36px;
+            font-weight: 900;
+            letter-spacing: 2px;
+            color: var(--text-main);
+            margin-bottom: 8px;
+        }
+
+        #header p {
+            font-size: 16px;
+            color: var(--text-sub);
+            font-family: 'Poppins', sans-serif;
+            letter-spacing: 1px;
+        }
+
+        /* 动画舞台区域 */
+        #stages-container {
+            position: absolute;
+            top: 140px;
+            width: 100%;
+            height: 420px;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-around;
+            align-items: center;
+        }
+
+        .stage {
+            width: 800px;
+            height: 180px;
+            background: var(--stage-bg);
+            border-radius: 20px;
+            box-shadow: 0 20px 40px rgba(0,0,0,0.03), 0 1px 3px rgba(0,0,0,0.05);
+            position: relative;
+            display: flex;
+            justify-content: center;
+            align-items: flex-end;
+            padding-bottom: 20px;
+            opacity: 0; /* 初始隐藏 */
+        }
+
+        .stage-title {
+            position: absolute;
+            top: -30px;
+            left: 20px;
+            font-weight: 700;
+            font-size: 18px;
+            color: var(--text-sub);
+            opacity: 0;
+        }
+
+        /* 柱子元素 */
+        .bar {
+            position: absolute;
+            bottom: 20px;
+            width: 60px;
+            background-color: var(--bar-unsorted);
+            border-radius: 12px;
+            box-shadow: 0 8px 16px var(--bar-shadow);
+            display: flex;
+            justify-content: center;
+            align-items: flex-end;
+            padding-bottom: 15px;
+            color: white;
+            font-weight: 800;
+            font-size: 20px;
+            font-family: 'Poppins', sans-serif;
+            transition: background-color 0.3s ease, box-shadow 0.3s ease;
+            /* 移除 transition left/bottom, 交由 GSAP 控制以避免冲突 */
+        }
+
+        .bar.active {
+            background-color: var(--bar-active);
+            box-shadow: 0 10px 20px rgba(253, 121, 168, 0.4);
+            z-index: 10;
+        }
+
+        .bar.sorted {
+            background-color: var(--bar-sorted);
+            box-shadow: 0 8px 16px rgba(0, 206, 201, 0.3);
+        }
+
+        .bar.lifted {
+            background-color: var(--bar-lifted);
+            color: var(--text-main);
+            box-shadow: 0 20px 30px rgba(0,0,0,0.1);
+            z-index: 20;
+        }
+
+        /* 底部字幕区 */
+        #subtitle-box {
+            position: absolute;
+            bottom: 40px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 80%;
+            text-align: center;
+            background: rgba(45, 52, 54, 0.85);
+            backdrop-filter: blur(10px);
+            padding: 20px 40px;
+            border-radius: 20px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.15);
+            opacity: 0; /* 初始隐藏 */
+            border: 1px solid rgba(255,255,255,0.1);
+        }
+
+        #sub-zh {
+            font-size: 22px;
+            font-weight: 400;
+            color: #ffffff;
+            margin-bottom: 6px;
+            letter-spacing: 1px;
+        }
+
+        #sub-en {
+            font-size: 14px;
+            color: #b2bec3;
+            font-family: 'Poppins', sans-serif;
+        }
+
+    </style>
+</head>
+<body>
+
+    <div id="theater">
+        <!-- 标题 -->
+        <div id="header">
+            <h1>排序的艺术</h1>
+            <p>The Art of Sorting</p>
+        </div>
+
+        <!-- 动画舞台 -->
+        <div id="stages-container">
+            <div id="stage-bubble" class="stage">
+                <div class="stage-title">冒泡排序 Bubble Sort</div>
+                <!-- 柱子将由 JS 动态生成 -->
+            </div>
+            
+            <div id="stage-insertion" class="stage">
+                <div class="stage-title">插入排序 Insertion Sort</div>
+                <!-- 柱子将由 JS 动态生成 -->
+            </div>
+        </div>
+
+        <!-- 字幕 -->
+        <div id="subtitle-box">
+            <div id="sub-zh"></div>
+            <div id="sub-en"></div>
+        </div>
+    </div>
+
+<script>
+    // --------------------------------------------------------
+    // 1. 初始化与配置
+    // --------------------------------------------------------
+    
+    // 自动缩放以适应屏幕
+    function resizeTheater() {
+        const theater = document.getElementById('theater');
+        const scale = Math.min(window.innerWidth / 1280, window.innerHeight / 720) * 0.95;
+        theater.style.transform = `scale(${scale})`;
+    }
+    window.addEventListener('resize', resizeTheater);
+    resizeTheater();
+
+    // 初始数据
+    const initialData = [6, 2, 7, 3, 5];
+    const barWidth = 60;
+    const barGap = 20;
+    const totalWidth = initialData.length * barWidth + (initialData.length - 1) * barGap;
+    const startX = (800 - totalWidth) / 2; // 居中计算
+
+    // 生成元素的函数
+    function createBars(containerId, data, prefix) {
+        const container = document.getElementById(containerId);
+        const bars = [];
+        data.forEach((val, index) => {
+            const bar = document.createElement('div');
+            bar.className = 'bar';
+            bar.id = `${prefix}-bar-${index}`;
+            bar.innerText = val;
+            
+            // 高度映射 (最小高度40，最大高度120)
+            const height = 40 + (val / Math.max(...data)) * 80;
+            bar.style.height = `${height}px`;
+            
+            // 计算 X 坐标
+            const xPos = startX + index * (barWidth + barGap);
+            gsap.set(bar, { x: xPos, y: 0 }); // 使用 GSAP 初始化位置
+            
+            container.appendChild(bar);
+            bars.push({ el: bar, val: val, currentPos: index });
+        });
+        return bars;
+    }
+
+    let bubbleBars = createBars('stage-bubble', initialData, 'b');
+    let insertionBars = createBars('stage-insertion', initialData, 'i');
+
+    // 计算指定索引的 X 坐标
+    const getX = (index) => startX + index * (barWidth + barGap);
+
+    // --------------------------------------------------------
+    // 2. 动画脚本生成器 (算法逻辑分离)
+    // --------------------------------------------------------
+
+    // 生成冒泡排序的动画步骤
+    function generateBubbleSteps(arr) {
+        let steps = [];
+        let tempArr = [...arr];
+        for (let i = 0; i < tempArr.length; i++) {
+            for (let j = 0; j < tempArr.length - i - 1; j++) {
+                steps.push({ type: 'compare', i: j, j: j + 1 });
+                if (tempArr[j] > tempArr[j + 1]) {
+                    steps.push({ type: 'swap', i: j, j: j + 1 });
+                    let t = tempArr[j]; tempArr[j] = tempArr[j + 1]; tempArr[j + 1] = t;
+                }
+                steps.push({ type: 'uncompare', i: j, j: j + 1 });
+            }
+            steps.push({ type: 'sorted', index: tempArr.length - i - 1 });
+        }
+        steps.push({ type: 'sorted', index: 0 }); // 最后一个自然有序
+        return steps;
+    }
+
+    // 生成插入排序的动画步骤
+    function generateInsertionSteps(arr) {
+        let steps = [];
+        let tempArr = [...arr];
+        steps.push({ type: 'sorted', index: 0 });
+        for (let i = 1; i < tempArr.length; i++) {
+            let key = tempArr[i];
+            steps.push({ type: 'lift', index: i });
+            let j = i - 1;
+            while (j >= 0 && tempArr[j] > key) {
+                steps.push({ type: 'compare', index: j });
+                steps.push({ type: 'shiftRight', index: j });
+                tempArr[j + 1] = tempArr[j];
+                j = j - 1;
+            }
+            if(j >= 0) steps.push({ type: 'compare_ok', index: j });
+            steps.push({ type: 'drop', value: key, targetIndex: j + 1, originalIndex: i });
+            tempArr[j + 1] = key;
+            
+            // 更新已排序标记
+            let sortedIndices = [];
+            for(let k=0; k<=i; k++) sortedIndices.push(k);
+            steps.push({ type: 'markSorted', indices: sortedIndices });
+        }
+        return steps;
+    }
+
+    // --------------------------------------------------------
+    // 3. 主动画时间轴构建
+    // --------------------------------------------------------
+    
+    const tl = gsap.timeline({ delay: 0.5 });
+    const subZh = document.getElementById('sub-zh');
+    const subEn = document.getElementById('sub-en');
+    const subBox = document.getElementById('subtitle-box');
+
+    // 辅助函数：更新字幕
+    function say(zh, en, duration) {
+        tl.to(subBox, { opacity: 0, duration: 0.3 })
+          .call(() => {
+              subZh.innerText = zh;
+              subEn.innerText = en;
+          })
+          .to(subBox, { opacity: 1, duration: 0.4 })
+          .to({}, { duration: duration }); // 保持显示的时间
+    }
+
+    // --- 场景 1：开场 ---
+    tl.to('#header', { opacity: 1, y: 10, duration: 1, ease: 'power2.out' });
+    say("欢迎来到算法视觉剧场。", "Welcome to the Algorithm Visual Theater.", 2);
+    say("今天，我们来直观地感受两种最基础的排序方法：\n冒泡排序 与 插入排序。", "Today, we'll visually experience two basic sorting methods:\nBubble Sort vs Insertion Sort.", 3);
+    
+    // 显示冒泡舞台
+    tl.to('#stage-bubble', { opacity: 1, duration: 1 }, "-=1")
+      .to('#stage-bubble .stage-title', { opacity: 1, duration: 0.5 });
+    
+    say("假设我们有一组杂乱无章的数字，需要从小到大排列。", "Imagine we have a disorganized set of numbers to sort from smallest to largest.", 3);
+
+    // --- 场景 2：冒泡排序慢动作解析 ---
+    say("首先是【冒泡排序】。它的核心规则是：相邻比较。", "First is [Bubble Sort]. Its core rule is: Adjacent Comparison.", 3);
+    
+    // 获取冒泡 DOM 数组 (物理顺序)
+    let bDom = [...bubbleBars]; 
+    
+    say("它从左到右，每次比较相邻的两个元素。", "It moves from left to right, comparing two adjacent elements each time.", 2);
+    
+    // 演示第一轮比较
+    tl.to([bDom[0].el, bDom[1].el], { className: "+=bar active", duration: 0.3 });
+    say("如果左边的数字大于右边，它们就交换位置。", "If the left number is greater than the right, they swap positions.", 2);
+    
+    // 6 和 2 交换
+    tl.to(bDom[0].el, { x: getX(1), duration: 0.8, ease: "back.inOut(1.5)" }, "swap1")
+      .to(bDom[1].el, { x: getX(0), duration: 0.8, ease: "back.inOut(1.5)" }, "swap1");
+    
+    tl.call(() => { let t=bDom[0]; bDom[0]=bDom[1]; bDom[1]=t; }); // 更新物理映射
+    tl.to([bDom[0].el, bDom[1].el], { className: "-=bar active", duration: 0.3 });
+
+    say("接着往右移动，继续比较下一对。", "Then it moves right, continuing to compare the next pair.", 1.5);
+    
+    // 6 和 7 不交换
+    tl.to([bDom[1].el, bDom[2].el], { className: "+=bar active", duration: 0.3 });
+    say("这里左边小于右边，所以保持原样。", "Here the left is smaller than the right, so they stay as is.", 2);
+    tl.to([bDom[1].el, bDom[2].el], { className: "-=bar active", duration: 0.3 });
+
+    // 7 和 3 交换
+    tl.to([bDom[2].el, bDom[3].el], { className: "+=bar active", duration: 0.3 });
+    tl.to(bDom[2].el, { x: getX(3), duration: 0.6, ease: "power2.inOut" }, "swap2")
+      .to(bDom[3].el, { x: getX(2), duration: 0.6, ease: "power2.inOut" }, "swap2");
+    tl.call(() => { let t=bDom[2]; bDom[2]=bDom[3]; bDom[3]=t; });
+    tl.to([bDom[2].el, bDom[3].el], { className: "-=bar active", duration: 0.3 });
+
+    // 7 和 5 交换
+    tl.to([bDom[3].el, bDom[4].el], { className: "+=bar active", duration: 0.3 });
+    tl.to(bDom[3].el, { x: getX(4), duration: 0.6, ease: "power2.inOut" }, "swap3")
+      .to(bDom[4].el, { x: getX(3), duration: 0.6, ease: "power2.inOut" }, "swap3");
+    tl.call(() => { let t=bDom[3]; bDom[3]=bDom[4]; bDom[4]=t; });
+    tl.to([bDom[3].el, bDom[4].el], { className: "-=bar active", duration: 0.3 });
+
+    say("就像水底的泡泡一样，经过一轮完整的遍历，最大的数字一定会被推到最右侧。", "Like bubbles underwater, after one full pass, the largest number is pushed to the far right.", 4);
+    tl.to(bDom[4].el, { className: "+=bar sorted", duration: 0.5 }); // 标记最大值已排序
+
+    // 隐藏冒泡，准备插入
+    tl.to('#stage-bubble', { opacity: 0.3, duration: 1 });
+
+    // --- 场景 3：插入排序慢动作解析 ---
+    say("接下来是【插入排序】。它的思路像是在玩扑克牌时的整理。", "Next is [Insertion Sort]. Its logic is like sorting a hand of playing cards.", 3);
+    
+    // 居中显示插入排序
+    tl.to('#stage-insertion', { opacity: 1, duration: 1 })
+      .to('#stage-insertion .stage-title', { opacity: 1, duration: 0.5 });
+
+    let iDom = [...insertionBars];
+
+    say("它将数字分为‘已排序’和‘未排序’区域。一开始，第一个数字默认已排序。", "It divides numbers into 'sorted' and 'unsorted' areas. Initially, the first number is deemed sorted.", 3.5);
+    tl.to(iDom[0].el, { className: "+=bar sorted", duration: 0.5 });
+
+    say("然后，从未排序区域拿出一个数字（提起）。", "Then, it picks a number from the unsorted area (lifts it up).", 2.5);
+    // 提起第二个元素 (2)
+    tl.to(iDom[1].el, { y: -60, className: "+=bar lifted", duration: 0.6, ease: "power2.out" });
+    
+    say("在已排序区域中，从后往前寻找它的正确位置。", "In the sorted area, it looks backwards to find its correct position.", 3);
+    tl.to(iDom[0].el, { className: "+=bar active", duration: 0.3 }); // 比较 6
+    
+    say("因为 6 大于 2，所以把 6 往右挪出一个空位。", "Since 6 is greater than 2, it shifts 6 to the right to make room.", 3);
+    tl.to(iDom[0].el, { x: getX(1), duration: 0.6, ease: "power2.inOut" });
+    tl.to(iDom[0].el, { className: "-=bar active", duration: 0.2 });
+    
+    say("找到位置后，将拿起的数字插入。", "Once the spot is found, it inserts the picked number.", 2);
+    tl.to(iDom[1].el, { x: getX(0), duration: 0.6, ease: "power2.inOut" })
+      .to(iDom[1].el, { y: 0, className: "-=bar lifted", duration: 0.5, ease: "bounce.out" })
+      .to(iDom[1].el, { className: "+=bar sorted", duration: 0.3 });
+    
+    tl.call(() => { let t=iDom[0]; iDom[0]=iDom[1]; iDom[1]=t; }); // 更新物理映射
+
+    // --- 场景 4：双轨全速运行对比 ---
+    say("现在，让我们重置它们，同时运行剩下的步骤，直观感受两者的区别。", "Now, let's reset them and run the remaining steps simultaneously to feel the difference.", 4);
+
+    // 恢复冒泡舞台不透明度
+    tl.to('#stage-bubble', { opacity: 1, duration: 1 });
+
+    // **生成剩余完整的动画步骤并加入时间轴**
+    const bSteps = generateBubbleSteps([2, 6, 3, 5, 7]); // 当前冒泡状态
+    const iSteps = generateInsertionSteps([2, 6, 7, 3, 5]); // 当前插入状态 (注意前两个已有序)
+
+    // 创建一个子时间轴用于同时执行
+    const raceTl = gsap.timeline();
+
+    // -- 编译冒泡步骤 --
+    let bTime = 0;
+    const bStepDuration = 0.4;
+    bSteps.forEach(step => {
+        if(step.type === 'compare') {
+            raceTl.to([bDom[step.i].el, bDom[step.j].el], { className: "+=bar active", duration: 0.2 }, bTime);
+            bTime += 0.2;
+        } else if (step.type === 'uncompare') {
+            raceTl.to([bDom[step.i].el, bDom[step.j].el], { className: "-=bar active", duration: 0.1 }, bTime);
+            bTime += 0.1;
+        } else if (step.type === 'swap') {
+            raceTl.to(bDom[step.i].el, { x: getX(step.j), duration: bStepDuration, ease: "power1.inOut" }, bTime)
+                  .to(bDom[step.j].el, { x: getX(step.i), duration: bStepDuration, ease: "power1.inOut" }, bTime);
+            raceTl.call(() => { let t=bDom[step.i]; bDom[step.i]=bDom[step.j]; bDom[step.j]=t; }, null, bTime + bStepDuration);
+            bTime += bStepDuration;
+        } else if (step.type === 'sorted') {
+            raceTl.to(bDom[step.index].el, { className: "+=bar sorted", duration: 0.3 }, bTime);
+        }
+    });
+
+    // -- 编译插入步骤 --
+    let iTime = 0;
+    const iStepDuration = 0.4;
+    // 跳过已经演示过的前两个元素的插入逻辑 (索引0和1)
+    let filteredISteps = iSteps.filter(s => {
+        if(s.type === 'sorted' && s.index === 0) return false;
+        if((s.type === 'lift' || s.type === 'drop') && s.originalIndex === 1) return false;
+        if(s.type === 'markSorted' && s.indices.includes(1) && s.indices.length === 2) return false;
+        if(s.type === 'compare' && s.index === 0 && iTime === 0) return false; // 过滤掉前面硬编码的部分
+        return true;
+    });
+    // 由于前面硬编码了步骤，这里为了完美衔接，最好重新基于当前状态生成步骤
+    // 当前状态 iDom: [2, 6, 7, 3, 5] (前两个已有序，但实际上第三个 7 在原始数据中，我们需要从索引2开始)
+    
+    function buildRemainingInsertion() {
+        // 从索引 2 (值为 7) 开始
+        let currentArr = [2, 6, 7, 3, 5];
+        let steps = [];
+        for (let i = 2; i < currentArr.length; i++) {
+            let key = currentArr[i];
+            steps.push({ type: 'lift', index: i });
+            let j = i - 1;
+            while (j >= 0 && currentArr[j] > key) {
+                steps.push({ type: 'compare', index: j });
+                steps.push({ type: 'shiftRight', index: j });
+                currentArr[j + 1] = currentArr[j];
+                j = j - 1;
+            }
+            if(j>=0) steps.push({ type: 'compare_ok', index: j });
+            steps.push({ type: 'drop', value: key, targetIndex: j + 1, originalIndex: i });
+            currentArr[j + 1] = key;
+            
+            let sortedIndices = [];
+            for(let k=0; k<=i; k++) sortedIndices.push(k);
+            steps.push({ type: 'markSorted', indices: sortedIndices });
+        }
+        return steps;
+    }
+
+    const finalISteps = buildRemainingInsertion();
+
+    finalISteps.forEach(step => {
+        if (step.type === 'lift') {
+            raceTl.to(iDom[step.index].el, { y: -60, className: "+=bar lifted", duration: 0.4, ease: "power2.out" }, iTime);
+            iTime += 0.4;
+        } else if (step.type === 'compare') {
+            raceTl.to(iDom[step.index].el, { className: "+=bar active", duration: 0.2 }, iTime);
+            iTime += 0.2;
+        } else if (step.type === 'shiftRight') {
+            raceTl.to(iDom[step.index].el, { x: getX(step.index + 1), duration: iStepDuration, ease: "power1.inOut" }, iTime);
+            raceTl.to(iDom[step.index].el, { className: "-=bar active", duration: 0.1 }, iTime + iStepDuration);
+            // 更新虚拟DOM数组位置以供后续查找
+            raceTl.call((idx) => { iDom[idx+1] = iDom[idx]; }, [step.index], iTime + iStepDuration);
+            iTime += iStepDuration;
+        } else if (step.type === 'compare_ok') {
+            raceTl.to(iDom[step.index].el, { className: "+=bar active", duration: 0.2 }, iTime);
+            raceTl.to(iDom[step.index].el, { className: "-=bar active", duration: 0.2 }, iTime + 0.2);
+            iTime += 0.4;
+        } else if (step.type === 'drop') {
+            // 找到被提起的元素原始DOM
+            let el = document.getElementById(`i-bar-${step.originalIndex}`);
+            raceTl.to(el, { x: getX(step.targetIndex), duration: 0.4, ease: "power1.inOut" }, iTime)
+                  .to(el, { y: 0, className: "-=bar lifted", duration: 0.3, ease: "bounce.out" }, iTime + 0.4);
+            raceTl.call((tIdx, oIdx) => { 
+                iDom[tIdx] = { el: document.getElementById(`i-bar-${oIdx}`) }; 
+            }, [step.targetIndex, step.originalIndex], iTime + 0.7);
+            iTime += 0.7;
+        } else if (step.type === 'markSorted') {
+            step.indices.forEach(idx => {
+                 raceTl.to(iDom[idx].el, { className: "+=bar sorted", duration: 0.2 }, iTime);
+            });
+            iTime += 0.2;
+        }
+    });
+
+    // 将比赛时间轴加入主时间轴
+    tl.add(raceTl, "+=0.5");
+
+    // 比赛过程中的字幕解说 (不阻塞时间轴，并行执行)
+    tl.add(() => {
+        say("注意看动画形态的区别。", "Notice the difference in their animation patterns.", 3);
+        setTimeout(() => {
+            say("冒泡排序在不断进行局部的【互换】，慢慢把大数字推向右侧。", "Bubble Sort constantly performs local [swaps], slowly pushing large numbers to the right.", 4);
+        }, 3000);
+        setTimeout(() => {
+            say("插入排序则是不断扩大左侧的有序区，靠【平移】腾出空间来嵌入新数字。", "Insertion Sort expands the sorted area on the left, [shifting] to make room to embed new numbers.", 4);
+        }, 7500);
+    }, "-=" + raceTl.duration()); // 与 raceTl 同时开始
+
+    // --- 场景 5：总结 ---
+    tl.to({}, { duration: 1 }); // 稍微停顿
+    say("冒泡重交换，插入重移位。", "Bubble relies on swapping, Insertion relies on shifting.", 3);
+    say("虽然面对少量数据时它们都很直观，但在计算机世界里，插入排序通常比冒泡排序效率更高哦。", "While both are intuitive for small data, in the computer world, Insertion Sort is generally more efficient than Bubble Sort.", 5);
+    
+    // 华丽结束
+    tl.to('.bar', { y: -10, duration: 0.3, stagger: 0.05, ease: "power1.out" })
+      .to('.bar', { y: 0, duration: 0.5, stagger: 0.05, ease: "bounce.out" })
+      .call(() => {
+          say("感谢观看。The End.", "Thanks for watching. The End.", 10);
+      });
+
+</script>
+</body>
+</html>
