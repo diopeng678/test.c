@@ -1,0 +1,233 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HTML的魅力展示</title>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@700&display=swap" rel="stylesheet">
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            min-height: 100vh;
+            background: linear-gradient(135deg, #1e3c72 0%, #2a5298 40%, #ff8a00 100%);
+            color: #fff;
+            font-family: 'Roboto', Arial, sans-serif;
+            overflow-x: hidden;
+        }
+        header {
+            text-align: center;
+            padding: 60px 20px 20px 20px;
+        }
+        h1 {
+            font-size: 3.5rem;
+            letter-spacing: 2px;
+            background: linear-gradient(90deg, #ff8a00, #e52e71, #00c3ff);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            color: transparent;
+            animation: gradient-move 3s infinite linear alternate;
+            text-shadow:0 4px 24px #ff8a0055,0 2px 8px #e52e7144;
+        }
+        @keyframes gradient-move {
+            0% { background-position: 0% 50%; }
+            100% { background-position: 100% 50%; }
+        }
+        .features {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 40px;
+            margin: 40px 0;
+            position: relative;
+        }
+        .features::before {
+            content: '';
+            position: absolute;
+            left: 10%;
+            top: 10%;
+            width: 80%;
+            height: 80%;
+            background: radial-gradient(circle at 30% 30%, #ff8a00cc 0%, transparent 70%),
+                        radial-gradient(circle at 70% 70%, #e52e71cc 0%, transparent 70%);
+            z-index: 0;
+            pointer-events: none;
+            filter: blur(40px);
+        }
+        .card {
+            background: linear-gradient(135deg, rgba(255,138,0,0.18) 0%, rgba(229,46,113,0.18) 100%);
+            border-radius: 18px;
+            box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
+            backdrop-filter: blur(6px);
+            border: 2px solid transparent;
+            background-clip: padding-box;
+            width: 320px;
+            padding: 32px 24px;
+            transition: transform 0.3s, box-shadow 0.3s, border 0.3s;
+            position: relative;
+            z-index: 1;
+        }
+        .card:hover {
+            transform: translateY(-12px) scale(1.04);
+            box-shadow: 0 16px 48px 0 rgba(31, 38, 135, 0.47);
+            border: 2px solid #ff8a00;
+        }
+        .card h2 {
+            margin-top: 0;
+            font-size: 2rem;
+            background: linear-gradient(90deg, #ff8a00, #e52e71, #00c3ff);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            color: transparent;
+        }
+        .card p {
+            font-size: 1.1rem;
+            color: #ffe6c7;
+            text-shadow: 0 1px 8px #e52e7144;
+        }
+        .demo {
+            margin: 60px auto 0 auto;
+            max-width: 900px;
+            background: rgba(255,255,255,0.08);
+            border-radius: 16px;
+            padding: 32px;
+            box-shadow: 0 4px 24px 0 rgba(31, 38, 135, 0.27);
+        }
+        .demo h3 {
+            color: #e52e71;
+            margin-top: 0;
+            background:linear-gradient(90deg,#ff8a00,#e52e71,#00c3ff);
+            -webkit-background-clip:text;
+            -webkit-text-fill-color:transparent;
+            background-clip:text;
+            color:transparent;
+        }
+        .demo-content {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 32px;
+            align-items: center;
+            justify-content: center;
+        }
+        .demo-content > * {
+            flex: 1 1 250px;
+            min-width: 220px;
+        }
+        .btn {
+            display: inline-block;
+            padding: 12px 32px;
+            background: linear-gradient(90deg, #ff8a00, #e52e71, #00c3ff);
+            color: #fff;
+            border: none;
+            border-radius: 24px;
+            font-size: 1.2rem;
+            font-weight: bold;
+            cursor: pointer;
+            box-shadow: 0 2px 8px rgba(229,46,113,0.2);
+            transition: background 0.3s, transform 0.2s;
+        }
+        .btn:hover {
+            background: linear-gradient(90deg, #e52e71, #ff8a00, #00c3ff);
+            transform: scale(1.05);
+        }
+        .circle {
+            width: 100px;
+            height: 100px;
+            border-radius: 50%;
+            background: conic-gradient(from 0deg, #ff8a00, #e52e71, #00c3ff, #ff8a00);
+            animation: spin 2.5s linear infinite;
+            margin: 0 auto;
+            box-shadow: 0 0 32px 8px #e52e7155, 0 0 0 8px #ff8a0022;
+        }
+        @keyframes spin {
+            0% { transform: rotate(0deg); }
+            100% { transform: rotate(360deg); }
+        }
+        .code-sample {
+            background: linear-gradient(90deg, #222c36 60%, #e52e71 100%);
+            color: #fff;
+            border-radius: 8px;
+            padding: 16px;
+            font-family: 'Fira Mono', 'Consolas', monospace;
+            font-size: 1rem;
+            overflow-x: auto;
+            box-shadow: 0 2px 12px #e52e7133;
+        }
+        footer {
+            text-align: center;
+            padding: 32px 0 16px 0;
+            color: #fff;
+            font-size: 1rem;
+            background: linear-gradient(90deg, #e52e71 0%, #ff8a00 100%);
+            background-clip: text;
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+        @media (max-width: 900px) {
+            .features, .demo-content {
+                flex-direction: column;
+                gap: 24px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>HTML的魅力</h1>
+        <p style="font-size:1.3rem;max-width:600px;margin:0 auto;color:#ffe6c7;text-shadow:0 2px 8px #e52e7144;">HTML不仅仅是网页的骨架，更是创造无限可能的舞台。让我们一起感受HTML的魔力！</p>
+    </header>
+    <section class="features">
+        <div class="card">
+            <h2>结构化内容</h2>
+            <p>HTML让内容有序、清晰，便于阅读和维护。</p>
+        </div>
+        <div class="card">
+            <h2>多媒体集成</h2>
+            <p>图片、音频、视频轻松嵌入，丰富网页表现力。</p>
+        </div>
+        <div class="card">
+            <h2>交互与动画</h2>
+            <p>配合CSS和JS，HTML页面可以动起来，玩出花样！</p>
+        </div>
+    </section>
+    <section class="demo">
+        <h3>HTML酷炫演示</h3>
+        <div class="demo-content">
+            <div>
+                <div class="circle"></div>
+                <p style="text-align:center;margin-top:12px;">CSS动画：旋转的渐变圆</p>
+            </div>
+            <div>
+                <button class="btn" onclick="alert('HTML让一切变得简单！')">点击体验交互</button>
+            </div>
+            <div>
+                <audio controls style="width:100%;">
+                    <source src="https://www.w3schools.com/html/horse.mp3" type="audio/mpeg">
+                    您的浏览器不支持音频播放。
+                </audio>
+                <p style="text-align:center;margin-top:8px;">音频嵌入</p>
+            </div>
+            <div>
+                <video width="180" controls style="border-radius:8px;">
+                    <source src="https://www.w3schools.com/html/mov_bbb.mp4" type="video/mp4">
+                    您的浏览器不支持视频播放。
+                </video>
+                <p style="text-align:center;margin-top:8px;">视频嵌入</p>
+            </div>
+        </div>
+        <div style="margin-top:32px;">
+            <div class="code-sample">
+                &lt;button onclick="alert('Hello, HTML!')" style="background:linear-gradient(90deg,#ff8a00,#e52e71);color:#fff;border:none;padding:8px 20px;border-radius:16px;font-weight:bold;"&gt;点我试试&lt;/button&gt;
+            </div>
+            <p style="text-align:center;background:linear-gradient(90deg,#ff8a00,#e52e71,#00c3ff);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;color:transparent;margin-top:8px;">HTML代码示例</p>
+        </div>
+    </section>
+    <footer>
+        &copy; 2026 HTML魅力演示 | 由 <span style="color:#e52e71;">HTML</span> &amp; <span style="color:#ff8a00;">CSS</span> 强力驱动
+    </footer>
+    </body>
+    </html>
+</body>
+</html>

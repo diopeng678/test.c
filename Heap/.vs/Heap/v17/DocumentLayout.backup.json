@@ -7,12 +7,12 @@
       "RelativeMoniker": "D:0:0:{76D99A85-077D-4CA4-9373-75455F450FF6}|Heap\\Heap.vcxproj|solutionrelative:Heap\\test.c||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{76D99A85-077D-4CA4-9373-75455F450FF6}|Heap\\Heap.vcxproj|D:\\github\\Heap\\Heap\\heap.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
-      "RelativeMoniker": "D:0:0:{76D99A85-077D-4CA4-9373-75455F450FF6}|Heap\\Heap.vcxproj|solutionrelative:Heap\\heap.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
-    },
-    {
       "AbsoluteMoniker": "D:0:0:{76D99A85-077D-4CA4-9373-75455F450FF6}|Heap\\Heap.vcxproj|D:\\github\\Heap\\Heap\\heap.c||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
       "RelativeMoniker": "D:0:0:{76D99A85-077D-4CA4-9373-75455F450FF6}|Heap\\Heap.vcxproj|solutionrelative:Heap\\heap.c||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{76D99A85-077D-4CA4-9373-75455F450FF6}|Heap\\Heap.vcxproj|D:\\github\\Heap\\Heap\\heap.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{76D99A85-077D-4CA4-9373-75455F450FF6}|Heap\\Heap.vcxproj|solutionrelative:Heap\\heap.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
     }
   ],
   "DocumentGroupContainers": [
@@ -42,29 +42,29 @@
               "Title": "test.c",
               "DocumentMoniker": "D:\\github\\Heap\\Heap\\test.c",
               "RelativeDocumentMoniker": "Heap\\test.c",
-              "ToolTip": "D:\\github\\Heap\\Heap\\test.c*",
-              "RelativeToolTip": "Heap\\test.c*",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAfAAAAAAAAAA==",
+              "ToolTip": "D:\\github\\Heap\\Heap\\test.c",
+              "RelativeToolTip": "Heap\\test.c",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAUAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000423|",
               "WhenOpened": "2026-03-09T03:12:00.838Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 2,
+              "DocumentIndex": 1,
               "Title": "heap.c",
               "DocumentMoniker": "D:\\github\\Heap\\Heap\\heap.c",
               "RelativeDocumentMoniker": "Heap\\heap.c",
               "ToolTip": "D:\\github\\Heap\\Heap\\heap.c",
               "RelativeToolTip": "Heap\\heap.c",
-              "ViewState": "AgIAAEIAAAAAAAAAAAAAAFMAAAAFAAAAAAAAAA==",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAFMAAAAFAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000423|",
               "WhenOpened": "2026-03-09T03:11:50.442Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 1,
+              "DocumentIndex": 2,
               "Title": "heap.h",
               "DocumentMoniker": "D:\\github\\Heap\\Heap\\heap.h",
               "RelativeDocumentMoniker": "Heap\\heap.h",
@@ -72,8 +72,7 @@
               "RelativeToolTip": "Heap\\heap.h",
               "ViewState": "AgIAAA0AAAAAAAAAAAAAACEAAAAbAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
-              "WhenOpened": "2026-03-09T03:11:40.688Z",
-              "EditorCaption": ""
+              "WhenOpened": "2026-03-09T03:11:40.688Z"
             }
           ]
         }

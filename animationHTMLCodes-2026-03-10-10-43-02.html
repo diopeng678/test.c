@@ -1,0 +1,494 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>快速排序动画 - Quick Sort Animation</title>
+    <style>
+        :root {
+            /* 浅色现代配色方案 */
+            --bg-color: #f4f7f9;
+            --text-main: #2c3e50;
+            --text-muted: #7f8c8d;
+            
+            /* 元素颜色 */
+            --bar-default: #a8d5e2;    /* 默认浅蓝 */
+            --bar-compare: #ffd166;    /* 比较中黄色 */
+            --bar-pivot: #ff9f1c;      /* 基准橙色 */
+            --bar-smaller: #cbaacb;    /* 小于基准紫色 */
+            --bar-sorted: #06d6a0;     /* 已排序绿色 */
+            
+            --shadow: 0 10px 30px rgba(0,0,0,0.08);
+            --bar-width: 50px;
+            --bar-gap: 20px;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+            background: radial-gradient(circle at 50% 30%, #ffffff 0%, var(--bg-color) 100%);
+            height: 100vh;
+            overflow: hidden;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            color: var(--text-main);
+        }
+
+        /* 标题屏幕 */
+        #title-screen {
+            position: absolute;
+            top: 0; left: 0; width: 100%; height: 100%;
+            background: var(--bg-color);
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            z-index: 100;
+            transition: opacity 1.5s ease-in-out;
+        }
+        #title-screen h1 {
+            font-size: 4rem;
+            font-weight: 800;
+            letter-spacing: 2px;
+            margin-bottom: 10px;
+            background: linear-gradient(45deg, #ff9f1c, #ef476f);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+        #title-screen p {
+            font-size: 1.5rem;
+            color: var(--text-muted);
+            letter-spacing: 4px;
+        }
+
+        /* 动画主舞台 */
+        #stage {
+            position: relative;
+            width: 800px;
+            height: 400px;
+            display: flex;
+            align-items: flex-end;
+            justify-content: center;
+            opacity: 0;
+            transition: opacity 2s ease-in-out;
+            margin-bottom: 100px; /* 为字幕留出空间 */
+        }
+
+        /* 数组柱子容器 */
+        #array-container {
+            position: relative;
+            width: 100%;
+            height: 300px;
+        }
+
+        .bar-wrapper {
+            position: absolute;
+            bottom: 40px; /* 为底部的指针留出空间 */
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            transition: transform 0.6s cubic-bezier(0.25, 0.8, 0.25, 1);
+        }
+
+        .bar {
+            width: var(--bar-width);
+            background-color: var(--bar-default);
+            border-radius: 8px 8px 4px 4px;
+            box-shadow: var(--shadow);
+            transition: background-color 0.4s ease, height 0.6s ease, transform 0.3s ease;
+            display: flex;
+            justify-content: center;
+            align-items: flex-end;
+            padding-bottom: 10px;
+            overflow: hidden;
+        }
+
+        .bar-value {
+            color: white;
+            font-weight: bold;
+            font-size: 1.2rem;
+            text-shadow: 0 2px 4px rgba(0,0,0,0.2);
+        }
+
+        /* 指针标记 */
+        .pointer {
+            margin-top: 10px;
+            font-size: 0.9rem;
+            font-weight: bold;
+            color: var(--text-muted);
+            opacity: 0;
+            transition: opacity 0.3s;
+            text-align: center;
+        }
+        .pointer.active {
+            opacity: 1;
+        }
+        .pointer-i { color: #9b59b6; }
+        .pointer-j { color: #f39c12; }
+
+        /* 电影感字幕 */
+        #subtitle-container {
+            position: absolute;
+            bottom: 40px;
+            width: 80%;
+            max-width: 900px;
+            text-align: center;
+            background: rgba(255, 255, 255, 0.85);
+            backdrop-filter: blur(10px);
+            -webkit-backdrop-filter: blur(10px);
+            padding: 25px 40px;
+            border-radius: 20px;
+            box-shadow: 0 10px 40px rgba(0,0,0,0.05);
+            border: 1px solid rgba(255,255,255,0.5);
+            opacity: 0;
+            transform: translateY(20px);
+            transition: opacity 0.8s ease, transform 0.8s ease;
+            z-index: 10;
+        }
+
+        #subtitle-container.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        #subtitle-zh {
+            font-size: 1.5rem;
+            font-weight: 600;
+            color: #2c3e50;
+            margin-bottom: 8px;
+            line-height: 1.4;
+        }
+
+        #subtitle-en {
+            font-size: 1.1rem;
+            font-weight: 400;
+            color: #7f8c8d;
+            font-style: italic;
+        }
+
+        /* 装饰元素 */
+        .decorative-circle {
+            position: absolute;
+            border-radius: 50%;
+            background: linear-gradient(135deg, rgba(168, 213, 226, 0.2), rgba(255, 159, 28, 0.1));
+            z-index: -1;
+        }
+        .circle1 { width: 400px; height: 400px; top: -100px; left: -100px; }
+        .circle2 { width: 300px; height: 300px; bottom: 50px; right: -50px; }
+
+    </style>
+</head>
+<body>
+
+    <div class="decorative-circle circle1"></div>
+    <div class="decorative-circle circle2"></div>
+
+    <!-- 标题屏幕 -->
+    <div id="title-screen">
+        <h1>快速排序</h1>
+        <p>Quick Sort Algorithm</p>
+    </div>
+
+    <!-- 动画主舞台 -->
+    <div id="stage">
+        <div id="array-container"></div>
+    </div>
+
+    <!-- 字幕 -->
+    <div id="subtitle-container">
+        <div id="subtitle-zh"></div>
+        <div id="subtitle-en"></div>
+    </div>
+
+    <script>
+        /**
+         * 快速排序可视化逻辑
+         */
+        
+        // 初始数据
+        const initialData = [35, 12, 42, 18, 28, 15, 48, 24];
+        let domElements = [];
+        const container = document.getElementById('array-container');
+        const barWidth = 50;
+        const barGap = 30;
+        
+        // 计算居中偏移量
+        const totalWidth = initialData.length * barWidth + (initialData.length - 1) * barGap;
+        const startOffset = (800 - totalWidth) / 2;
+
+        // 工具函数：延时
+        const sleep = (ms) => new Promise(resolve => setTimeout(resolve, ms));
+
+        // 工具函数：更新字幕
+        async function setSubtitle(zh, en, duration = 0) {
+            const subBox = document.getElementById('subtitle-container');
+            const zhEl = document.getElementById('subtitle-zh');
+            const enEl = document.getElementById('subtitle-en');
+            
+            subBox.classList.remove('visible');
+            await sleep(400); // 等待淡出
+            
+            zhEl.textContent = zh;
+            enEl.textContent = en;
+            
+            subBox.classList.add('visible');
+            if (duration > 0) {
+                await sleep(duration);
+            }
+        }
+
+        // 初始化DOM元素
+        function initBars() {
+            for (let i = 0; i < initialData.length; i++) {
+                const val = initialData[i];
+                
+                const wrapper = document.createElement('div');
+                wrapper.className = 'bar-wrapper';
+                
+                const bar = document.createElement('div');
+                bar.className = 'bar';
+                // 高度映射：24 -> 100px, 48 -> 200px (基础高度+比例)
+                bar.style.height = `${val * 4 + 40}px`; 
+                
+                const valText = document.createElement('div');
+                valText.className = 'bar-value';
+                valText.innerText = val;
+                
+                const pointer = document.createElement('div');
+                pointer.className = 'pointer';
+                pointer.innerHTML = '&nbsp;'; // 占位
+                
+                bar.appendChild(valText);
+                wrapper.appendChild(bar);
+                wrapper.appendChild(pointer);
+                container.appendChild(wrapper);
+                
+                domElements.push({
+                    value: val,
+                    wrapper: wrapper,
+                    bar: bar,
+                    pointer: pointer,
+                    index: i
+                });
+
+                // 设置初始物理位置
+                updatePosition(i, i);
+            }
+        }
+
+        // 更新元素的物理位置 (基于索引)
+        function updatePosition(physicalIndex, domIndex) {
+            const x = startOffset + physicalIndex * (barWidth + barGap);
+            domElements[domIndex].wrapper.style.transform = `translateX(${x}px)`;
+            domElements[domIndex].index = physicalIndex;
+        }
+
+        // 改变颜色
+        function setColor(domIndex, colorVar) {
+            domElements[domIndex].bar.style.backgroundColor = `var(${colorVar})`;
+        }
+
+        // 改变指针文本
+        function setPointer(domIndex, text, className) {
+            if(domIndex < 0 || domIndex >= domElements.length) return;
+            const p = domElements[domIndex].pointer;
+            p.innerHTML = text || '&nbsp;';
+            p.className = `pointer ${className} ${text ? 'active' : ''}`;
+        }
+        function clearAllPointers() {
+            domElements.forEach(el => setPointer(el.index, '', ''));
+        }
+
+        // 交换动画
+        async function swapAnimation(idx1, idx2) {
+            if (idx1 === idx2) return;
+            
+            const dom1 = domElements.find(el => el.index === idx1);
+            const dom2 = domElements.find(el => el.index === idx2);
+            
+            // 物理位置交换
+            const tempIndex = dom1.index;
+            updatePosition(dom2.index, domElements.indexOf(dom1));
+            updatePosition(tempIndex, domElements.indexOf(dom2));
+
+            // 添加一点垂直跳跃的视觉效果
+            dom1.bar.style.transform = 'translateY(-20px)';
+            dom2.bar.style.transform = 'translateY(-20px)';
+            
+            await sleep(300);
+            
+            dom1.bar.style.transform = 'translateY(0)';
+            dom2.bar.style.transform = 'translateY(0)';
+            
+            await sleep(300);
+        }
+
+        // 重置颜色
+        function resetColors(start, end) {
+            for(let i=start; i<=end; i++) {
+                const dom = domElements.find(el => el.index === i);
+                if(dom.bar.style.backgroundColor !== 'var(--bar-sorted)') {
+                    dom.bar.style.backgroundColor = 'var(--bar-default)';
+                }
+            }
+        }
+
+        /**
+         * 核心：快速排序剧本化执行
+         */
+        async function runCinematicQuickSort() {
+            // 1. 开场
+            await sleep(1000);
+            document.getElementById('title-screen').style.opacity = '0';
+            await sleep(1500);
+            document.getElementById('title-screen').style.display = 'none';
+            document.getElementById('stage').style.opacity = '1';
+
+            await setSubtitle("欢迎。今天我们将探索计算机科学中最优美的算法之一：", "Welcome. Today we will explore one of the most elegant algorithms in computer science:", 3500);
+            await setSubtitle("快速排序 (Quick Sort)", "Quick Sort", 2500);
+            await setSubtitle("它的核心思想是极其强大的“分而治之”。", "Its core idea is the extremely powerful 'Divide and Conquer'.", 3500);
+
+            // 详细演示第一轮分区
+            await setSubtitle("第一步：选择基准 (Pivot)", "Step 1: Choose a Pivot", 2000);
+            await setSubtitle("我们从数组中选择一个元素作为比较的基准。这里我们选择最右侧的元素。", "We choose an element from the array as a baseline for comparison. Here we pick the rightmost element.", 1000);
+            
+            let high = domElements.length - 1;
+            let low = 0;
+            const pivotDom = domElements.find(el => el.index === high);
+            setColor(domElements.indexOf(pivotDom), '--bar-pivot');
+            // 基准稍微升起强调
+            pivotDom.bar.style.transform = 'translateY(-15px) scale(1.05)';
+            await sleep(2500);
+            pivotDom.bar.style.transform = 'translateY(0) scale(1)';
+
+            await setSubtitle("第二步：分区 (Partitioning)", "Step 2: Partitioning", 2000);
+            await setSubtitle("目标是将所有小于基准的数移到左边，大于基准的数留在右边。", "The goal is to move all numbers smaller than the pivot to the left, and larger ones to the right.", 4000);
+
+            await setSubtitle("我们使用指针 J 遍历数组，并用指针 I 记录小于基准的区域边界。", "We use pointer J to scan the array, and pointer I to mark the boundary of the smaller elements.", 2000);
+
+            let i = low - 1;
+            
+            for (let j = low; j < high; j++) {
+                const jDom = domElements.find(el => el.index === j);
+                setPointer(domElements.indexOf(jDom), 'J', 'pointer-j');
+                if(i >= low) setPointer(domElements.indexOf(domElements.find(el => el.index === i)), 'I', 'pointer-i');
+                
+                setColor(domElements.indexOf(jDom), '--bar-compare');
+                await sleep(800);
+
+                if (jDom.value < pivotDom.value) {
+                    await setSubtitle(`${jDom.value} 小于基准 ${pivotDom.value}，扩展左侧区域并将其交换过来。`, `${jDom.value} is less than ${pivotDom.value}. Expand left region and swap.`, 500);
+                    i++;
+                    if(i !== j) {
+                        setPointer(domElements.indexOf(domElements.find(el => el.index === i)), 'I', 'pointer-i');
+                        await swapAnimation(i, j);
+                    } else {
+                        setPointer(domElements.indexOf(domElements.find(el => el.index === i)), 'I, J', 'pointer-i');
+                        await sleep(600);
+                    }
+                    // 标记为小于基准的颜色
+                    setColor(domElements.indexOf(domElements.find(el => el.index === i)), '--bar-smaller');
+                } else {
+                    await setSubtitle(`${jDom.value} 大于基准 ${pivotDom.value}，保持在右侧。`, `${jDom.value} is greater than ${pivotDom.value}, keep it on the right.`, 1500);
+                    setColor(domElements.indexOf(jDom), '--bar-default');
+                }
+                
+                if(i !== j && i>=low) setPointer(domElements.indexOf(domElements.find(el => el.index === i)), 'I', 'pointer-i');
+                setPointer(domElements.indexOf(jDom), '', '');
+            }
+
+            clearAllPointers();
+            await setSubtitle("遍历完成。现在，将基准放入中间正确的位置 (I+1)。", "Traversal complete. Now, place the pivot in its correct middle position (I+1).", 3000);
+            
+            i++;
+            await swapAnimation(i, high);
+            
+            const newPivotDom = domElements.find(el => el.index === i);
+            setColor(domElements.indexOf(newPivotDom), '--bar-sorted'); // 基准位置已锁定
+            
+            await setSubtitle("看！基准左边的数字都比它小，右边的都比它大。", "Look! Numbers on the left are smaller, and on the right are larger.", 3500);
+            
+            // 恢复默认颜色以便下一轮
+            resetColors(0, domElements.length-1);
+            setColor(domElements.indexOf(newPivotDom), '--bar-sorted');
+
+            await setSubtitle("第三步：递归 (Recursion)", "Step 3: Recursion", 2000);
+            await setSubtitle("现在，基准的位置已经永久固定。", "Now, the pivot's position is permanently fixed.", 2500);
+            await setSubtitle("我们只需对左边和右边的子数组，重复施展同样的魔法。", "We simply repeat the exact same magic on the left and right sub-arrays.", 3500);
+
+            // 开始自动加速排序剩余部分
+            await setSubtitle("通过不断地拆分和排序...", "Through continuous splitting and sorting...", 1000);
+            
+            // 真正的快速排序递归函数 (加速版视觉)
+            async function quickSortVisual(start, end) {
+                if (start >= end) {
+                    if(start === end) setColor(domElements.indexOf(domElements.find(el=>el.index===start)), '--bar-sorted');
+                    return;
+                }
+
+                // Partition
+                let pivotIdx = end;
+                let pivotVal = domElements.find(el => el.index === pivotIdx).value;
+                setColor(domElements.indexOf(domElements.find(el=>el.index===pivotIdx)), '--bar-pivot');
+                await sleep(400);
+
+                let ptr = start - 1;
+                for (let j = start; j < end; j++) {
+                    const jDom = domElements.find(el => el.index === j);
+                    setColor(domElements.indexOf(jDom), '--bar-compare');
+                    await sleep(300);
+                    
+                    if (jDom.value < pivotVal) {
+                        ptr++;
+                        await swapAnimation(ptr, j);
+                    }
+                    setColor(domElements.indexOf(domElements.find(el=>el.index===j)), '--bar-default');
+                }
+                
+                ptr++;
+                await swapAnimation(ptr, end);
+                setColor(domElements.indexOf(domElements.find(el=>el.index===ptr)), '--bar-sorted');
+                await sleep(300);
+
+                await quickSortVisual(start, ptr - 1);
+                await quickSortVisual(ptr + 1, end);
+            }
+
+            // 执行剩余的排序 (跳过已经排好序的左侧0到i-1，和右侧i+1到high)
+            await quickSortVisual(0, i - 1);
+            await setSubtitle("整个数组最终变得井然有序。", "The entire array eventually becomes perfectly ordered.", 1000);
+            await quickSortVisual(i + 1, high);
+
+            // 结束
+            await setSubtitle("这就是快速排序。", "This is Quick Sort.", 3000);
+            await setSubtitle("高效，优美，且充满逻辑的魅力。", "Efficient, elegant, and full of logical charm.", 4000);
+            
+            const subBox = document.getElementById('subtitle-container');
+            subBox.classList.remove('visible');
+            
+            // 庆祝动画
+            for(let k=0; k<domElements.length; k++){
+                const dom = domElements.find(el => el.index === k);
+                dom.bar.style.transform = 'translateY(-30px)';
+                dom.bar.style.boxShadow = '0 15px 35px rgba(6, 214, 160, 0.4)';
+                await sleep(100);
+                dom.bar.style.transform = 'translateY(0)';
+            }
+        }
+
+        // 启动
+        window.onload = () => {
+            initBars();
+            runCinematicQuickSort();
+        };
+
+    </script>
+</body>
+</html>
