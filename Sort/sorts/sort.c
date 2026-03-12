@@ -3,9 +3,9 @@
 
 //交换函数
 void swap(int* a, int* b) {
-	int temp = *a;
+	int tmp = *a;
 	*a = *b;
-	*b = temp;
+	*b = tmp;
 }
 
 //冒泡排序
@@ -54,3 +54,153 @@ void InsertSort(int* a, int n)
 	}
 }
 
+//选择排序
+void SelectSort(int* a, int n)
+{
+	int begin = 0;
+	int end = n - 1;
+
+	while (begin < end)
+	{
+		int maxi = begin;
+		int mini = begin;
+
+		for (int i = begin + 1 ;i <= end ; ++i)
+		{
+			if (a[maxi] < a[i])
+			{
+				maxi = i;
+			}
+			if (a[mini] > a[i])
+			{
+				mini = i;
+			}
+
+		}
+
+		swap(&a[begin], &a[mini]);
+		if (begin == maxi)
+			maxi = mini;
+
+		swap(&a[end], &a[maxi]);
+		++begin;
+		--end;
+	}
+	
+}
+
+//hoare法
+void QuickSort1(int* a,int left, int right)
+{
+	if (left >= right)
+		return;
+
+	int keyi = left;
+	int begin = left, end = right;
+	while (begin < end)
+	{
+		// 右边找小
+		while (begin < end && a[end] >= a[keyi])
+		{
+			--end;
+		}
+
+		// 左边找大
+		while (begin < end && a[begin] <= a[keyi])
+		{
+			++begin;
+		}
+
+		swap(&a[begin], &a[end]);
+	}
+
+	swap(&a[keyi], &a[begin]);
+	keyi = begin;
+	// [left, keyi-1] keyi [keyi+1, right]
+	QuickSort1(a, left, keyi - 1);
+	QuickSort1(a, keyi + 1, right);
+}
+
+//前后指针法
+void QuickSort2(int* a, int left, int right)
+{
+	if (left >= right)
+		return;
+
+	int keyi = left;
+	int prev =left;
+	int cur = left + 1;
+
+	while (cur <= right)
+	{
+		while (a[cur] <=a[keyi] && ++prev!=cur)
+		{
+			swap(&a[prev], &a[cur]);
+		}
+		cur++;
+	}
+	swap(&a[keyi], &a[prev]);
+	keyi = prev;
+
+	QuickSort2(a, left, keyi - 1);
+	QuickSort2(a, keyi + 1, right);
+}
+
+#include "Stack.h"
+
+int QuickSort3(int* a, int left, int right)
+{
+	
+	int keyi = left;
+	int prev = left;
+	int cur = left + 1;
+
+	if (left >= right)
+		return prev;
+
+	while (cur <= right)
+	{
+		while (a[cur] <= a[keyi] && ++prev != cur)
+		{
+			swap(&a[prev], &a[cur]);
+		}
+		cur++;
+	}
+	swap(&a[keyi], &a[prev]);
+	keyi = prev;
+
+	QuickSort2(a, left, keyi - 1);
+	QuickSort2(a, keyi + 1, right);
+
+	return prev;
+}
+
+//非递归快排
+void QuickSortNonR(int* a, int left, int right)
+{
+	ST st;
+	STInit(&st);
+	STPush(&st, right);
+	STPush(&st, left);
+	while (!STEmpty(&st))
+	{
+		int begin = STTop(&st);
+		STPop(&st);
+		int end = STTop(&st);
+		STPop(&st);
+
+		int keyi = QuickSort3(a, begin, begin);
+		if(keyi-1 > begin)
+		{
+			STPush(&st, keyi - 1);
+			STPush(&st, begin);
+		}
+		if (keyi + 1 < end)
+		{
+			STPush(&st, end);
+			STPush(&st, keyi + 1);
+		}
+	
+	}
+	STDestroy(&st);
+}

@@ -1,0 +1,49 @@
+{
+  "Version": 1,
+  "WorkspaceRootPath": "D:\\github\\leecode\\",
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{103ACBC6-C23F-4C73-8593-1E5FA1D29723}|leecode\\leecode.vcxproj|D:\\github\\leecode\\leecode\\\u53CD\u8F6C.c||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{103ACBC6-C23F-4C73-8593-1E5FA1D29723}|leecode\\leecode.vcxproj|solutionrelative:leecode\\\u53CD\u8F6C.c||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+    }
+  ],
+  "DocumentGroupContainers": [
+    {
+      "Orientation": 0,
+      "VerticalTabListWidth": 256,
+      "DocumentGroups": [
+        {
+          "DockedWidth": 200,
+          "SelectedChildIndex": 3,
+          "Children": [
+            {
+              "$type": "Bookmark",
+              "Name": "ST:283709:0:{1a46fd64-28d5-0019-8eb3-17a02d419b53}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{3ae79031-e1bc-11d0-8f78-00a0c9110057}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{aa2115a1-9712-457b-9047-dbb71ca2cdd2}"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "\u53CD\u8F6C.c",
+              "DocumentMoniker": "D:\\github\\leecode\\leecode\\\u53CD\u8F6C.c",
+              "RelativeDocumentMoniker": "leecode\\\u53CD\u8F6C.c",
+              "ToolTip": "D:\\github\\leecode\\leecode\\\u53CD\u8F6C.c",
+              "RelativeToolTip": "leecode\\\u53CD\u8F6C.c",
+              "ViewState": "AgIAAIsAAAAAAAAAAAAAAJMAAAADAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000423|",
+              "WhenOpened": "2026-02-02T05:32:45.625Z",
+              "EditorCaption": ""
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

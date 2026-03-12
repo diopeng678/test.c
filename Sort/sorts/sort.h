@@ -9,3 +9,15 @@ void BubbleSort(int* a, int n);
 
 //插入排序
 void InsertSort(int* a, int n);
+
+//选择排序
+void SelectSort(int* a, int n);
+
+//快速排序hoare法
+void QuickSort1(int* a,int left, int right);
+
+//快速排序前后指针法
+void QuickSort2(int* a, int left, int right);
+
+//非递归快排
+void QuickSortNonR(int* a, int left, int right);
