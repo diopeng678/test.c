@@ -1,6 +1,8 @@
 #define _CRT_SECURE_NO_WARNINGS
 #include <stdio.h>
 #include<stdlib.h>
+#include<string.h>
+
 //交换函数
 void swap(int* a, int* b);
 
@@ -21,3 +23,5 @@ void QuickSort2(int* a, int left, int right);
 
 //非递归快排
 void QuickSortNonR(int* a, int left, int right);
+
+void MergeSort(int* a, int n);

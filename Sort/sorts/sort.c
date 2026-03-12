@@ -204,3 +204,53 @@ void QuickSortNonR(int* a, int left, int right)
 	}
 	STDestroy(&st);
 }
+
+//归并排序
+void _Mergesort(int* a, int* tmp, int begin, int end)
+{
+	if (begin >= end)
+		return;
+	int mid = (begin + end) / 2;
+	_Mergesort(a, tmp, begin, mid);
+	_Mergesort(a, tmp, mid + 1, end);
+	//这里的区间不能取减一的，因为mid是向下取整的，所以mid+1才是右边的开始位置
+	//如果取减一的可能会栈溢出
+
+	int begin1 = begin, end1 = mid;
+	int begin2 = mid + 1, end2 = end;
+	int i = begin;
+	while(begin1 <= end1 && begin2 <= end2)
+	{
+		if (a[begin1] < a[begin2])
+		{
+			tmp[i++] = a[begin1++];
+		}
+		else
+		{
+			tmp[i++] = a[begin2++];
+		}
+	}
+	while(begin1 <= end1)
+	{
+		tmp[i++] = a[begin1++];
+	}
+	while (begin2 <= end2)
+	{
+		tmp[i++] = a[begin2++];
+	}
+	memcpy(a + begin, tmp + begin, (end - begin + 1) * sizeof(int));
+}
+
+void MergeSort(int* a, int n)
+{
+	int* tmp = (int*)malloc(sizeof(int) * n);
+	if (tmp == NULL)
+	{
+		perror("malloc fail");
+		return;
+	}
+	_Mergesort(a, tmp, 0, n - 1);
+
+	free(tmp);
+	tmp = NULL;
+}

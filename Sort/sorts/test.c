@@ -62,8 +62,20 @@ void testQuick3()
 	printf("\n");
 }
 
+void testmerge()
+{
+	int a[] = { 33,24,52,63,53,654,645,4675,4756,654,7654,3456 };
+	int n = sizeof(a) / sizeof(a[0]);
+	MergeSort(a, n);
+	for (int i = 0; i < n; i++)
+	{
+		printf("%d ", a[i]);
+	}
+	printf("\n");
+}
+
 int main()
 {
-	testQuick2();
+	testmerge();
 	return 0;
 }
