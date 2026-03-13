@@ -24,4 +24,8 @@ void QuickSort2(int* a, int left, int right);
 //∑«µ›πÈøÏ≈≈
 void QuickSortNonR(int* a, int left, int right);
 
+//πÈ≤¢≈≈–Úµ›πÈ
 void MergeSort(int* a, int n);
+
+//πÈ≤¢≈≈–Ú∑«µ›πÈ
+void MergeSortNonR(int* a, int n);

@@ -74,8 +74,20 @@ void testmerge()
 	printf("\n");
 }
 
+void testmergeNonr()
+{
+	int a[] = { 33,24,52,63,53,654,645,4675,4756,654,7654,3456 };
+	int n = sizeof(a) / sizeof(a[0]);
+	MergeSortNonR(a, n);
+	for (int i = 0; i < n; i++)
+	{
+		printf("%d ", a[i]);
+	}
+	printf("\n");
+}
+
 int main()
 {
-	testmerge();
+	testmergeNonr();
 	return 0;
 }
