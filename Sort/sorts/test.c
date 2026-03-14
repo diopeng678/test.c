@@ -86,8 +86,28 @@ void testmergeNonr()
 	printf("\n");
 }
 
+//别忘了头文件<time.h>
+void Rand()
+{
+	int n = 100000;
+	srand(time(0));
+	const char* file = "data.txt";
+	FILE* fin = fopen(file, "w");
+	if (fin == NULL)
+	{
+		perror("file error");
+		return;
+	}
+	for (int i = 0; i < n; i++)
+	{
+		int x = (rand() + i) % 1000000;
+		fprintf(fin, "%d\n", x);
+	}
+	fclose(fin);
+}
+
 int main()
 {
-	testmergeNonr();
+	Rand();
 	return 0;
 }

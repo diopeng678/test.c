@@ -1,4 +1,3 @@
-﻿  sort.c
-  test.c
-  正在生成代码...
+﻿  test.c
+D:\github\Sort\sorts\test.c(92,8): warning C4244: “函数”: 从“time_t”转换到“unsigned int”，可能丢失数据
   sorts.vcxproj -> D:\github\Sort\x64\Debug\sorts.exe
