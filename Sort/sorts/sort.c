@@ -317,3 +317,43 @@ void MergeSortNonR(int* a, int n)
 	free(tmp);
 	tmp = NULL;
 }
+
+//计数排序
+// 适用于数据范围较小的情况，时间复杂度O(n+k)，空间复杂度O(k)，k是数据范围
+void  CountSort(int* a, int n)
+{
+	int max = a[0];
+	int min = a[0];
+	for(int i= 1; i < n; i++)
+	{
+		if (a[i] > max)
+			max = a[i];
+		if (a[i] < min)
+			min = a[i];
+	}
+	int range = max - min + 1;
+
+	int* count = (int*)malloc(sizeof(int) * range);
+	if (count == NULL)
+	{
+		perror("malloc fail");
+		return;
+	}
+
+	//统计次数
+	for(int i = 0; i < range; i++)
+	{
+		count[a[i] - min]++;
+	}
+
+	int j = 0;
+	for(int i = 0; i < range; i++)
+	{
+		while(count[i]--)
+		{
+			a[j++] = i + min;
+		}
+	}
+}
+
+//ok了 到这里也是结束了  红豆泥 绕了一大圈

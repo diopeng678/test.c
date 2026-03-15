@@ -5,7 +5,6 @@
 // 初始化和销毁
 void STInit(ST* pst)
 {     
-
 	assert(pst);
 
 	pst->a = NULL;
