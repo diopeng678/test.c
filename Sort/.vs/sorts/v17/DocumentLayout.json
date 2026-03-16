@@ -70,8 +70,7 @@
               "RelativeToolTip": "sorts\\sort.h",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAACIAAAAfAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
-              "WhenOpened": "2026-03-09T13:53:50.934Z",
-              "EditorCaption": ""
+              "WhenOpened": "2026-03-09T13:53:50.934Z"
             },
             {
               "$type": "Document",
@@ -83,8 +82,7 @@
               "RelativeToolTip": "sorts\\stack.h",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAA8AAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
-              "WhenOpened": "2026-03-12T07:27:56.064Z",
-              "EditorCaption": ""
+              "WhenOpened": "2026-03-12T07:27:56.064Z"
             },
             {
               "$type": "Document",
@@ -94,7 +92,7 @@
               "RelativeDocumentMoniker": "sorts\\sort.c",
               "ToolTip": "D:\\github\\Sort\\sorts\\sort.c",
               "RelativeToolTip": "sorts\\sort.c",
-              "ViewState": "AgIAAFQBAAAAAAAAAAAAAGYBAAAZAAAAAAAAAA==",
+              "ViewState": "AgIAAFEBAAAAAAAAAAAswGQBAAABAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000423|",
               "WhenOpened": "2026-03-09T13:54:29.094Z",
               "EditorCaption": ""
@@ -109,8 +107,7 @@
               "RelativeToolTip": "sorts\\stack.c",
               "ViewState": "AgIAABIAAAAAAAAAAAAAAFMAAAABAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000423|",
-              "WhenOpened": "2026-03-12T07:27:57.16Z",
-              "EditorCaption": ""
+              "WhenOpened": "2026-03-12T07:27:57.16Z"
             },
             {
               "$type": "Document",
