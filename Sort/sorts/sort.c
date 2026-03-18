@@ -357,3 +357,37 @@ void  CountSort(int* a, int n)
 }
 
 //ok了 到这里也是结束了  红豆泥 绕了一大圈
+
+//三路划分
+void QuickSort4(int* a, int left, int right)
+{
+	if(left >= right)
+		return;
+	int begin = left, end = right;
+	
+	int randix = (rand() % (right - left + 1));
+	swap(&a[left], &a[randix]);
+
+	int key = a[left];
+	int cur = left + 1;
+	while (cur < left)
+	{
+		if(a[cur] < key)
+		{
+			swap(&a[cur], &a[begin]);
+			begin++;
+			cur++;
+		}
+		else if (a[cur] > key)
+		{
+			swap(&a[cur], &a[end]); 
+			end--;
+		}
+		else
+		{
+			cur++;
+		}
+	}
+	QuickSort4(* a, left, right);
+	QuickSort4(* a, right + 1,end);
+}
