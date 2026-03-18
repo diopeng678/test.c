@@ -1,77 +1,77 @@
 import java.util.Random;
 import java.util.Scanner;
 
-public class FruitGame {
+public class AppleGame {
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
         Random random = new Random();
 
-        // 1. 初始化游戏数据
-        int coins = 10; // 初始金币
-        String[] fruits = {"苹果", "木瓜", "西瓜", "香蕉", "橙子", "葡萄"};
-        int[] multipliers = {2, 5, 10, 20, 50, 100}; // 对应奖励系数
+        // 1. 鍒濆鍖栨父鎴忔暟鎹�
+        int coins = 10; // 鍒濆閲戝竵
+        String[] fruits = {"鑻规灉", "鏈ㄧ摐", "瑗跨摐", "棣欒晧", "姗欏瓙", "钁¤悇"};
+        int[] multipliers = {2, 5, 10, 20, 50, 100}; // 瀵瑰簲濂栧姳绯绘暟
 
-        System.out.println("🎮 欢迎来到幸运苹果机游戏！");
-        System.out.println("初始金币：" + coins);
+        System.out.println("馃幃 娆㈣繋鏉ュ埌骞歌繍鑻规灉鏈烘父鎴忥紒");
+        System.out.println("鍒濆閲戝竵锛�" + coins);
         System.out.println("------------------------");
 
-        // 2. 游戏主循环
+        // 2. 娓告垙涓诲惊鐜�
         while (coins > 0) {
-            // 显示当前金币
-            System.out.println("\n当前金币：" + coins);
+            // 鏄剧ず褰撳墠閲戝竵
+            System.out.println("\n褰撳墠閲戝竵锛�" + coins);
 
-            // 显示水果选项
-            System.out.println("可选水果及奖励系数：");
+            // 鏄剧ず姘存灉閫夐」
+            System.out.println("鍙€夋按鏋滃強濂栧姳绯绘暟锛�");
             for (int i = 0; i < fruits.length; i++) {
-                System.out.println((i + 1) + ". " + fruits[i] + " —— 奖励系数 ×" + multipliers[i]);
+                System.out.println((i + 1) + ". " + fruits[i] + " 鈥斺€� 濂栧姳绯绘暟 脳" + multipliers[i]);
             }
 
-            // 选择水果
-            System.out.print("请选择你要押注的水果（输入数字1-6）：");
-            int fruitChoice = scanner.nextInt() - 1; // 转成数组下标
+            // 閫夋嫨姘存灉
+            System.out.print("璇烽€夋嫨浣犺鎶兼敞鐨勬按鏋滐紙杈撳叆鏁板瓧1-6锛夛細");
+            int fruitChoice = scanner.nextInt() - 1; // 杞垚鏁扮粍涓嬫爣
             if (fruitChoice < 0 || fruitChoice >= fruits.length) {
-                System.out.println("❌ 输入错误，请重新选择！");
+                System.out.println("鉂� 杈撳叆閿欒锛岃閲嶆柊閫夋嫨锛�");
                 continue;
             }
             String selectedFruit = fruits[fruitChoice];
 
-            // 输入押注金额
-            System.out.print("请输入押注金币（1~" + coins + "）：");
+            // 杈撳叆鎶兼敞閲戦
+            System.out.print("璇疯緭鍏ユ娂娉ㄩ噾甯侊紙1~" + coins + "锛夛細");
             int bet = scanner.nextInt();
             if (bet < 1 || bet > coins) {
-                System.out.println("❌ 押注金额无效，请重新输入！");
+                System.out.println("鉂� 鎶兼敞閲戦鏃犳晥锛岃閲嶆柊杈撳叆锛�");
                 continue;
             }
 
-            // 3. 模拟运转（随机结果）
-            System.out.println("\n🎰 苹果机正在运转...");
+            // 3. 妯℃嫙杩愯浆锛堥殢鏈虹粨鏋滐級
+            System.out.println("\n馃幇 鑻规灉鏈烘鍦ㄨ繍杞�...");
             int resultIndex = random.nextInt(fruits.length);
             String resultFruit = fruits[resultIndex];
-            System.out.println("结果：" + resultFruit);
+            System.out.println("缁撴灉锛�" + resultFruit);
 
-            // 4. 结算
+            // 4. 缁撶畻
             if (resultFruit.equals(selectedFruit)) {
-                // 猜中：获得奖励
+                // 鐚滀腑锛氳幏寰楀鍔�
                 int reward = bet * multipliers[resultIndex];
                 coins += reward;
-                System.out.println("🎉 恭喜！猜中了 " + selectedFruit + "，获得 " + reward + " 金币！");
+                System.out.println("馃帀 鎭枩锛佺寽涓簡 " + selectedFruit + "锛岃幏寰� " + reward + " 閲戝竵锛�");
             } else {
-                // 没猜中：扣除押注
+                // 娌＄寽涓細鎵ｉ櫎鎶兼敞
                 coins -= bet;
-                System.out.println("😢 很遗憾，没猜中，失去 " + bet + " 金币。");
+                System.out.println("馃槩 寰堥仐鎲撅紝娌＄寽涓紝澶卞幓 " + bet + " 閲戝竵銆�");
             }
 
-            // 询问是否继续
-            System.out.print("\n是否继续游戏？（输入y继续，其他键退出）：");
+            // 璇㈤棶鏄惁缁х画
+            System.out.print("\n鏄惁缁х画娓告垙锛燂紙杈撳叆y缁х画锛屽叾浠栭敭閫€鍑猴級锛�");
             String choice = scanner.next();
             if (!choice.equalsIgnoreCase("y")) {
                 break;
             }
         }
 
-        // 5. 游戏结束
+        // 5. 娓告垙缁撴潫
         System.out.println("\n------------------------");
-        System.out.println("游戏结束！最终金币：" + coins);
+        System.out.println("娓告垙缁撴潫锛佹渶缁堥噾甯侊細" + coins);
         scanner.close();
     }
 }
