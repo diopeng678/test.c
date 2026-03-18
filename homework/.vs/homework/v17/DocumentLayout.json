@@ -3,8 +3,11 @@
   "WorkspaceRootPath": "D:\\github\\homework\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{138AD09B-093F-487A-9A61-3524FC8354DC}|homework\\homework.vcxproj|D:\\github\\homework\\homework\\max.c||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
-      "RelativeMoniker": "D:0:0:{138AD09B-093F-487A-9A61-3524FC8354DC}|homework\\homework.vcxproj|solutionrelative:homework\\max.c||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+      "AbsoluteMoniker": "D:0:0:{138AD09B-093F-487A-9A61-3524FC8354DC}|homework\\homework.vcxproj|D:\\github\\homework\\homework\\max.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{138AD09B-093F-487A-9A61-3524FC8354DC}|homework\\homework.vcxproj|solutionrelative:homework\\max.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{138AD09B-093F-487A-9A61-3524FC8354DC}|homework\\homework.vcxproj|C:\\PROGRAM FILES (X86)\\WINDOWS KITS\\10\\INCLUDE\\10.0.26100.0\\UCRT\\CORECRT_WSTDIO.H||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
     }
   ],
   "DocumentGroupContainers": [
@@ -14,7 +17,7 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 3,
+          "SelectedChildIndex": 4,
           "Children": [
             {
               "$type": "Bookmark",
@@ -30,14 +33,25 @@
             },
             {
               "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "corecrt_wstdio.h",
+              "DocumentMoniker": "C:\\Program Files (x86)\\Windows Kits\\10\\Include\\10.0.26100.0\\ucrt\\corecrt_wstdio.h",
+              "ToolTip": "C:\\Program Files (x86)\\Windows Kits\\10\\Include\\10.0.26100.0\\ucrt\\corecrt_wstdio.h",
+              "ViewState": "AgIAABMAAAAAAAAAAAAAACEAAAANAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
+              "WhenOpened": "2026-03-18T06:09:51.876Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
               "DocumentIndex": 0,
-              "Title": "max.c",
-              "DocumentMoniker": "D:\\github\\homework\\homework\\max.c",
-              "RelativeDocumentMoniker": "homework\\max.c",
-              "ToolTip": "D:\\github\\homework\\homework\\max.c",
-              "RelativeToolTip": "homework\\max.c",
-              "ViewState": "AgIAAE0AAAAAAAAAAAAswHEAAAAMAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000423|",
+              "Title": "max.cpp",
+              "DocumentMoniker": "D:\\github\\homework\\homework\\max.cpp",
+              "RelativeDocumentMoniker": "homework\\max.cpp",
+              "ToolTip": "D:\\github\\homework\\homework\\max.cpp",
+              "RelativeToolTip": "homework\\max.cpp",
+              "ViewState": "AgIAAOwAAAAAAAAAAAAIwPwAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
               "WhenOpened": "2026-03-07T09:16:12.74Z",
               "EditorCaption": ""
             }

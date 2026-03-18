@@ -19,7 +19,7 @@ void WelcomeToGame()
 	wprintf(L"欢迎来到贪吃蛇小游戏\n");
 	SetPos(42, 20);
 	system("pause");
-	system("cls");//清屏
+	system("cls");
 	SetPos(25, 14);
 	wprintf(L"用 ↑. ↓ . ← . → 来控制蛇的移动，按F3加速，F4减速\n");
 	SetPos(25, 15);
@@ -104,7 +104,7 @@ void InitSnake(pSnake ps)
 	ps->_food_weight = 10;
 	ps->_sleep_time = 200;//单位是毫秒
 	ps->_status = OK;
-	   
+
 }
 
 void CreateFood(pSnake ps)
@@ -161,7 +161,7 @@ void GameStart(pSnake ps)
 	//影藏光标操作
 	CONSOLE_CURSOR_INFO CursorInfo;
 	GetConsoleCursorInfo(houtput, &CursorInfo);//获取控制台光标信息
-	CursorInfo.bVisible = false; //隐藏控制台光标
+	CursorInfo.bVisible = 0; //隐藏控制台光标
 	SetConsoleCursorInfo(houtput, &CursorInfo);//设置控制台光标状态
 
 	//1. 打印环境界面和功能介绍
@@ -186,7 +186,7 @@ void PrintHelpInfo()
 	wprintf(L"%ls", L"按ESC退出游戏，按空格暂停游戏");
 
 	SetPos(64, 18);
-	wprintf(L"%ls", L"你鹏 制造");
+	wprintf(L"%ls", L"比特就业课制作");
 }
 
 #define KEY_PRESS(vk)  ((GetAsyncKeyState(vk)&1)?1:0)
@@ -204,69 +204,69 @@ void Pause()
 	}
 }
 
-//int NextIsFood(pSnakeNode pn, pSnake ps)
-//{
-//	if (ps->_pFood->x == pn->x && ps->_pFood->y == pn->y)
-//		return 1;
-//	else
-//		return 0;
-//}
-
 int NextIsFood(pSnakeNode pn, pSnake ps)
 {
-	return (ps->_pFood->x == pn->x && ps->_pFood->y == pn->y);
+	if (ps->_pFood->x == pn->x && ps->_pFood->y == pn->y)
+		return 1;
+	else
+		return 0;
 }
 
-void EatFood(pSnakeNode pn, pSnake ps)
-{
-	//头插法
-	ps->_pFood->next = ps->_pSnake;
-	ps->_pSnake = ps->_pFood;
-
-	//释放下一个位置的节点
-	free(pn);
-	pn = NULL;
-
-	pSnakeNode cur = ps->_pSnake;
-	//打印蛇
-	while (cur)
-	{
-		SetPos(cur->x, cur->y);
-		wprintf(L"%lc", BODY);
-		cur = cur->next;
-	}
-	ps->_score += ps->_food_weight;
-
-	//重新创建食物
-	CreateFood(ps);
-}
-
-void NoFood(pSnakeNode pn, pSnake ps)
-{
-	//头插法
-	pn->next = ps->_pSnake;
-	ps->_pSnake = pn;
-
-	pSnakeNode cur = ps->_pSnake;
-	while (cur->next->next != NULL)
-	{
-		SetPos(cur->x, cur->y);
-		wprintf(L"%lc", BODY);
-		cur = cur->next;
-	}
-
-	//把最后一个结点打印成空格
-	SetPos(cur->next->x, cur->next->y);
-	printf("  ");
-
-	//释放最后一个结点
-	free(cur->next);
-
-	//把倒数第二个节点的地址置为NULL
-	cur->next = NULL;
-}
-
-
+//int NextIsFood(pSnakeNode pn, pSnake ps)
+//{
+//	return (ps->_pFood->x == pn->x && ps->_pFood->y == pn->y);
+//}
+//
+//void EatFood(pSnakeNode pn, pSnake ps)
+//{
+//	//头插法
+//	ps->_pFood->next = ps->_pSnake;
+//	ps->_pSnake = ps->_pFood;
+//
+//	//释放下一个位置的节点
+//	free(pn);
+//	pn = NULL;
+//
+//	pSnakeNode cur = ps->_pSnake;
+//	//打印蛇
+//	while (cur)
+//	{
+//		SetPos(cur->x, cur->y);
+//		wprintf(L"%lc", BODY);
+//		cur = cur->next;
+//	}
+//	ps->_score += ps->_food_weight;
+//
+//	//重新创建食物
+//	CreateFood(ps);
+//}
+//
+//void NoFood(pSnakeNode pn, pSnake ps)
+//{
+//	//头插法
+//	pn->next = ps->_pSnake;
+//	ps->_pSnake = pn;
+//
+//	pSnakeNode cur = ps->_pSnake;
+//	while (cur->next->next != NULL)
+//	{
+//		SetPos(cur->x, cur->y);
+//		wprintf(L"%lc", BODY);
+//		cur = cur->next;
+//	}
+//
+//	//把最后一个结点打印成空格
+//	SetPos(cur->next->x, cur->next->y);
+//	printf("  ");
+//
+//	//释放最后一个结点
+//	free(cur->next);
+//
+//	//把倒数第二个节点的地址置为NULL
+//	cur->next = NULL;
+//}
+//
+//
 void KillByWall(pSnake ps)
 {
 	if (ps->_pSnake->x == 0 || ps->_pSnake->x == 56 ||
@@ -337,18 +337,157 @@ void SnakeMove(pSnake ps)
 }
 
 
+//void GameRun(pSnake ps)
+//{
+//	//打印帮助信息
+//	PrintHelpInfo();
+//	do
+//	{
+//		//打印总分数和食物的分值
+//		SetPos(64, 10);
+//		printf("总分数:%d\n", ps->_score);
+//		SetPos(64, 11);
+//		printf("当前食物的分数:%2d\n", ps->_food_weight);
+//
+//		if (KEY_PRESS(VK_UP) && ps->_dir != DOWN)
+//		{
+//			ps->_dir = UP;
+//		}
+//		else if (KEY_PRESS(VK_DOWN) && ps->_dir != UP)
+//		{
+//			ps->_dir = DOWN;
+//		}
+//		else if (KEY_PRESS(VK_LEFT) && ps->_dir != RIGHT)
+//		{
+//			ps->_dir = LEFT;
+//		}
+//		else if (KEY_PRESS(VK_RIGHT) && ps->_dir != LEFT)
+//		{
+//			ps->_dir = RIGHT;
+//		}
+//		else if (KEY_PRESS(VK_SPACE))
+//		{
+//			Pause();
+//		}
+//		else if (KEY_PRESS(VK_ESCAPE))
+//		{
+//			//正常退出游戏
+//			ps->_status = END_NORMAL;
+//		}
+//		else if (KEY_PRESS(VK_F3))
+//		{
+//			//加速
+//			if (ps->_sleep_time > 80)
+//			{
+//				ps->_sleep_time -= 30;
+//				ps->_food_weight += 2;
+//			}
+//		}
+//		else if (KEY_PRESS(VK_F4))
+//		{
+//			//减速
+//			if (ps->_food_weight > 2)
+//			{
+//				ps->_sleep_time += 30;
+//				ps->_food_weight -= 2;
+//			}
+//		}
+//
+//		SnakeMove(ps);//蛇走一步的过程
+//
+//		Sleep(ps->_sleep_time);
+//
+//	} while (ps->_status == OK);
+//}
+//
+//void GameEnd(pSnake ps)
+//{
+//	SetPos(24, 12);
+//	switch (ps->_status)
+//	{
+//	case END_NORMAL:
+//		wprintf(L"您主动结束游戏\n");
+//		break;
+//	case KILL_BY_WALL:
+//		wprintf(L"您撞到墙上，游戏结束\n");
+//		break;
+//	case KILL_BY_SELF:
+//		wprintf(L"您撞到了自己，游戏结束\n");
+//		break;
+//	}
+//
+//	//释放蛇身的链表
+//
+//	pSnakeNode cur = ps->_pSnake;
+//	while (cur)
+//	{
+//		pSnakeNode del = cur;
+//		cur = cur->next;
+//		free(del);
+//	}
+//}
+// 修复1：吃食物逻辑（删除错误的free(pn)，释放旧食物节点，避免内存泄漏）
+void EatFood(pSnakeNode pn, pSnake ps)
+{
+	// 头插法：新节点（pn）作为新蛇头，原蛇头接在后面
+	pn->next = ps->_pSnake;
+	ps->_pSnake = pn;
+
+	// 重新绘制蛇身
+	pSnakeNode cur = ps->_pSnake;
+	while (cur)
+	{
+		SetPos(cur->x, cur->y);
+		wprintf(L"%lc", BODY);
+		cur = cur->next;
+	}
+
+	// 加分并释放旧食物节点（核心修复：避免内存泄漏）
+	ps->_score += ps->_food_weight;
+	free(ps->_pFood);
+	ps->_pFood = NULL;
+
+	// 重新创建食物
+	CreateFood(ps);
+}
+
+// 修复2：无食物逻辑（printf改wprintf，宽字符空格清除蛇尾，避免残留）
+void NoFood(pSnakeNode pn, pSnake ps)
+{
+	// 头插法添加新蛇头
+	pn->next = ps->_pSnake;
+	ps->_pSnake = pn;
+
+	pSnakeNode cur = ps->_pSnake;
+	while (cur->next->next != NULL)
+	{
+		SetPos(cur->x, cur->y);
+		wprintf(L"%lc", BODY);
+		cur = cur->next;
+	}
+
+	// 核心修复：宽字符wprintf清除蛇尾，替换原printf("  ")
+	SetPos(cur->next->x, cur->next->y);
+	wprintf(L"  ");
+
+	// 释放蛇尾节点
+	free(cur->next);
+	cur->next = NULL;
+}
+
+// 修复3：游戏运行逻辑（调整加速减速边界，避免分值/速度异常）
 void GameRun(pSnake ps)
 {
-	//打印帮助信息
-	PrintHelpInfo();
+	PrintHelpInfo(); // 打印帮助信息
 	do
 	{
-		//打印总分数和食物的分值
+		// 打印分数（保留原逻辑）
 		SetPos(64, 10);
 		printf("总分数:%d\n", ps->_score);
 		SetPos(64, 11);
 		printf("当前食物的分数:%2d\n", ps->_food_weight);
 
+		// 方向控制（保留原逻辑）
 		if (KEY_PRESS(VK_UP) && ps->_dir != DOWN)
 		{
 			ps->_dir = UP;
@@ -371,35 +510,34 @@ void GameRun(pSnake ps)
 		}
 		else if (KEY_PRESS(VK_ESCAPE))
 		{
-			//正常退出游戏
 			ps->_status = END_NORMAL;
 		}
+		// 核心修复：F3加速（最小间隔80ms，最大分值20，避免无限加速）
 		else if (KEY_PRESS(VK_F3))
 		{
-			//加速
-			if (ps->_sleep_time > 80)
+			if (ps->_sleep_time > 80 && ps->_food_weight < 20)
 			{
 				ps->_sleep_time -= 30;
 				ps->_food_weight += 2;
 			}
 		}
+		// 核心修复：F4减速（最小分值10，最大间隔500ms，与初始值匹配）
 		else if (KEY_PRESS(VK_F4))
 		{
-			//减速
-			if (ps->_food_weight > 2)
-			{         
+			if (ps->_sleep_time < 500 && ps->_food_weight > 10)
+			{
 				ps->_sleep_time += 30;
 				ps->_food_weight -= 2;
 			}
 		}
 
-		SnakeMove(ps);//蛇走一步的过程
-
+		SnakeMove(ps);
 		Sleep(ps->_sleep_time);
 
 	} while (ps->_status == OK);
 }
 
+// 修复4：GameEnd（补充食物节点释放，避免内存泄漏）
 void GameEnd(pSnake ps)
 {
 	SetPos(24, 12);
@@ -416,8 +554,7 @@ void GameEnd(pSnake ps)
 		break;
 	}
 
-	//释放蛇身的链表
-
+	// 释放蛇身链表（保留原逻辑）
 	pSnakeNode cur = ps->_pSnake;
 	while (cur)
 	{
@@ -425,4 +562,11 @@ void GameEnd(pSnake ps)
 		cur = cur->next;
 		free(del);
 	}
-}   
+
+	// 核心修复：释放食物节点，避免内存泄漏
+	if (ps->_pFood != NULL)
+	{
+		free(ps->_pFood);
+		ps->_pFood = NULL;
+	}
+}
