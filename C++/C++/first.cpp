@@ -28,7 +28,19 @@ bool operator == (const C& c1, const C& c2) {
 
 
 //空类的大小为1字节
-class man{};
+class man
+{
+public:
+	man()
+	{
+		cout << "这是一个空类" << endl;
+	}
+
+};
+
+inline void inlineFunction() {
+	cout << "这是一个内联函数" << endl;
+}
 
 int main() {
 	int z = sizeof(man); //类对象占用的内存空间
@@ -42,6 +54,11 @@ int main() {
 	cout << "常量引用: " << &c <<"  "<< & h << endl; //常量引用  40
 	//引用的两个数是一样的，说明引用就是一个别名
 
+	man m;
+	int q = sizeof(m); //对象占用的内存空间
+	cout << "对象占用的内存空间: " << q << " 字节" << endl; //对象占用的内存空间: 4 字节
+	//空类的大小为1字节
 
+	inlineFunction();
 	return 0;
 }
