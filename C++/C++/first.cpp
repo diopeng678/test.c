@@ -35,7 +35,10 @@ public:
 	{
 		cout << "这是一个空类" << endl;
 	}
-
+	~man()
+	{
+		cout << "这是空类的析构函数" << endl;
+	}
 };
 
 inline void inlineFunction() {

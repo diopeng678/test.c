@@ -127,7 +127,6 @@
     <ClCompile Include="snake.h" />
     <ClCompile Include="snake.c" />
     <ClCompile Include="test.c" />
-    <ClCompile Include="try.c" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

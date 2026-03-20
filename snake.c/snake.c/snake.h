@@ -1,5 +1,4 @@
-﻿//
-
+﻿
 #define _CRT_SECURE_NO_WARNINGS 1  // 修复：去掉多余下划线
 #pragma once
 #include <windows.h>
@@ -55,18 +54,34 @@ typedef struct Snake
 
 // 函数声明（补充PrintHelpInfo/Pause，与snake.c一一对应）
 void SetPos(short x, short y);
+
 void WelcomeToGame();
+
 void CreateMap();
+
 void InitSnake(pSnake ps);
+
 void CreateFood(pSnake ps);
+
 void GameStart(pSnake ps);
+
 void PrintHelpInfo();
+
 void Pause();
+
 int NextIsFood(pSnakeNode pn, pSnake ps);
+
 void EatFood(pSnakeNode pn, pSnake ps);
+
 void NoFood(pSnakeNode pn, pSnake ps);
+
 void KillByWall(pSnake ps);
+
 void KillBySelf(pSnake ps);
+
 void SnakeMove(pSnake ps);
+
 void GameRun(pSnake ps);
+
 void GameEnd(pSnake ps);
+
