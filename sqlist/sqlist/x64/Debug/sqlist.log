@@ -1,0 +1,7 @@
+﻿  test.c
+D:\github\sqlist\sqlist\sqlist.h(2,9): warning C4005: “_CRT_SECURE_NO_WARNINGS”: 宏重定义
+  (编译源文件“test.c”)
+      D:\github\sqlist\sqlist\test.c(1,9):
+      参见“_CRT_SECURE_NO_WARNINGS”的前一个定义
+  
+  sqlist.vcxproj -> D:\github\sqlist\x64\Debug\sqlist.exe
