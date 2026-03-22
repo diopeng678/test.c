@@ -3,19 +3,18 @@
 using namespace std;
 #include"date.h"
 
+void TestDate4()
+{
+	Date d1(2034, 10, 1);
+	Date d2(2034, 10 , 32);
+
+	cout << d1 - d2 << endl;
+}
+
 int main()
 {
-	Date d1(2024, 7, 12);
-	Date d2 = d1 + 100;
-	//Date d3(d1 + 100);
-	d1.Print();
-	d2.Print();
-
-	//d1 += 100;
-	//d1.Print();
-
-	d1 += 30000;
-	d1.Print();
-
+	TestDate4();
 	return 0;
-}
+}	
+//我真燃尽了  
+//我真燃尽了
