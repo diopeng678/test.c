@@ -7,6 +7,7 @@ using namespace std;
 
 class Date
 {
+	friend ostream& operator<<(ostream& out, Date& d);
 public:
 	Date(int year = 1900, int month = 1, int day = 1);
 	void Print();

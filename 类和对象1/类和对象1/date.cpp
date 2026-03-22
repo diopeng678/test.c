@@ -50,3 +50,15 @@ Date Date::operator+(int day)
 
 	return tmp;
 }
+
+//<< 是从左到右匹配的 
+//void operator<<(ostream &out, Date& d)
+//{
+//	out << d._year << "-" << d._month << "-" << d._day;
+//}
+
+ostream& operator<<(ostream& out, Date& d)
+{
+	out << d._year << "-" << d._month << "-" << d._day;
+	return out;
+}
