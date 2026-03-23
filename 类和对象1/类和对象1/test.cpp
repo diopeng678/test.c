@@ -11,9 +11,21 @@ void TestDate4()
 	cout << d1 - d2 << endl;
 }
 
+void TestDate1()
+{
+	Date d1(2026,3,23);
+	d1.Print();
+	Date d2 (2026,11,27);
+	d2.Print();
+	cout << d2 - d1 << endl;
+	Date d3;
+	cin >> d3;
+}
+
 int main()
 {
-	TestDate4();
+	//TestDate4();
+	TestDate1();
 	return 0;
 }	
 //Œ“’Ê»ºæ°¡À  

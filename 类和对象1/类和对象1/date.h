@@ -51,6 +51,3 @@ private:
 	int _month;
 	int _day;
 };
-
-ostream& operator<<(ostream& out, const Date& d);
-istream& operator>>(istream& in, Date& d);

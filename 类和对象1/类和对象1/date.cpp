@@ -25,12 +25,6 @@ Date::Date(int year, int month, int day)
 	}
 }
 
-//Date::Date(int year, int month, int day)
-//{
-//	_year = year;
-//	_month = month;
-//	_day = day;
-//}
 
 void Date::Print() const
 {
@@ -205,18 +199,18 @@ istream& operator>>(istream& in, Date& d)
 {
 	while (1)
 	{
-		cout<< "请输入日期 (年 月 日): ";
+		cout<< "请输入日期 年 月 日: ";
 		in >> d._year >> d._month >> d._day;
 		if(!d.Checkdate())
 		{
 			cout << "日期错误，请重新输入!" << endl;
+			d.Print();
+			cout << "请重新输入日期 年 月 日: ";
 		}
 		else
 		{
 			break;
 		}
 	}
-	in >> d._year >> d._month >> d._day;
-
 	return in;
 }
