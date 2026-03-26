@@ -47,7 +47,7 @@ inline void inlineFunction() {
 
 //模板函数 适用于不同类型的数据 但是同一个函数
 template<class T>
-void swwap(T& a, T& b) {
+void swwap( T& a,  T& b) {
 	T temp = a;
 	a = b;
 	b = temp;
