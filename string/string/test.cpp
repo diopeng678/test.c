@@ -180,12 +180,12 @@ void test_string4()
 
 }
 
-int main()
-{
-	test_string4();
-
-	return 0;
-}
+//int main()
+//{
+//	test_string4();
+//
+//	return 0;
+//}
 
 //int func1()
 //{
@@ -246,3 +246,79 @@ int main()
 //
 //	return 0;
 //}
+
+
+
+
+//int main() {
+//	// 构造
+//	string s1;                         // 空字符串
+//	string s2("hello world");          // 字面量
+//	string s3 = s2;                    // 拷贝
+//	string s4(std::move(s3));          // 移动
+//
+//	// 访问与遍历
+//	s2[0] = 'H';
+//	try {
+//		char c = s2.at(0);
+//		cout << "at(0): " << c << '\n';
+//	}
+//	catch (...) {}
+//
+//	for (auto& ch : s2) { ch = toupper(ch); }
+//	cout << s2 << '\n';
+//
+//	// 修改
+//	s2.append("!!!");
+//	s2.insert(5, " C++");
+//	s2.erase(5, 4); // 删除插入的 " C++"
+//	s2.replace(0, 5, "Hi");
+//	s2.push_back('?');
+//	cout << "modified: " << s2 << '\n';
+//
+//	// 容量操作
+//	cout << "size: " << s2.size() << " capacity: " << s2.capacity() << '\n';
+//	s2.reserve(100);
+//	cout << "after reserve capacity: " << s2.capacity() << '\n';
+//
+//	// 搜索与子串
+//	auto pos = s2.find("Hi");
+//	if (pos != string::npos) {
+//		cout << "found at " << pos << " substr: " << s2.substr(pos, 2) << '\n';
+//	}
+//
+//	// 转换
+//	string num = to_string(42);
+//	int val = stoi("123");
+//	cout << num << " " << val << '\n';
+//
+//	// C 风格字符串
+//	cout << "c_str: " << s2.c_str() << '\n';
+//
+//	return 0;
+//}
+
+
+//迭代器类似于指针，提供了访问容器元素的方式
+int main()
+{
+	string man ("wang shi yu nb");
+	cout << man <<endl;
+	man.erase(0, 5);
+	cout << man << endl;
+	man.append(" 666");
+	cout << man << endl;
+	string::iterator j =  man.begin();
+	cout << *j << endl;
+	string::reverse_iterator i = man.rbegin();
+	cout << *i << endl;
+	cout << man.size() << endl;
+	//遍历
+	for (auto& ch : man)
+	{
+		cout << ch << " ";
+	}
+
+	return 0;
+
+}
