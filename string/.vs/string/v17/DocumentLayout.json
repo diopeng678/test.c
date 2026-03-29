@@ -3,6 +3,14 @@
   "WorkspaceRootPath": "D:\\github\\string\\",
   "Documents": [
     {
+      "AbsoluteMoniker": "D:0:0:{2BFBDE12-7254-4337-9190-60BEDAABFBD5}|string\\string.vcxproj|D:\\github\\string\\string\\string.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{2BFBDE12-7254-4337-9190-60BEDAABFBD5}|string\\string.vcxproj|solutionrelative:string\\string.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{2BFBDE12-7254-4337-9190-60BEDAABFBD5}|string\\string.vcxproj|D:\\github\\string\\string\\string.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{2BFBDE12-7254-4337-9190-60BEDAABFBD5}|string\\string.vcxproj|solutionrelative:string\\string.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+    },
+    {
       "AbsoluteMoniker": "D:0:0:{2BFBDE12-7254-4337-9190-60BEDAABFBD5}|string\\string.vcxproj|D:\\github\\string\\string\\test.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
       "RelativeMoniker": "D:0:0:{2BFBDE12-7254-4337-9190-60BEDAABFBD5}|string\\string.vcxproj|solutionrelative:string\\test.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
     }
@@ -14,7 +22,7 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 3,
+          "SelectedChildIndex": 4,
           "Children": [
             {
               "$type": "Bookmark",
@@ -30,16 +38,40 @@
             },
             {
               "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "string.cpp",
+              "DocumentMoniker": "D:\\github\\string\\string\\string.cpp",
+              "RelativeDocumentMoniker": "string\\string.cpp",
+              "ToolTip": "D:\\github\\string\\string\\string.cpp",
+              "RelativeToolTip": "string\\string.cpp",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAANcAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
+              "WhenOpened": "2026-03-29T09:22:33.801Z"
+            },
+            {
+              "$type": "Document",
               "DocumentIndex": 0,
+              "Title": "string.h",
+              "DocumentMoniker": "D:\\github\\string\\string\\string.h",
+              "RelativeDocumentMoniker": "string\\string.h",
+              "ToolTip": "D:\\github\\string\\string\\string.h",
+              "RelativeToolTip": "string\\string.h",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
+              "WhenOpened": "2026-03-29T09:20:54.781Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
               "Title": "test.cpp",
               "DocumentMoniker": "D:\\github\\string\\string\\test.cpp",
               "RelativeDocumentMoniker": "string\\test.cpp",
               "ToolTip": "D:\\github\\string\\string\\test.cpp",
               "RelativeToolTip": "string\\test.cpp",
-              "ViewState": "AgIAAC0BAAAAAAAAAAAAAEUBAAAcAAAAAAAAAA==",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAEUBAAAcAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
-              "WhenOpened": "2026-03-27T15:19:15.804Z",
-              "EditorCaption": ""
+              "WhenOpened": "2026-03-27T15:19:15.804Z"
             }
           ]
         }
