@@ -318,6 +318,15 @@ int main()
 	{
 		cout << ch << " ";
 	}
+	cout << endl;
+	string sss("hello wangshipeng ");
+	size_t pos = sss.find(' ');
+	while (pos != string::npos)
+	{
+		sss.replace(pos, 1, "$$");
+		pos = sss.find(' ');
+	}
+	cout << sss << endl;
 
 	return 0;
 
