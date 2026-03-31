@@ -5,6 +5,14 @@
     {
       "AbsoluteMoniker": "D:0:0:{AEC10342-5CAB-4D08-BD5B-08C50DC4B40C}|sList\\sList.vcxproj|D:\\github\\sList\\sList\\Slist.c||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
       "RelativeMoniker": "D:0:0:{AEC10342-5CAB-4D08-BD5B-08C50DC4B40C}|sList\\sList.vcxproj|solutionrelative:sList\\Slist.c||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{AEC10342-5CAB-4D08-BD5B-08C50DC4B40C}|sList\\sList.vcxproj|D:\\github\\sList\\sList\\test.c||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{AEC10342-5CAB-4D08-BD5B-08C50DC4B40C}|sList\\sList.vcxproj|solutionrelative:sList\\test.c||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{AEC10342-5CAB-4D08-BD5B-08C50DC4B40C}|sList\\sList.vcxproj|D:\\github\\sList\\sList\\Slist.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{AEC10342-5CAB-4D08-BD5B-08C50DC4B40C}|sList\\sList.vcxproj|solutionrelative:sList\\Slist.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
     }
   ],
   "DocumentGroupContainers": [
@@ -14,7 +22,7 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 3,
+          "SelectedChildIndex": 5,
           "Children": [
             {
               "$type": "Bookmark",
@@ -30,13 +38,39 @@
             },
             {
               "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "test.c",
+              "DocumentMoniker": "D:\\github\\sList\\sList\\test.c",
+              "RelativeDocumentMoniker": "sList\\test.c",
+              "ToolTip": "D:\\github\\sList\\sList\\test.c",
+              "RelativeToolTip": "sList\\test.c",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABQAAAAMAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000423|",
+              "WhenOpened": "2026-03-31T02:15:59.703Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "Slist.h",
+              "DocumentMoniker": "D:\\github\\sList\\sList\\Slist.h",
+              "RelativeDocumentMoniker": "sList\\Slist.h",
+              "ToolTip": "D:\\github\\sList\\sList\\Slist.h",
+              "RelativeToolTip": "sList\\Slist.h",
+              "ViewState": "AgIAABUAAAAAAAAAAAAAACgAAAAkAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
+              "WhenOpened": "2026-03-31T02:14:14.595Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
               "DocumentIndex": 0,
               "Title": "Slist.c",
               "DocumentMoniker": "D:\\github\\sList\\sList\\Slist.c",
               "RelativeDocumentMoniker": "sList\\Slist.c",
               "ToolTip": "D:\\github\\sList\\sList\\Slist.c",
               "RelativeToolTip": "sList\\Slist.c",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAEAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000423|",
               "WhenOpened": "2026-03-22T09:56:59.098Z",
               "EditorCaption": ""

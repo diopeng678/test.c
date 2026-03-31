@@ -18,5 +18,11 @@
     <ClCompile Include="Slist.c">
       <Filter>源文件</Filter>
     </ClCompile>
+    <ClCompile Include="Slist.h">
+      <Filter>头文件</Filter>
+    </ClCompile>
+    <ClCompile Include="test.c">
+      <Filter>源文件</Filter>
+    </ClCompile>
   </ItemGroup>
 </Project>
