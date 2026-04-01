@@ -29,7 +29,7 @@ int main()
 	{
 		cout << *it << " ";
 	}
-	//erase可以传入的参数   •	可用的重载
+	//erase可以传入的参数   •	可用的重载功能仍与erase(const_iterator pos)和erase(const_iterator first, const_iterator last)相同。
 	/*  •	单个元素：iterator erase(const_iterator pos) —— 擦除 pos 指向的元素。
 		•	范围：iterator erase(const_iterator first, const_iterator last) —— 擦除区间[first, last)。
 		•	参数类型
