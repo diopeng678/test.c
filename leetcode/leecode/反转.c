@@ -186,3 +186,50 @@ struct Node* copyRandomList(struct Node* head) {
 //        }
 //    }
 //};
+//快乐数计算 leetcode 202
+//class Solution {
+//public:
+//
+//    int Sum(int n)
+//    {
+//        int sum = 0;
+//        while (n)
+//        {
+//            int t = n % 10;
+//            sum += t * t;
+//            n = n / 10;
+//        }
+//        return sum;
+//    }
+//
+//    bool isHappy(int n)
+//    {
+//        int slow = n;
+//        int fast = Sum(n);
+//        while (slow != fast)
+//        {
+//            slow = Sum(slow);
+//            fast = Sum(Sum(fast));
+//        }
+//        return slow == 1;
+//
+//    }
+//};
+
+//盛最多的水的容器 leetcode 11
+//class Solution {
+//public:
+//    int maxArea(vector<int>& height) {
+//        int left = 0, right = height.size() - 1, ret = 0;
+//
+//        while (left < right)
+//        {
+//            int v = min(height[left], height[right]) * (right - left);
+//            ret = max(ret, v);
+//            if (height[left] > height[right]) right--;
+//            else left++;
+//
+//        }
+//        return ret;
+//    }
+//};
