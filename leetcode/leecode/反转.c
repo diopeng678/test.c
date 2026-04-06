@@ -261,3 +261,51 @@ struct Node* copyRandomList(struct Node* head) {
 //        return ret;
 //    }
 //};
+//179 两数之和等于固定值
+//class Solution {
+//public:
+//    vector<int> twoSum(vector<int>& price, int target) {
+//        int left = 0;
+//        int right = price.size() - 1;
+//        while (left < right)
+//        {
+//            int sum = price[left] + price[right];
+//            if (sum < target) left++;
+//            else if (sum > target) right--;
+//            else return { price[left],price[right] };
+//        }
+//        return { -1,-1 };
+//    }
+//};
+
+//双指针解决 15 三数之和
+//class Solution {
+//public:
+//    vector<vector<int>> threeSum(vector<int>& nums) {
+//        vector<vector<int>> ret;
+//        sort(nums.begin(), nums.end());
+//        int n = nums.size();
+//        for (int i = 0;i < nums.size();)
+//        {
+//            if (nums[i] > 0) break;
+//            int left = i + 1, right = n - 1, target = -nums[i];
+//            while (left < right)
+//            {
+//                if (nums[left] + nums[right] < target) left++;
+//                else if (nums[left] + nums[right] > target) right--;
+//                else
+//                {
+//                    ret.push_back({ nums[i], nums[left], nums[right] });
+//                    left++, right--;
+//                    // 去重操作 left 和right 
+//                    while (left < right && nums[left] == nums[left - 1]) left++;
+//                    while (left < right && nums[right] == nums[right + 1]) right--;
+//                }
+//            }
+//            i++;
+//            while (i < nums.size() && nums[i] == nums[i - 1]) i++;
+//        }
+//        return ret;
+//    }
+//
+//};
