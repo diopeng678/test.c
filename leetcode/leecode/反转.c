@@ -22,55 +22,55 @@
 
 
 //leetcode 138. 复制带随机指针的链表
-struct Node* copyRandomList(struct Node* head) {
-    //拷贝节点差入到源节点的后面
-
-    struct Node* cur = head;
-    while (cur) {
-        struct Node* copy = (struct Node*)malloc(sizeof(struct Node));
-        copy->val = cur->val;
-
-        copy->next = cur->next;
-        cur->next = copy;
-
-        cur = copy->next;
-
-    }
-    //控制random
-    cur = head;
-    while (cur)
-    {
-        struct Node* copy = cur->next;
-        if (cur->random == NULL) {
-            copy->random = NULL;
-        }
-        else {
-            copy->random = cur->random->next;
-
-        }
-        cur = copy->next;
-
-    }
-    //把拷贝下来的节点取下来尾插成新的链表,然后恢复原链表(不恢复也行)
-    struct Node* copyhead = NULL, * copytail = NULL;
-    cur = head;
-    while (cur)
-    {
-        struct Node* copy = cur->next;
-        struct Node* next = copy->next;
-
-        if (copytail == NULL)
-        {
-            copyhead = copytail = copy;
-        }
-        else {
-            copytail->next = copy;
-            copytail = copytail->next;
-        }
-        cur = next;
-    }
-    return copyhead;
-}
+//struct Node* copyRandomList(struct Node* head) {
+//    //拷贝节点差入到源节点的后面
+//
+//    struct Node* cur = head;
+//    while (cur) {
+//        struct Node* copy = (struct Node*)malloc(sizeof(struct Node));
+//        copy->val = cur->val;
+//
+//        copy->next = cur->next;
+//        cur->next = copy;
+//
+//        cur = copy->next;
+//
+//    }
+//    //控制random
+//    cur = head;
+//    while (cur)
+//    {
+//        struct Node* copy = cur->next;
+//        if (cur->random == NULL) {
+//            copy->random = NULL;
+//        }
+//        else {
+//            copy->random = cur->random->next;
+//
+//        }
+//        cur = copy->next;
+//
+//    }
+//    //把拷贝下来的节点取下来尾插成新的链表,然后恢复原链表(不恢复也行)
+//    struct Node* copyhead = NULL, * copytail = NULL;
+//    cur = head;
+//    while (cur)
+//    {
+//        struct Node* copy = cur->next;
+//        struct Node* next = copy->next;
+//
+//        if (copytail == NULL)
+//        {
+//            copyhead = copytail = copy;
+//        }
+//        else {
+//            copytail->next = copy;
+//            copytail = copytail->next;
+//        }
+//        cur = next;
+//    }
+//    return copyhead;
+//}
 //144题 前序遍历
 //int treesize(struct TreeNode* root)
 //{
@@ -324,5 +324,27 @@ struct Node* copyRandomList(struct Node* head) {
 //            }
 //        }
 //        return len == INT_MAX ? 0 : len;
+//    }
+//};
+//滑动窗口解决 3 无重复字符的最长子串
+//class Solution {
+//public:
+//    int lengthOfLongestSubstring(string s) {
+//        int hash[128] = { 0 };
+//        int left = 0;
+//        int right = 0;
+//        int ret = 0;
+//        int n = s.size();
+//        while (right < n)
+//        {
+//            hash[s[right]]++;
+//            while (hash[s[right]] > 1)
+//            {
+//                hash[s[left++]]--;
+//            }
+//            ret = max(ret, right - left + 1);
+//            right++;
+//        }
+//        return ret;
 //    }
 //};
