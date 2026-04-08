@@ -348,3 +348,30 @@
 //        return ret;
 //    }
 //};
+//1004 滑动窗口解决 最大连续1的个数 III
+//class Solution {
+//public:
+//    int longestOnes(vector<int>& nums, int k) {
+//        int left = 0;
+//        int right = 0;
+//        int zero = 0, n = nums.size();
+//        int ret = 0;
+//        while (right < n)
+//        {
+//            if (nums[right] == 0)
+//            {
+//                zero++;
+//            }
+//            while (zero > k)
+//            {
+//                if (nums[left++] == 0)   zero--;
+//            }
+//            right++;
+//            ret = max(ret, right - left);
+//        }
+//        return ret;
+//    }
+//}
+//进窗口 判断 出窗口 更新结果
+ 
+ 
