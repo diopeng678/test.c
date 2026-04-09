@@ -373,5 +373,61 @@
 //    }
 //}
 //进窗口 判断 出窗口 更新结果
- 
- 
+
+// 155 最小栈 
+//class MinStack {
+//public:
+//    MinStack() {
+//
+//    }
+//
+//    void push(int val) {
+//        _st.push(val);
+//        if (_minst.empty() || _minst.top() >= val)
+//        {
+//            _minst.push(val);
+//        }
+//    }
+//
+//    void pop() {
+//        if (_st.top() == _minst.top())
+//        {
+//            _minst.pop();
+//        }
+//        _st.pop();
+//    }
+//
+//    int top() {
+//        return _st.top();
+//    }
+//
+//    int getMin() {
+//        return _minst.top();
+//    }
+//private:
+//    stack <int> _st;
+//    stack <int> _minst;
+//};
+//
+// 
+//JZ31 栈的压入、弹出序列牛课题
+//class Solution {
+//public:
+//
+//    bool IsPopOrder(vector<int>& pushV, vector<int>& popV) {
+//        int popi = 0;
+//        stack <int> st;
+//        for (auto& e : pushV)
+//        {
+//            st.push(e);
+//            while (!st.empty() && st.top() == popV[popi])
+//            {
+//                st.pop();
+//                popi++;
+//            }
+//        }
+//        // write code here
+//        return st.empty();
+//    }
+//};
+// 
