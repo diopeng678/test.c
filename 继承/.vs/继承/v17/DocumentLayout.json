@@ -1,0 +1,49 @@
+{
+  "Version": 1,
+  "WorkspaceRootPath": "D:\\github\\\u7EE7\u627F\\",
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{3AFC24D6-CFFD-474D-9742-2F2263DD45B0}|\u7EE7\u627F\\\u7EE7\u627F.vcxproj|D:\\github\\\u7EE7\u627F\\\u7EE7\u627F\\test.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{3AFC24D6-CFFD-474D-9742-2F2263DD45B0}|\u7EE7\u627F\\\u7EE7\u627F.vcxproj|solutionrelative:\u7EE7\u627F\\test.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+    }
+  ],
+  "DocumentGroupContainers": [
+    {
+      "Orientation": 0,
+      "VerticalTabListWidth": 256,
+      "DocumentGroups": [
+        {
+          "DockedWidth": 200,
+          "SelectedChildIndex": 3,
+          "Children": [
+            {
+              "$type": "Bookmark",
+              "Name": "ST:283709:0:{1a46fd64-28d5-0019-8eb3-17a02d419b53}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{3ae79031-e1bc-11d0-8f78-00a0c9110057}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{aa2115a1-9712-457b-9047-dbb71ca2cdd2}"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "test.cpp",
+              "DocumentMoniker": "D:\\github\\\u7EE7\u627F\\\u7EE7\u627F\\test.cpp",
+              "RelativeDocumentMoniker": "\u7EE7\u627F\\test.cpp",
+              "ToolTip": "D:\\github\\\u7EE7\u627F\\\u7EE7\u627F\\test.cpp",
+              "RelativeToolTip": "\u7EE7\u627F\\test.cpp",
+              "ViewState": "AgIAACoAAAAAAAAAAADwv04AAAALAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
+              "WhenOpened": "2026-04-12T14:14:27.54Z",
+              "EditorCaption": ""
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}
