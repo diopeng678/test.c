@@ -455,3 +455,25 @@
 //        else return nums.size() - ret;
 //    }
 //};
+//904 解决水果成篮问题 滑动窗口解决 最多包含两种不同的水果
+//class Solution {
+//public:
+//    int totalFruit(vector<int>& f) {
+//        int left = 0, right = 0;
+//        int hash[100001] = { 0 };
+//        int ret = 0;
+//        for (int kinds = 0;right < f.size(); right++)
+//        {
+//            if (hash[f[right]] == 0)  kinds++;
+//            hash[f[right]]++;
+//            while (kinds > 2)
+//            {
+//                hash[f[left]]--;
+//                if (hash[f[left]] == 0) kinds--;
+//                left++;
+//            }
+//            ret = max(ret, right - left + 1);
+//        }
+//        return ret;
+//    }
+//};
