@@ -1,4 +1,4 @@
-#define _CRT_SECURE_NO_WARNINGS_1
+ï»¿#define _CRT_SECURE_NO_WARNINGS_1
 //void reverse(int* a, int left, int right) {
 //    while (left < right) {
 //        int tmp = a[left];
@@ -21,9 +21,9 @@
 //
 
 
-//leetcode 138. ¸´ÖÆ´øËæ»úÖ¸ÕëµÄÁ´±í
+//leetcode 138. å¤åˆ¶å¸¦éšæœºæŒ‡é’ˆçš„é“¾è¡¨
 //struct Node* copyRandomList(struct Node* head) {
-//    //¿½±´½Úµã²îÈëµ½Ô´½ÚµãµÄºóÃæ
+//    //æ‹·è´èŠ‚ç‚¹å·®å…¥åˆ°æºèŠ‚ç‚¹çš„åé¢
 //
 //    struct Node* cur = head;
 //    while (cur) {
@@ -36,7 +36,7 @@
 //        cur = copy->next;
 //
 //    }
-//    //¿ØÖÆrandom
+//    //æ§åˆ¶random
 //    cur = head;
 //    while (cur)
 //    {
@@ -51,7 +51,7 @@
 //        cur = copy->next;
 //
 //    }
-//    //°Ñ¿½±´ÏÂÀ´µÄ½ÚµãÈ¡ÏÂÀ´Î²²å³ÉĞÂµÄÁ´±í,È»ºó»Ö¸´Ô­Á´±í(²»»Ö¸´Ò²ĞĞ)
+//    //æŠŠæ‹·è´ä¸‹æ¥çš„èŠ‚ç‚¹å–ä¸‹æ¥å°¾æ’æˆæ–°çš„é“¾è¡¨,ç„¶åæ¢å¤åŸé“¾è¡¨(ä¸æ¢å¤ä¹Ÿè¡Œ)
 //    struct Node* copyhead = NULL, * copytail = NULL;
 //    cur = head;
 //    while (cur)
@@ -71,7 +71,7 @@
 //    }
 //    return copyhead;
 //}
-//144Ìâ Ç°Ğò±éÀú
+//144é¢˜ å‰åºéå†
 //int treesize(struct TreeNode* root)
 //{
 //    if (root == NULL)
@@ -101,7 +101,7 @@
 //    return a;
 //}
 
-//leetcode 572. ÁíÒ»¸öÊ÷µÄ×ÓÊ÷
+//leetcode 572. å¦ä¸€ä¸ªæ ‘çš„å­æ ‘
 //bool isSameTree(struct TreeNode* p, struct TreeNode* q) {
 //    if (p == NULL && q == NULL)
 //        return true;
@@ -153,7 +153,7 @@
 //    reverse(nums, 0, numsSize - 1);
 //}
 //
-// ¸´Ğ´Áãleetcode 1089
+// å¤å†™é›¶leetcode 1089
 //class Solution {
 //public:
 //    void duplicateZeros(vector<int>& arr) {
@@ -186,7 +186,7 @@
 //        }
 //    }
 //};
-//¿ìÀÖÊı¼ÆËã leetcode 202
+//å¿«ä¹æ•°è®¡ç®— leetcode 202
 //class Solution {
 //public:
 //
@@ -216,7 +216,7 @@
 //    }
 //};
 
-//Ê¢×î¶àµÄË®µÄÈİÆ÷ leetcode 11
+//ç››æœ€å¤šçš„æ°´çš„å®¹å™¨ leetcode 11
 //class Solution {
 //public:
 //    int maxArea(vector<int>& height) {
@@ -234,7 +234,7 @@
 //    }
 //};
 
-//611 ÓĞĞ§Èı½ÇĞÎµÄ¸öÊı
+//611 æœ‰æ•ˆä¸‰è§’å½¢çš„ä¸ªæ•°
 //class Solution {
 //public:
 //    int triangleNumber(vector<int>& nums) {
@@ -261,7 +261,7 @@
 //        return ret;
 //    }
 //};
-//179 Á½ÊıÖ®ºÍµÈÓÚ¹Ì¶¨Öµ
+//179 ä¸¤æ•°ä¹‹å’Œç­‰äºå›ºå®šå€¼
 //class Solution {
 //public:
 //    vector<int> twoSum(vector<int>& price, int target) {
@@ -278,7 +278,7 @@
 //    }
 //};
 
-//Ë«Ö¸Õë½â¾ö 15 ÈıÊıÖ®ºÍ
+//åŒæŒ‡é’ˆè§£å†³ 15 ä¸‰æ•°ä¹‹å’Œ
 //class Solution {
 //public:
 //    vector<vector<int>> threeSum(vector<int>& nums) {
@@ -297,7 +297,7 @@
 //                {
 //                    ret.push_back({ nums[i], nums[left], nums[right] });
 //                    left++, right--;
-//                    // È¥ÖØ²Ù×÷ left ºÍright 
+//                    // å»é‡æ“ä½œ left å’Œright 
 //                    while (left < right && nums[left] == nums[left - 1]) left++;
 //                    while (left < right && nums[right] == nums[right + 1]) right--;
 //                }
@@ -309,7 +309,7 @@
 //    }
 //
 //};
-//209 ´°¿Ú»¬¶¯ 
+//209 çª—å£æ»‘åŠ¨ 
 //class Solution {
 //public:
 //    int minSubArrayLen(int target, vector<int>& nums) {
@@ -326,7 +326,7 @@
 //        return len == INT_MAX ? 0 : len;
 //    }
 //};
-//»¬¶¯´°¿Ú½â¾ö 3 ÎŞÖØ¸´×Ö·ûµÄ×î³¤×Ó´®
+//æ»‘åŠ¨çª—å£è§£å†³ 3 æ— é‡å¤å­—ç¬¦çš„æœ€é•¿å­ä¸²
 //class Solution {
 //public:
 //    int lengthOfLongestSubstring(string s) {
@@ -348,7 +348,7 @@
 //        return ret;
 //    }
 //};
-//1004 »¬¶¯´°¿Ú½â¾ö ×î´óÁ¬Ğø1µÄ¸öÊı III
+//1004 æ»‘åŠ¨çª—å£è§£å†³ æœ€å¤§è¿ç»­1çš„ä¸ªæ•° III
 //class Solution {
 //public:
 //    int longestOnes(vector<int>& nums, int k) {
@@ -372,9 +372,9 @@
 //        return ret;
 //    }
 //}
-//½ø´°¿Ú ÅĞ¶Ï ³ö´°¿Ú ¸üĞÂ½á¹û
+//è¿›çª—å£ åˆ¤æ–­ å‡ºçª—å£ æ›´æ–°ç»“æœ
 
-// 155 ×îĞ¡Õ» 
+// 155 æœ€å°æ ˆ 
 //class MinStack {
 //public:
 //    MinStack() {
@@ -410,7 +410,7 @@
 //};
 //
 // 
-//JZ31 Õ»µÄÑ¹Èë¡¢µ¯³öĞòÁĞÅ£¿ÎÌâ
+//JZ31 æ ˆçš„å‹å…¥ã€å¼¹å‡ºåºåˆ—ç‰›è¯¾é¢˜
 //class Solution {
 //public:
 //
@@ -431,7 +431,7 @@
 //    }
 //};
 // 
-//1658 ½«X¼õµ½ÁãµÄ×îĞ¡²Ù×÷Êı
+//1658 å°†Xå‡åˆ°é›¶çš„æœ€å°æ“ä½œæ•°
 //class Solution {
 //public:
 //    int minOperations(vector<int>& nums, int x) {
@@ -455,7 +455,7 @@
 //        else return nums.size() - ret;
 //    }
 //};
-//904 ½â¾öË®¹û³ÉÀºÎÊÌâ »¬¶¯´°¿Ú½â¾ö ×î¶à°üº¬Á½ÖÖ²»Í¬µÄË®¹û
+//904 è§£å†³æ°´æœæˆç¯®é—®é¢˜ æ»‘åŠ¨çª—å£è§£å†³ æœ€å¤šåŒ…å«ä¸¤ç§ä¸åŒçš„æ°´æœ
 //class Solution {
 //public:
 //    int totalFruit(vector<int>& f) {
@@ -473,6 +473,30 @@
 //                left++;
 //            }
 //            ret = max(ret, right - left + 1);
+//        }
+//        return ret;
+//    }
+//};
+//ï¼š438.æ‰¾åˆ°å­—ç¬¦ä¸²ä¸­æ‰€æœ‰å­—âºŸå¼‚ä½è¯
+//class Solution {
+//public:
+//    vector<int> findAnagrams(string s, string p) {
+//        vector<int> ret;
+//        int hash1[26] = { 0 };
+//        for (auto ch : p) hash1[ch - 'a']++;
+//
+//        int hash2[26] = { 0 };
+//        int m = p.size();
+//        for (int left = 0, right = 0, num = 0; right < s.size(); right++)
+//        {
+//            char in = s[right];
+//            if (++hash2[in - 'a'] <= hash1[in - 'a']) num++;
+//            if (right - left + 1 > m)
+//            {
+//                char out = s[left++];
+//                if (hash2[out - 'a']-- <= hash1[out - 'a']) num--;
+//            }
+//            if (num == m) ret.push_back(left);
 //        }
 //        return ret;
 //    }
