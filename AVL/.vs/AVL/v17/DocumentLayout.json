@@ -1,0 +1,66 @@
+{
+  "Version": 1,
+  "WorkspaceRootPath": "D:\\github\\AVL\\",
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{C125CA67-3ECE-42D9-BB47-A015F49ADF47}|AVL\\AVL.vcxproj|D:\\github\\AVL\\AVL\\AVL.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{C125CA67-3ECE-42D9-BB47-A015F49ADF47}|AVL\\AVL.vcxproj|solutionrelative:AVL\\AVL.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{C125CA67-3ECE-42D9-BB47-A015F49ADF47}|AVL\\AVL.vcxproj|D:\\github\\AVL\\AVL\\test.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{C125CA67-3ECE-42D9-BB47-A015F49ADF47}|AVL\\AVL.vcxproj|solutionrelative:AVL\\test.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+    }
+  ],
+  "DocumentGroupContainers": [
+    {
+      "Orientation": 0,
+      "VerticalTabListWidth": 256,
+      "DocumentGroups": [
+        {
+          "DockedWidth": 200,
+          "SelectedChildIndex": 3,
+          "Children": [
+            {
+              "$type": "Bookmark",
+              "Name": "ST:283709:0:{1a46fd64-28d5-0019-8eb3-17a02d419b53}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{3ae79031-e1bc-11d0-8f78-00a0c9110057}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{aa2115a1-9712-457b-9047-dbb71ca2cdd2}"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "AVL.cpp",
+              "DocumentMoniker": "D:\\github\\AVL\\AVL\\AVL.cpp",
+              "RelativeDocumentMoniker": "AVL\\AVL.cpp",
+              "ToolTip": "D:\\github\\AVL\\AVL\\AVL.cpp",
+              "RelativeToolTip": "AVL\\AVL.cpp",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABEAAAAFAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
+              "WhenOpened": "2026-04-20T14:51:26.674Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "test.cpp",
+              "DocumentMoniker": "D:\\github\\AVL\\AVL\\test.cpp",
+              "RelativeDocumentMoniker": "AVL\\test.cpp",
+              "ToolTip": "D:\\github\\AVL\\AVL\\test.cpp",
+              "RelativeToolTip": "AVL\\test.cpp",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
+              "WhenOpened": "2026-04-20T14:50:51.248Z",
+              "EditorCaption": ""
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}
