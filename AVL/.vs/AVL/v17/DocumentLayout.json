@@ -3,12 +3,12 @@
   "WorkspaceRootPath": "D:\\github\\AVL\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{C125CA67-3ECE-42D9-BB47-A015F49ADF47}|AVL\\AVL.vcxproj|D:\\github\\AVL\\AVL\\AVL.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
-      "RelativeMoniker": "D:0:0:{C125CA67-3ECE-42D9-BB47-A015F49ADF47}|AVL\\AVL.vcxproj|solutionrelative:AVL\\AVL.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
-    },
-    {
       "AbsoluteMoniker": "D:0:0:{C125CA67-3ECE-42D9-BB47-A015F49ADF47}|AVL\\AVL.vcxproj|D:\\github\\AVL\\AVL\\test.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
       "RelativeMoniker": "D:0:0:{C125CA67-3ECE-42D9-BB47-A015F49ADF47}|AVL\\AVL.vcxproj|solutionrelative:AVL\\test.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{C125CA67-3ECE-42D9-BB47-A015F49ADF47}|AVL\\AVL.vcxproj|D:\\github\\AVL\\AVL\\AVL.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{C125CA67-3ECE-42D9-BB47-A015F49ADF47}|AVL\\AVL.vcxproj|solutionrelative:AVL\\AVL.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
     }
   ],
   "DocumentGroupContainers": [
@@ -18,7 +18,7 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 3,
+          "SelectedChildIndex": 4,
           "Children": [
             {
               "$type": "Bookmark",
@@ -34,26 +34,25 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 0,
+              "DocumentIndex": 1,
               "Title": "AVL.cpp",
               "DocumentMoniker": "D:\\github\\AVL\\AVL\\AVL.cpp",
               "RelativeDocumentMoniker": "AVL\\AVL.cpp",
               "ToolTip": "D:\\github\\AVL\\AVL\\AVL.cpp",
               "RelativeToolTip": "AVL\\AVL.cpp",
-              "ViewState": "AgIAADUBAAAAAAAAAAAAAAEBAAAHAAAAAAAAAA==",
+              "ViewState": "AgIAAFkBAAAAAAAAAAAAAAEBAAAHAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
-              "WhenOpened": "2026-04-20T14:51:26.674Z",
-              "EditorCaption": ""
+              "WhenOpened": "2026-04-20T14:51:26.674Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 1,
+              "DocumentIndex": 0,
               "Title": "test.cpp",
               "DocumentMoniker": "D:\\github\\AVL\\AVL\\test.cpp",
               "RelativeDocumentMoniker": "AVL\\test.cpp",
               "ToolTip": "D:\\github\\AVL\\AVL\\test.cpp",
               "RelativeToolTip": "AVL\\test.cpp",
-              "ViewState": "AgIAAAMAAAAAAAAAAAAAAAQAAAATAAAAAAAAAA==",
+              "ViewState": "AgIAAEQAAAAAAAAAAAAAAD4AAAAJAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
               "WhenOpened": "2026-04-20T14:50:51.248Z",
               "EditorCaption": ""

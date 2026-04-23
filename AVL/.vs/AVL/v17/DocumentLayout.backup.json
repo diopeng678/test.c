@@ -40,10 +40,9 @@
               "RelativeDocumentMoniker": "AVL\\AVL.cpp",
               "ToolTip": "D:\\github\\AVL\\AVL\\AVL.cpp",
               "RelativeToolTip": "AVL\\AVL.cpp",
-              "ViewState": "AgIAAC0BAAAAAAAAAAAUwGgBAAACAAAAAAAAAA==",
+              "ViewState": "AgIAAFkBAAAAAAAAAAAAAAEBAAAHAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
-              "WhenOpened": "2026-04-20T14:51:26.674Z",
-              "EditorCaption": ""
+              "WhenOpened": "2026-04-20T14:51:26.674Z"
             },
             {
               "$type": "Document",
@@ -51,9 +50,9 @@
               "Title": "test.cpp",
               "DocumentMoniker": "D:\\github\\AVL\\AVL\\test.cpp",
               "RelativeDocumentMoniker": "AVL\\test.cpp",
-              "ToolTip": "D:\\github\\AVL\\AVL\\test.cpp*",
-              "RelativeToolTip": "AVL\\test.cpp*",
-              "ViewState": "AgIAADYAAAAAAAAAAAAAAAQAAAATAAAAAAAAAA==",
+              "ToolTip": "D:\\github\\AVL\\AVL\\test.cpp",
+              "RelativeToolTip": "AVL\\test.cpp",
+              "ViewState": "AgIAADkAAAAAAAAAAAAAAD4AAAAJAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
               "WhenOpened": "2026-04-20T14:50:51.248Z",
               "EditorCaption": ""
