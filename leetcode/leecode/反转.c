@@ -565,7 +565,7 @@
 //    }
 //};
 
-//  704 二分查找
+//  704 二分查找 简单模板 
 //class Solution {
 //public:
 //    int search(vector<int>& nums, int target) {
@@ -580,4 +580,5 @@
 //        }
 //        return -1;
 //    }
+// 时间复杂度 O(logn) 空间复杂度 O(1)
 //};
